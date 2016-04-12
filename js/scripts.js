@@ -28,6 +28,13 @@ Character.prototype.addHealth = function(amount){
 Character.prototype.loseHealth = function(amount){
   return this.health -= amount;
 };
+Character.prototype.checkInventory = function(passItem){
+  for(i = 0; i < this.items.length; i += 1){
+    if(this.items[i] === passItem){
+    return false;
+    }
+  }
+}
 var Character = new Character(100,10,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
@@ -99,11 +106,13 @@ function directionCheck(directions){
     $('#right').show();
   }
 }
+
 }
 function compareText(passedKeyArray, passedEnteredText){
   for(i = 0; i < passedKeyArray.length; i += 1){
     if(passedKeyArray[i] === passedEnteredText){
       return true;
+      break;
     }
   }
 }
@@ -150,12 +159,14 @@ var office = {
   '<div>',
   action: function(){},
   results: function(){
-    $('#room-display').empty();
-    $('#room-display').append(
-    '<div class="room" id="labratory">' +
-    '<p>' + 'You searched the desk and found an unlocked drawer. The drawer contained a <span class="item">Small Key</span>.' + '</p>' +
-    '</div>');
-    Character.items.push(' Small Key')
+    var firstKeyCheck = Character.checkInventory(" Small Key");
+    if (firstKeyCheck !== false){
+      $(".modal-page1").empty();
+      $(".modal-page2").empty();
+      $(".modal-page1").append("<p>You find a small key.</p>");
+      $("#myModal").modal();
+    Character.items.push(' Small Key');
+  }
 },
   directions: ['down'],
 
@@ -266,11 +277,14 @@ var path = {
   },
   after: null,
   results: function(){
-    $(".modal-page1").empty();
-    $(".modal-page2").empty();
-    $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
-    $("#myModal").modal();
-    Character.items.push("cigarettes");
+    var verifyCigs = Character.checkInventory("cigarettes");
+    if(verifyCigs !== false){
+      $(".modal-page1").empty();
+      $(".modal-page2").empty();
+      $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
+      $("#myModal").modal();
+      Character.items.push("cigarettes");
+    }
   },
   directions: ['up'],
 }
