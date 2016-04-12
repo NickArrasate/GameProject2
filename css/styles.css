@@ -5,25 +5,33 @@ body {
   padding-top: 25px;
 }
 p {
-  max-height: 342px;
-
+  max-height: 235px;
 }
-.container {
-  max-width: 90%;
-  margin: auto;
+/*.container {
+  max-width: 100%;
+  margin: none;
   align-items: center;
+}*/
+.img-styles{
+  width: 100%;
+  max-height: 650px;
+  margin: auto;
+  margin-top: 13px;
+  padding-bottom: 0;
+  border-radius: 5px;
 }
 .room-frame {
   background-image: url(../img/frame.png);
   z-index: 2;
-  margin: auto;
-  margin-top: 100px;
-  max-width: 80%;
+  /*margin: auto;*/
+  /*margin-top: 100px;*/
+  max-width: 100%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding-top: 5px;
   padding-bottom: 10px;
-  min-height: 342px;
+  max-height: 250px;
+
 }
 #room-display {
   max-width: 87%;
@@ -31,9 +39,11 @@ p {
   margin: auto;
   margin-top: 13px;
   padding-bottom: 0;
-  min-height: 442px;
-
+  overflow: auto;
 }
+
+
+
 .room {
   align-items: center;
   text-align: center;
@@ -42,9 +52,9 @@ p {
   margin: auto;
   margin-bottom: 36px;
   margin-top: 34px;
-    padding: 0px 40px 12px 40px;
+  padding: 0px 40px 12px 40px;
   max-width: 100%;
-  min-height: 442px;
+  max-height: 175px;
   overflow: auto;
 }
 #character-info {
@@ -55,12 +65,13 @@ p {
   border-style: dashed;
   background-repeat: no-repeat;
   min-width: 133px;
+  
 }
 #character-info h4 {
   text-align: left;
 }
 #button-display {
-  margin-top: 90px;
+
   background-image: url(../img/frame.png);
   background-size: 100% 100%;
   height: 68px;
@@ -105,7 +116,10 @@ p {
 #contextual {
   z-index: 3;
   padding: 0;
+  align-items: center;
   text-align: center;
+
+
 }
 .context{
   font-size: 20pt;
@@ -114,12 +128,17 @@ p {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 100%;
-  margin-top: 30px;
-  width: 100%;
+  margin-top: 10px;
+  width: 15%;
   text-align: center;
+  margin-left:auto;
+  margin-right: auto;
 }
 .context:hover{
   cursor: pointer;
+}
+.arrow {
+  text-align: center;
 }
 #left, #right, #up, #down {
   display: none;

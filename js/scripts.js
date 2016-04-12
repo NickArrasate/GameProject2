@@ -40,6 +40,7 @@ $(document).ready(function(){
   var place = 0;
   var arrayPlace = 1;
   $('#room-display').append(roomArray[arrayPlace][place].description);
+  $('#room-picture').append(roomArray[arrayPlace][place].image);
   displayCoords(arrayPlace, place);
 
   // movement and setting=====================================================
@@ -53,6 +54,8 @@ $(document).ready(function(){
   };
     $('#room-display').empty();
     $('#room-display').append(roomArray[arrayPlace][place].description);
+    $('#room-picture').empty();
+    $('#room-picture').append(roomArray[arrayPlace][place].image);
     console.log(place, arrayPlace);// logs current coords==========================
     displayCoords(arrayPlace, place, roomArray[arrayPlace][place].title);
 //calls the room action function and refreshes stats=================================
@@ -158,6 +161,7 @@ var office = {
     Character.items.push(' Small Key')
 },
   directions: ['down'],
+  image: '<img src="img/study.jpg" class="img-styles">',
 
 }
 var library = {
@@ -232,6 +236,7 @@ var foyer = {
   },
   after: null,
   directions: ['up'],
+  image: '<img src="img/vestibule.jpg" class="img-styles">',
 }
 var terrace = {
   title: 'Terrace',
@@ -253,6 +258,7 @@ var entrance = {
   action: function(){},
   after: null,
   directions: ['up','down','right'],
+  image: '<img src="img/gate.jpg" class="img-styles">'
 }
 
 var path = {
@@ -273,6 +279,7 @@ var path = {
     Character.items.push("cigarettes");
   },
   directions: ['up'],
+  image: '<img src="img/path.jpg" class="img-styles">',
 }
 var turnback = {
   title: 'Path',
