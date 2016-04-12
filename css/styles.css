@@ -1,0 +1,182 @@
+body {
+  background-image: url(../img/parchment.jpg);
+  background-position: center;
+  align-items: center;
+  padding-top: 25px;
+}
+p {
+  max-height: 242px;
+}
+.container {
+  max-width: 80%;
+  margin: auto;
+  align-items: center;
+}
+.room-frame {
+  background-image: url(../img/frame.png);
+  z-index: 2;
+  margin: auto;
+  max-width: 80%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  min-height: 242px;
+}
+#room-display {
+  max-width: 87%;
+  height: inherit;
+  margin: auto;
+  margin-top: 13px;
+  padding-bottom: 0;
+  min-height: 242px;
+}
+.room {
+  align-items: center;
+  text-align: center;
+  font-size: 30pt;
+  font-family: 'Tangerine', cursive;
+  margin: auto;
+  margin-bottom: 30px;
+  padding: 10px 40px 12px 40px;
+  max-width: 100%;
+  max-height: 242px;
+  min-height: 242px;
+  overflow: auto;
+}
+#character-info {
+  font-weight: bold;
+  text-align: left;
+  padding: 12px 40px 12px 10px;
+  border-radius: 2px;
+  border-style: dashed;
+  background-repeat: no-repeat;
+  min-width: 133px;
+}
+#character-info h4 {
+  text-align: left;
+}
+#button-display {
+  margin-top: 90px;
+  background-image: url(../img/frame.png);
+  background-size: 100% 100%;
+  height: 68px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-repeat: no-repeat;
+}
+.directions {
+  height: 26px;
+  width: 26px;
+}
+.directions:hover {
+  cursor: pointer;
+}
+.health, #health {
+  color: crimson;
+}
+.item, #itemdisplay {
+  color: orange;
+  text-shadow: 2px 2px 2px #202020;
+}
+#contextrow{
+  height: 60px;
+}
+#contextual {
+  z-index: 3;
+  padding: 0;
+  text-align: center;
+}
+.context{
+  font-size: 20pt;
+  font-family: 'Tangerine', cursive;
+  background-image: url(../img/frame.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+.context:hover{
+  cursor: pointer;
+}
+#left, #right, #up, #down {
+  display: none;
+}
+#uprow {
+  height: 26px;
+}
+#buttonrow{
+  margin-bottom: 8px;
+}
+#left {
+  transform: rotate(90deg);
+}
+#right {
+  transform: rotate(270deg);
+}
+#up {
+  transform: rotate(180deg);
+}
+#down{
+  text-align: center;
+}
+#downcol {
+  margin-left: 0;
+  margin-right: 0;
+}
+#coordinateDisplay {
+  text-align: center;
+  font-size: 30pt;
+  font-weight: bold;
+  font-family: 'Tangerine', cursive;
+}
+
+.modal-content {
+  background-image: url("../img/journal.png");
+  width:800px;
+  height:500px;
+  background-color: rgba(0,0,0,0);
+  box-shadow: none;
+  border: none;
+}
+
+.modal-page1 {
+  float:left;
+  width: 390px;
+  margin-top: 30px;
+  margin-left: 25px;
+}
+.modal-page2 {
+  float:right;
+  margin: 15px 60px 0 0;
+}
+
+.modal-page1 p {
+  font-family: 'tangerine',cursive;
+  position: absolute fixed right;
+  font-size: 24pt;
+  color: rgba(102, 51, 0, .6);
+  text-align: center;
+  text-shadow: .5px .25px .25px black;
+}
+
+.modal-page2 p {
+  font-family: 'tangerine',cursive;
+  position: absolute fixed right;
+  font-size: 24pt;
+  color: rgba(102, 51, 0, .6);
+  text-align: center;
+  text-shadow: .5px .25px .25px black;
+}
+
+.exit {
+  position: absolute fixed right;
+  margin-left: 250px;
+}
+#closeModalBtn {
+  color: rgb(255, 191, 128);
+  background-color: rgba(102, 51, 0, .6);
+  box-shadow: 5px 5px 5px black;
+}
