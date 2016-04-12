@@ -35,7 +35,7 @@ $(document).ready(function(){
 
   var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2];// y-axis array================
   var roomRight = [null,null, terrace];// x-axis array ===========================
-  var roomLeft = [null,null,null,null,null,labratory];
+  var roomLeft = [null,null,null,null,null,labratory, office];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
   var place = 0;
   var arrayPlace = 1;
@@ -56,6 +56,7 @@ $(document).ready(function(){
     console.log(place, arrayPlace);// logs current coords==========================
     displayCoords(arrayPlace, place, roomArray[arrayPlace][place].title);
 //calls the room action function and refreshes stats=================================
+    $('#contextual').hide();
     roomArray[arrayPlace][place].action(Character);
     characterRefresh(Character);
     $('.directions').hide();
@@ -65,20 +66,22 @@ $(document).ready(function(){
 });
 //Contextual button function. pressing the contextual button calls the rooms 'after' function======================================================
   $('#contextual').click(function(){
+    $('#contextual').hide();
     roomArray[arrayPlace][place].after(Character);
     directionCheck(roomArray[arrayPlace][place].directions);
   });
 
-  $("button#textSubmit").click(function(event){
-    event.preventDefault();
-    keyArray = [];
-    var enteredText = $("#textInput").val();
-    var keyArray = roomArray[arrayPlace][place].keywords;
-    var checkedText = compareText(keyArray, enteredText);
-    if (checkedText === true){
-      roomArray[arrayPlace][place].results(Character);
-    }
-  });
+    $("button#textSubmit").click(function(event){
+      event.preventDefault();
+      keyArray = [];
+      var enteredText = $("#textInput").val();
+      $("#textInput").val('');
+      var keyArray = roomArray[arrayPlace][place].keywords;
+      var checkedText = compareText(keyArray, enteredText);
+      if (checkedText === true){
+        roomArray[arrayPlace][place].results(Character);
+      }
+    });
 });
 // Business logic=======================================
 // protoypes for updating character stats. Call the proto in the room object functions.
@@ -97,7 +100,6 @@ function directionCheck(directions){
   }
 }
 }
-
 function compareText(passedKeyArray, passedEnteredText){
   for(i = 0; i < passedKeyArray.length; i += 1){
     if(passedKeyArray[i] === passedEnteredText){
@@ -105,7 +107,6 @@ function compareText(passedKeyArray, passedEnteredText){
     }
   }
 }
-
 //updates character sheet info====================================
 function characterRefresh(Character){
   $('#healthdisplay').text(Character.health);
@@ -139,6 +140,32 @@ function displayCoords(x,y,title){
 
 // Room objects to append into display ======================================
 // Rooms should contain a 'description' to be appended into html, an 'action' function to happen when char moves into room (can be null), an 'after' function to run after the 'contextual' button has been pressed and the available 'directions' from the room.=============================================
+
+
+var office = {
+  title: 'Office',
+  keywords: ['drawer','desk','drawers','furniture'],
+  description: '<div class="room" id="office">' +
+  '<p>' + 'At the end of the hall you enter a small office. tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers. Against the far wall, a chest of drawers sits in the gloom.' + '<p/>' +
+  '<div>',
+  action: function(){},
+  results: function(){
+    $('#room-display').empty();
+    $('#room-display').append(
+    '<div class="room" id="labratory">' +
+    '<p>' + 'You searched the desk and found an unlocked drawer. The drawer contained a <span class="item">Small Key</span>.' + '</p>' +
+    '</div>');
+    Character.items.push(' Small Key')
+},
+  directions: ['down'],
+
+}
+var library = {
+   title: 'Library',
+   description: '<div class="room" id="library">' +
+   '<p>' + ''
+}
+
 var labratory = {
   title: 'Labratory',
   description: '<div class="room" id="labratory">' +
@@ -146,7 +173,7 @@ var labratory = {
   '</div>',
   action: function(){
   $('#contextual').show();
-  $('#contextual span.buttontext').append('Push the door open.');
+  $('#contextual span.buttontext').text('Push the door open.');
 },
   after: function(Character){
     Character.loseSanity(3);
@@ -159,7 +186,7 @@ var labratory = {
   '<p>' + 'The room is small and contains several tables densely cluttered with glass vials and scientific equipment. Dust covers every surface. You approach a large glass container. When you hold your light up to it, the shape of a large, curled tentacle emerges through the cloudy liquid that suspends it. You recoil in disgust at the sight and knock a vial off the table behind you sending it to the ground. The sound of it shattering in the silence is enough to send your heart racing. You exit the labratory in a hurry, eager to put some distance between you and the odd tentacle in the jar...' + '</p>' +
   '</div>');
 },
-directions: ['up','down']
+directions: ['up','right']
 }
 var hallway2 = {
   title: 'Hallway',
@@ -239,13 +266,14 @@ var path = {
   },
   after: null,
   results: function(){
+    $(".modal-page1").empty();
+    $(".modal-page2").empty();
     $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
     $("#myModal").modal();
     Character.items.push("cigarettes");
   },
   directions: ['up'],
 }
-
 var turnback = {
   title: 'Path',
   description: '<div class="room" id="path">' +

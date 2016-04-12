@@ -5,10 +5,11 @@ body {
   padding-top: 25px;
 }
 p {
-  max-height: 242px;
+  max-height: 342px;
+
 }
 .container {
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
   align-items: center;
 }
@@ -16,12 +17,13 @@ p {
   background-image: url(../img/frame.png);
   z-index: 2;
   margin: auto;
+  margin-top: 100px;
   max-width: 80%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding-top: 5px;
-  padding-bottom: 5px;
-  min-height: 242px;
+  padding-bottom: 10px;
+  min-height: 342px;
 }
 #room-display {
   max-width: 87%;
@@ -29,7 +31,8 @@ p {
   margin: auto;
   margin-top: 13px;
   padding-bottom: 0;
-  min-height: 242px;
+  min-height: 442px;
+
 }
 .room {
   align-items: center;
@@ -37,11 +40,11 @@ p {
   font-size: 30pt;
   font-family: 'Tangerine', cursive;
   margin: auto;
-  margin-bottom: 30px;
-  padding: 10px 40px 12px 40px;
+  margin-bottom: 36px;
+  margin-top: 34px;
+    padding: 0px 40px 12px 40px;
   max-width: 100%;
-  max-height: 242px;
-  min-height: 242px;
+  min-height: 442px;
   overflow: auto;
 }
 #character-info {
@@ -71,6 +74,23 @@ p {
 }
 .directions:hover {
   cursor: pointer;
+}
+#textInput {
+  font-size: 20pt;
+  font-family: 'Tangerine', cursive;
+  background: none;
+  border-color: black;
+  width: 60%;
+}
+#textSubmit {
+  font-size: 20pt;
+  font-family: 'Tangerine', cursive;
+  background: none;
+  border-radius: 0;
+  width: 30%;
+  font-weight: bolder;
+  border-color: #252525;
+
 }
 .health, #health {
   color: crimson;
