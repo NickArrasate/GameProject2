@@ -10,28 +10,40 @@ var roomLeft = [];
 var roomArray = [];
 // var Character = null;
 var directions = null;
-function Character(health, strength, sanity, items){
+function Character(health, sanity, items){
  this.health= health;
- this.strength = strength;
  this.sanity = sanity;
  this.items= items;
 };
 Character.prototype.addSanity = function(amount){
   return this.sanity += amount;
+  characterRefresh();
 };
 Character.prototype.loseSanity = function(amount){
-  if (this.sanity > 0){
-    return this.sanity -= amount;
-  }else if(this.sanity <= 0){
+  this.sanity -= amount;
+  if(this.sanity <= 0){
     //Modal to display Game over
-    location.reload();  
+    alert("You have gone insane.  Game Over.");
+    location.reload();
+  } else if (this.sanity > 0){
+      return this.sanity;
+      characterRefresh();
   }
 };
 Character.prototype.addHealth = function(amount){
   return this.health += amount;
+  characterRefresh();
 };
 Character.prototype.loseHealth = function(amount){
-  return this.health -= amount;
+  this.health -= amount;
+  if(this.health <= 0){
+    //Modal to display Game over
+    alert("You have Died.  Game Over.");
+    location.reload();
+  } else if (this.health > 0){
+      return this.health;
+      characterRefresh();
+  }
 };
 Character.prototype.smokeCig = function(){
   this.health -= 5;
@@ -44,7 +56,7 @@ Character.prototype.checkInventory = function(passItem){
     }
   }
 }
-var Character = new Character(100,10,10,['Gold Lighter']);
+var Character = new Character(100,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
 $(document).ready(function(){
@@ -56,6 +68,7 @@ $(document).ready(function(){
   var place = 0;
   var arrayPlace = 1;
   $('#room-display').append(roomArray[arrayPlace][place].description);
+  $('#room-picture').append(roomArray[arrayPlace][place].image);
   displayCoords(arrayPlace, place);
 
   // movement and setting=====================================================
@@ -69,6 +82,8 @@ $(document).ready(function(){
   };
     $('#room-display').empty();
     $('#room-display').append(roomArray[arrayPlace][place].description);
+    $('#room-picture').empty();
+    $('#room-picture').append(roomArray[arrayPlace][place].image);
     console.log(place, arrayPlace);// logs current coords==========================
     displayCoords(arrayPlace, place, roomArray[arrayPlace][place].title);
 //calls the room action function and refreshes stats=================================
@@ -87,6 +102,7 @@ $(document).ready(function(){
     directionCheck(roomArray[arrayPlace][place].directions);
   });
 
+  //Text Enter
   $("button#textSubmit").click(function(event){
     event.preventDefault();
     keyArray = [];
@@ -97,6 +113,7 @@ $(document).ready(function(){
     if (checkedText === true){
       roomArray[arrayPlace][place].results(Character);
     }
+    characterRefresh();
   });
 
   $("button#smokeACig").click(function(){
@@ -135,7 +152,12 @@ function characterRefresh(Character){
   $('#healthdisplay').text(Character.health);
   $('#strengthdisplay').text(Character.strength);
   $('#sanitydisplay').text(Character.sanity);
-  $('#itemdisplay').text(Character.items);
+  $("#itemdisplay").empty();
+  for(var i = 0; i <= Character.items.length; i += 1){
+    if(Character.items[i] !== undefined){
+      $('#itemdisplay').append(Character.items[i] + "<br>");
+    }
+  }
 }
 //updates the y-axis information when 'up' or 'down' is pressed=======================
 function roomChanger(direction){
@@ -183,6 +205,7 @@ var office = {
   }
 },
   directions: ['down'],
+  image: '<img src="img/study.jpg" class="img-styles">',
 
 }
 var library = {
@@ -257,6 +280,7 @@ var foyer = {
   },
   after: null,
   directions: ['up'],
+  image: '<img src="img/vestibule.jpg" class="img-styles">',
 }
 var terrace = {
   title: 'Terrace',
@@ -278,13 +302,14 @@ var entrance = {
   action: function(){},
   after: null,
   directions: ['up','down','right'],
+  image: '<img src="img/gate.jpg" class="img-styles">'
 }
 
 var path = {
   title: 'Path',
   keywords: ['pocket'],
   description: '<div class="room" id="path">' +
-  '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You can only go forward...' + '</p>' +
+  '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You can only go forward.  What is that in your pocket?' + '</p>' +
   '</div>',
   action: function(){
     $('#down').hide();
@@ -298,10 +323,11 @@ var path = {
       $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
       $("#myModal").modal();
       Character.items.push("cigarettes");
-      $("#item-box-display").append("<h6>Cigarettes - <button id='smokeACig'>Smoke</button></h6>");
+      $("#itemdisplay").append("<h6><button id='smokeACig'>Smoke</button></h6>");
     }
   },
   directions: ['up'],
+  image: '<img src="img/path.jpg" class="img-styles">',
 }
 var turnback = {
   title: 'Path',
