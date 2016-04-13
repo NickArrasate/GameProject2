@@ -1,3 +1,30 @@
+// CISTERN NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
+var cistern = {
+  title: 'Cistern',
+  keywords: [],
+  description: '<div class="room" id="cistern">' +
+  '<p>' + 'You find yourself in a hollowed cistern. The air is noticably stale as it loomes over the stale crimsoned rust colored ankle deep water. Your only option is to proceed tredge through the cavernous halls.' + '</p>' +
+  '</div>',
+  action: function(){},
+  results: function(){},
+
+  directions: [],
+  image: '<img src="img/cistern.jpg" class="img-styles">',
+}
+
+// TUNNEL NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
+var tunnel = {
+  title: 'Tunnel Ground Hole',
+  keywords: [],
+  discription: '<div class="room" id="cistern">' +
+  '<p>' + 'You find yourself in a hollowed cistern. The air is noticably stale as it loomes over the stale crimsoned rust colored ankle deep water. Your only option is to proceed tredge through the cavernous halls.' + '</p>' +
+  '</div>',
+  action: function(){},
+  results: function(){},
+
+  directions: [],
+  image: '<img src="img/tunnel.jpg" class="img-styles">'
+}
 
 var catecomb3 = {
   title: 'Catecomb 3',
@@ -28,7 +55,7 @@ var catecomb3 = {
       $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
     },
   directions: [],
-  image: null,
+  image: '<img src="img/cistern.jpg" class="img-styles">',
 }
 
 var catecomb2 = {
@@ -113,6 +140,7 @@ var mausoleum = {
       '</div>');
   },
   directions: ["down", "left"],
+  image: '<img src="img/mausoleum.jpg" class="img-styles">',
 }
 
 
@@ -128,7 +156,7 @@ var cryptEntrance = {
     characterRefresh(character);
   },
   directions: ["down", "up"],
-
+  image: '<img src="img/cryptEntrance.jpg" class="img-styles">',
 }
 
 var library = {
@@ -139,6 +167,7 @@ var library = {
   '</div>',
   action: function(){},
   results: function(){
+
     library.directions.push('up');
     $('#room-display').empty();
     $('#room-display').append(
@@ -153,8 +182,8 @@ var library = {
   },
   directions: ['down'],
   image: '<img src="img/library.jpg" class="img-styles">',
-
 }
+
 var libraryDoor = {
   title: 'Mysterious Door',
   keywords: [],
@@ -162,14 +191,13 @@ var libraryDoor = {
   '<p>' + 'You encounter an old door, barely illuminated by a lit torch.' + '</p>' +
   '</div>',
   action: function() {
-    // $('#contextual').empty();
     var keyCheck = Character.checkInventory(" Small Key");
     if (keyCheck == false) {
       $('#contextual').show();
       $('#contextual span.buttontext').append('Unlock the door with the <span class ="item">small key</span>.');
-    } else{
+    } else {
       $('#contextual').show();
-      $('#contextual span.buttontext').append('Try to open the door');
+      $('#contextual span.buttontext').append('Try the door.');
     };
   },
   after: function() {
@@ -253,11 +281,17 @@ image2: '<img src="img/lab.jpg" class="img-styles">',
 }
 var hallway2 = {
   title: 'Hallway',
+  keywords: ['scrap','paper','note','floor'],
   description: '<div class="room" id="hallway2">' +
   '<p>' + 'As you reach the bottom of the stairs, the air smells more and more fetid. The weak flame in your hand is the only light. There is a path to your left and one to your right, each indiscernible from the other in the darkness...' + '</p>' +
   '</div>',
   action: function(){},
   after: null,
+  results: function(){
+      $(".modal-page1").empty();
+      $(".modal-page1").append("<p>Journal 3, 5, 1260<br>We have finally made contact with our Lord! Augustus went into the crypts to perform the ritual. He never returned. Peter went down to check on him and reported that he found nothing anywhere in the catacombs. We know our Lord took him into his embrace. We will all be with Him soon.</p>");
+      $("#myJournal").modal();
+  },
   directions: ['left','right'],
   image: '<img src="img/wall.jpg" class="img-styles">',
 }
@@ -385,4 +419,6 @@ var introduction = {
     place = 2;
   },
   directions: [],
+  image: '<img src="img/startScreen.gif" class="img-styles">',
+  image2: '<img src="img/startScreen.gif" class="img-styles">',
 }

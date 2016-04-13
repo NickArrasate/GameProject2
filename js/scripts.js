@@ -53,7 +53,7 @@ Character.prototype.smokeCig = function(Character){
 }
 Character.prototype.checkInventory = function(passItem){
   for(i = 0; i < this.items.length; i += 1){
-    if(this.items[i] === passItem){
+    if(this.items[i] == passItem){
     return false;
     }
   }
