@@ -1,13 +1,26 @@
+var cryptEntrance = {
+  title: 'Crypt Entrance',
+  keywords: [],
+  description: '<div class="room" id="office">' +
+  '<p>' + 'You step tenatively through the hidden door into a dark musty cold room. The floors are stone and the smell of death greets you... You raise your lighter in an attempt to see better but the darkness seems to continue on for quite some distance. ' + '<p/>' +
+  '<div>',
+  action: function(){
+    Character.loseSanity(1);
+    characterRefresh(character);
+  },
+  directions = ["down", "up"],
+
+}
+
+
 var Library = {
   title: 'Library',
   keywords: ['candle','candles','sconce','torch'],
   description: '<div class="room" id="office">' +
-  '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
+  '<p>' + 'The door leads to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
   '<div>',
   action: function(){},
-  results: function(){
-  }
-},
+  results: function(){},
   directions: ['down'],
   image: '<img src="img/door.jpg" class="img-styles">',
 
