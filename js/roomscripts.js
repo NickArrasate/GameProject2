@@ -10,7 +10,7 @@ var cryptEntrance = {
     characterRefresh(character);
   },
   directions = ["down", "up"],
-
+image: '<img src="img/cryptEntrance.jpg" class="img-styles">',
 }
 
 var library = {
@@ -47,11 +47,13 @@ var libraryDoor = {
     // $('#contextual').empty();
     var keyCheck = Character.checkInventory(" Small Key");
     if (keyCheck == false) {
+      $('#contextual').empty();
       $('#contextual').show();
       $('#contextual span.buttontext').append('Unlock the door with the <span class ="item">small key</span>.');
     } else{
+      $('#contextual').empty();
       $('#contextual').show();
-      $('#contextual span.buttontext').append('Try to open the door');
+      $('#contextual span.buttontext').text('Try to open the door');
     };
   },
   after: function() {
