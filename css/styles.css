@@ -142,6 +142,26 @@ p {
   margin-left:auto;
   margin-right: auto;
 }
+
+.leftContext,
+.rightContext,
+.middleContext{
+  font-size: 20pt;
+  font-family: 'Tangerine', cursive;
+  background-image: url(../img/frame.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.leftContext:hover,
+.rightContext:hover,
+.middleContext:hover{
+  cursor: pointer;
+}
 .context:hover{
   cursor: pointer;
 }
@@ -384,4 +404,8 @@ text-align: center;
 
 #smokeACig{
   display:none;
+}
+
+#tripleContextual{
+  display: none;
 }

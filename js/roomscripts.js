@@ -5,74 +5,92 @@ var catecomb3 = {
   description: '<div class="room" id="catecomb3">' +
   '<p>' + 'The door slams shut behind you and will not open.  You find yourself in yet another catecomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
   '</div>',
-  action: function(){},
-  results: function(){
-    if(enteredText === 'left' || enteredText ==='left lever'){
-      catecomb1.directions.push("forward");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to your right has appeared.</p></div>");
-    } else if(enteredText === 'center' || enteredText === 'center lever' || enteredText === 'middle' || enteredText === 'middle lever'){
-      catecomb1.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
-    } else if (enteredText === 'right' || enteredText === 'right lever'){
-      catecomb1.directions.push("right");
+  action: function(){
+    $("#tripleContextual").show();
+  },
+  results: function(){},
+  leftCont: function(){
+      $("#tripleContextual").hide();
+      catecomb3.directions.push("up");
       $('#room-display').empty();
       $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
-    }
-  },
+    },
+  middleCont: function(){
+      $("#tripleContextual").hide();
+      catecomb3.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    },
+  rightCont: function(){
+      $("#tripleContextual").hide();
+      catecomb3.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    },
   directions: [],
   image: null,
 }
 
 var catecomb2 = {
   title: 'Catecomb 2',
-  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  keywords: [],
   description: '<div class="room" id="catecomb2">' +
   '<p>' + 'The door slams shut behind you and will not open.  You find yourself in another catecomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
   '</div>',
-  action: function(){},
-  results: function(){
-    if(enteredText === 'left' || enteredText ==='left lever'){
-      catecomb1.directions.push("forward");
+  action: function(){
+    $("#tripleContextual").show();
+  },
+  results: function(){},
+  leftCont: function(){
+      $("#tripleContextual").hide();
+      catecomb2.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    },
+  middleCont: function(){
+      $("tripleContextual").hide();
+      catecomb2.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    },
+  rightCont: function(){
+      $("#tripleContextual").hide();
+      catecomb2.directions.push("up");
       $('#room-display').empty();
       $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
-    } else if(enteredText === 'center' || enteredText === 'center lever' || enteredText === 'middle' || enteredText === 'middle lever'){
-      catecomb1.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
-    } else if (enteredText === 'right' || enteredText === 'right lever'){
-      catecomb1.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
-    }
-  },
+    },
   directions: [],
   image: null,
 }
 
 var catecomb1 = {
   title: 'Catecomb 1',
-  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  keywords: [],
   description: '<div class="room" id="catecomb1">' +
   '<p>' + 'The door slams shut behind you and will not open.  You find yourself in a decrepit catecomb.  Skulls and bones line the walls. A stone column stands in the middle, with three levers facing you.' + '</p>' +
   '</div>',
-  action: function(){},
-  results: function(){
-    if(enteredText === 'left' || enteredText ==='left lever'){
-      catecomb1.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you came through has reappeared.</p></div>");
-    } else if(enteredText === 'center' || enteredText === 'center lever' || enteredText === 'middle' || enteredText === 'middle lever'){
-      catecomb1.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you came through has reappeared.</p></div>");
-    } else if (enteredText === 'right' || enteredText === 'right lever'){
-      catecomb1.directions.push("forward");
+  action: function(){
+    $("#tripleContextual").show();
+  },
+  results: function(){},
+  leftCont: function(){
+      $("#tripleContextual").hide();
+      catecomb1.directions.push("up");
       $('#room-display').empty();
       $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
-    }
-  },
+    },
+  middleCont: function(){
+      $("#tripleContextual").hide();
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
+    },
+  rightCont: function(){
+      $("#tripleContextual").hide();
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
+    },
   directions: [],
   image: null,
 }
@@ -83,6 +101,7 @@ var mausoleum = {
   '<p>' + 'As you continue walking, the stench of death grows. You can barely make out still shapes around you, bodies eternally resting. You arrive in a large open space, dimly lit by torches. There seem to be multiple diverging passages branching out from the larger room' + '<p/>' +
   '<div>',
   action: function(){
+    $("#contextual").empty();
     $('#contextual').show();
     $('#contextual span.buttontext').append('listen');
   },

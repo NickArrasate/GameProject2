@@ -46,7 +46,7 @@ Character.prototype.loseHealth = function(amount){
       characterRefresh();
   }
 };
-Character.prototype.smokeCig = function(){
+Character.prototype.smokeCig = function(Character){
   this.health -= 5;
   this.sanity += 1;
   characterRefresh();
@@ -62,7 +62,7 @@ var Character = new Character(100,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
 $(document).ready(function(){
-  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, catecomb1, catecomb2, catecomb3];// y-axis array================
+  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catecomb1, catecomb2, catecomb3];// y-axis array================
   var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum];// x-axis array ===========================
   var roomLeft = [null,null,null,null,null,labratory, office];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
@@ -105,6 +105,34 @@ $(document).ready(function(){
     $('#room-picture').append(roomArray[arrayPlace][place].image2);
   });
 
+  $("#leftContextual").click(function(){
+    alert('hi');
+    $('#contextual').hide();
+    roomArray[arrayPlace][place].leftCont(Character);
+    directionCheck(roomArray[arrayPlace][place].directions);
+    $('#room-picture').empty();
+    $('#room-picture').append(roomArray[arrayPlace][place].image2);
+  });
+
+
+  $("#rightContextual").click(function(){
+    alert('hi');
+    $('#contextual').hide();
+    roomArray[arrayPlace][place].rightCont(Character);
+    directionCheck(roomArray[arrayPlace][place].directions);
+    $('#room-picture').empty();
+    $('#room-picture').append(roomArray[arrayPlace][place].image2);
+  });
+
+  $("#middleContextual").click(function(){
+    alert("hi");
+    $('#contextual').hide();
+    roomArray[arrayPlace][place].middleCont(Character);
+    directionCheck(roomArray[arrayPlace][place].directions);
+    $('#room-picture').empty();
+    $('#room-picture').append(roomArray[arrayPlace][place].image2);
+  });
+
   //Text Enter
   $("button#textSubmit").click(function(event){
     event.preventDefault();
@@ -118,7 +146,6 @@ $(document).ready(function(){
       directionCheck(roomArray[arrayPlace][place].directions);
     }
     characterRefresh();
-
   });
 
   $("button#smokeACig").click(function(event){
