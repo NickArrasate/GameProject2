@@ -188,6 +188,8 @@ p {
   border: none;
 }
 
+/*MODALS*/
+
 .modal-page1 {
   float:left;
   width: 390px;
@@ -217,6 +219,158 @@ p {
   text-shadow: .5px .25px .25px black;
 }
 
+/*ALL MODAL CSS RULES FOR APPENDING*/
+/*UNIVERSAL CSS FOR ALL MODALS*/
+.modal-content {
+  background-image: url("parchment.png");
+  background-repeat: no-repeat;
+  width:800px;
+  height:1150px;
+  background-color: rgba(0,0,0,0);
+  box-shadow: none;
+  border: none;
+}
+
+.textBody {
+text-align: center;
+}
+
+/*GOLD LIGHTER */
+.modalText {
+  font-family: 'tangerine',cursive;
+  padding-top: 200px;
+  position: absolute fixed right;
+  font-size: 30px;
+  color: rgba(102, 51, 0, .6);
+  text-align: center;
+  text-shadow: .5px .25px .25px black;
+}
+
+#lighter {
+  padding-top: 200px;
+  padding-left: 200px;
+  width:500px;
+  -webkit-filter: sepia(70%); /* Chrome, Safari, Opera */
+}
+
+/*LEVER ON WALL*/
+.modalText {
+  font-family: 'tangerine',cursive;
+  padding-top: 200px;
+  position: absolute fixed right;
+  font-size: 30px;
+  color: rgba(102, 51, 0, .6);
+  text-align: center;
+  text-shadow: .5px .25px .25px black;
+}
+
+#candle {
+  padding-top: 130px;
+  padding-left: 200px;
+  margin: auto;
+  width:550px;
+  filter:opacity(800%);
+  -webkit-filter: sepia(100%); /* Chrome, Safari, Opera */
+  filter:blur(900%);
+}
+
+/*CIGARRETTES*/
+.modalText {
+  font-family: 'tangerine',cursive;
+  padding-top: 200px;
+  position: absolute fixed right;
+  font-size: 30px;
+  color: rgba(102, 51, 0, .6);
+  text-align: center;
+  text-shadow: .5px .25px .25px black;
+}
+
+#rolls {
+  padding-top: 200px;
+  padding-left: 85px;
+  margin: auto;
+  width:600px;
+  -webkit-filter: sepia(60%); /* Chrome, Safari, Opera */
+}
+
+/*DEATH*/
+
+.modalText {
+  font-family: 'tangerine',cursive;
+  padding-top: 170px;
+  position: absolute fixed right;
+  font-size: 60px;
+  color: rgba(102, 51, 0, .6);
+  text-align: center;
+  text-shadow: .5px .25px .25px black;
+}
+
+#death {
+  padding-left: 250px;
+  margin: auto;
+  width:525px;
+  -webkit-filter: sepia(90%); /* Chrome, Safari, Opera */
+}
+
+/*INSANITY*/
+.modalText {
+  font-family: 'tangerine',cursive;
+  padding-top: 200px;
+  position: absolute fixed right;
+  font-size: 30px;
+  color: rgba(102, 51, 0, .6);
+  text-align: center;
+  text-shadow: .5px .25px .25px black;
+}
+
+#insane {
+  padding-top: 100px;
+  padding-left: 150px;
+  margin: auto;
+  width:650px;
+  -webkit-filter: sepia(20%); /* Chrome, Safari, Opera */
+}
+
+/*LOSER*/
+.modalText {
+ font-family: 'tangerine',cursive;
+ padding-top: 30px;
+ position: absolute fixed right;
+ font-size: 30px;
+ color: rgba(102, 51, 0, .6);
+ text-align: center;
+ text-shadow: .5px .25px .25px black;
+}
+
+#crow {
+ padding-top: 30px;
+ padding-left: 150px;
+ margin: auto;
+ width:600px;
+ filter: opacity(60%);
+ -webkit-filter: sepia(100%); /* Chrome, Safari, Opera */
+}
+
+/*DOOR KEY*/
+.modalText {
+  font-family: 'tangerine',cursive;
+  padding-top: 200px;
+  position: absolute fixed right;
+  font-size: 30px;
+  color: rgba(102, 51, 0, .6);
+  text-align: center;
+  text-shadow: .5px .25px .25px black;
+}
+
+#key {
+  padding-top: 200px;
+  padding-left: 85px;
+  /*-webkit-filter: sepia(50%); /* Chrome, Safari, Opera */
+  margin: auto;
+  width:600px;
+}
+
+/*CLOSE MODAL BUTTON ---- NOT IN USE*/
 .exit {
   position: absolute fixed right;
   margin-left: 250px;
