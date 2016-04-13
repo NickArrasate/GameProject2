@@ -62,7 +62,7 @@ var Character = new Character(100,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
 $(document).ready(function(){
-  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, catecomb1, catecomb2, catecomb3];// y-axis array================
+  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catecomb1, catecomb2, catecomb3];// y-axis array================
   var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum];// x-axis array ===========================
   var roomLeft = [null,null,null,null,null,labratory, office];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================

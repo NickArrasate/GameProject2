@@ -1,3 +1,30 @@
+// CISTERN NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
+var cistern = {
+  title: 'Cistern',
+  keywords: [],
+  description: '<div class="room" id="cistern">' +
+  '<p>' + 'You find yourself in a hollowed cistern. The air is noticably stale as it loomes over the stale crimsoned rust colored ankle deep water. Your only option is to proceed tredge through the cavernous halls.' + '</p>' +
+  '</div>',
+  action: function(){},
+  results: function(){},
+
+  directions: [],
+  image: '<img src="img/cistern.jpg" class="img-styles">',
+}
+
+// TUNNEL NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
+var tunnel = {
+  title: 'Tunnel Ground Hole',
+  keywords: [],
+  discription: '<div class="room" id="cistern">' +
+  '<p>' + 'You find yourself in a hollowed cistern. The air is noticably stale as it loomes over the stale crimsoned rust colored ankle deep water. Your only option is to proceed tredge through the cavernous halls.' + '</p>' +
+  '</div>',
+  action: function(){},
+  results: function(){},
+
+  directions: [],
+  image: '<img src="img/tunnel.jpg" class="img-styles">'
+}
 
 var catecomb3 = {
   title: 'Catecomb 3',
@@ -22,7 +49,7 @@ var catecomb3 = {
     }
   },
   directions: [],
-  image: null,
+  image: '<img src="img/cistern.jpg" class="img-styles">',
 }
 
 var catecomb2 = {
@@ -120,10 +147,7 @@ var library = {
   '</div>',
   action: function(){},
   results: function(){
-<<<<<<< HEAD
-  },
 
-=======
     library.directions.push('up');
     $('#room-display').empty();
     $('#room-display').append(
@@ -136,11 +160,10 @@ var library = {
       $('.modalItem').append('<img id="candle" src="modalimg/candle.png" alt="parchment key" />');
       $("#myModal").modal();
   },
->>>>>>> 49822a35acc88135a99818c7c67698dbe650a603
   directions: ['down'],
   image: '<img src="img/library.jpg" class="img-styles">',
-
 }
+
 var libraryDoor = {
   title: 'Mysterious Door',
   keywords: [],
