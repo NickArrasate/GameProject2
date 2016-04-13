@@ -232,6 +232,15 @@ p {
   box-shadow: none;
   border: none;
 }
+.journal-content {
+  background-image: url("../modalimg/journal.png");
+  background-repeat: no-repeat;
+  width:800px;
+  height:1150px;
+  background-color: rgba(0,0,0,0);
+  box-shadow: none;
+  border: none;
+}
 
 .textBody {
 text-align: center;

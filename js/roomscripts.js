@@ -53,7 +53,7 @@ var catecomb2 = {
 
 var catecomb1 = {
   title: 'Catecomb 1',
-  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+
   description: '<div class="room" id="catecomb1">' +
   '<p>' + 'The door slams shut behind you and will not open.  You find yourself in a decrepit catecomb.  Skulls and bones line the walls. A stone column stands in the middle, with three levers facing you.' + '</p>' +
   '</div>',
@@ -94,6 +94,7 @@ var mausoleum = {
       '</div>');
   },
   directions: ["down", "left"],
+  image: '<img src="img/mausoleum.jpg" class="img-styles">',
 }
 
 
@@ -108,7 +109,7 @@ var cryptEntrance = {
     Character.loseSanity(1);
     characterRefresh(character);
   },
-  directions = ["down", "up"],
+  directions: ["down", "up"],
   image: '<img src="img/cryptEntrance.jpg" class="img-styles">',
 }
 
@@ -143,16 +144,13 @@ var libraryDoor = {
   '<p>' + 'You encounter an old door, barely illuminated by a lit torch.' + '</p>' +
   '</div>',
   action: function() {
-    // $('#contextual').empty();
     var keyCheck = Character.checkInventory(" Small Key");
     if (keyCheck == false) {
-      $('#contextual').empty();
       $('#contextual').show();
       $('#contextual span.buttontext').append('Unlock the door with the <span class ="item">small key</span>.');
-    } else{
-      $('#contextual').empty();
+    } else {
       $('#contextual').show();
-      $('#contextual span.buttontext').text('Try to open the door');
+      $('#contextual span.buttontext').append('Try the door.');
     };
   },
   after: function() {
@@ -236,11 +234,17 @@ image2: '<img src="img/lab.jpg" class="img-styles">',
 }
 var hallway2 = {
   title: 'Hallway',
+  keywords: ['scrap','paper','note','floor'],
   description: '<div class="room" id="hallway2">' +
   '<p>' + 'As you reach the bottom of the stairs, the air smells more and more fetid. The weak flame in your hand is the only light. There is a path to your left and one to your right, each indiscernible from the other in the darkness...' + '</p>' +
   '</div>',
   action: function(){},
   after: null,
+  results: function(){
+      $(".modal-page1").empty();
+      $(".modal-page1").append("<p>Journal 3, 5, 1260<br>We have finally made contact with our Lord! Augustus went into the crypts to perform the ritual. He never returned. Peter went down to check on him and reported that he found nothing anywhere in the catacombs. We know our Lord took him into his embrace. We will all be with Him soon.</p>");
+      $("#myJournal").modal();
+  },
   directions: ['left','right'],
   image: '<img src="img/wall.jpg" class="img-styles">',
 }
@@ -369,4 +373,5 @@ var introduction = {
   },
   directions: [],
   image: '<img src="img/startScreen.gif" class="img-styles">',
+  image2: '<img src="img/startScreen.gif" class="img-styles">',
 }
