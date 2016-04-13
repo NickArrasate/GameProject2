@@ -107,6 +107,9 @@ p {
   border-color: #252525;
 
 }
+.sanity, #sanity{
+  color: #0F6679;
+}
 .health, #health {
   color: crimson;
 }
