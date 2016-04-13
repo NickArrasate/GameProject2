@@ -19,6 +19,7 @@ p {
   margin-top: 13px;
   padding-bottom: 0;
   border-radius: 5px;
+  border: 10px solid #181717;
 }
 .room-frame {
   background-image: url(../img/frame.png);
