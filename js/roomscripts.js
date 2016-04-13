@@ -48,6 +48,11 @@ var library = {
       '<div class="room">' +
       '<p>' + 'You reach up to the the candlestick on the wall and give it a firm pull. The bookcase groans and swings out slowly. Beyond, there is a stairway leading down into the darkness...' + '</p>' +
       '</div>');
+      $(".textBody").empty();
+      $(".textBody").append("<p class='modalText'>You found a lever disguised as a candle.</p>");
+      $('.modalItem').empty();
+      $('.modalItem').append('<img id="candle" src="modalimg/candle.png" alt="parchment key" />');
+      $("#myModal").modal();
   },
   directions: ['down'],
   image: '<img src="img/library.jpg" class="img-styles">',
@@ -83,6 +88,11 @@ var libraryDoor = {
         '<div class="room" id="libraryDoor">' +
         '<p>' + 'You take the <span class ="item">small key </span>from your pocket and try to fit it into the lock. With some effort you hear a click and the door unlocks.' + '</p>' +
         '</div>');
+        $(".textBody").empty();
+        $(".textBody").append("<p class='modalText'>You used the <span class='item'>small key</span>.</p>");
+        $('.modalItem').empty();
+        $('.modalItem').append('<img id="key" src="modalimg/key.png" alt="parchment key" />');
+        $("#myModal").modal();
     } else {
       characterRefresh(Character);
       $('#contextual').hide();
@@ -109,9 +119,10 @@ var office = {
   results: function(){
     var firstKeyCheck = Character.checkInventory(" Small Key");
     if (firstKeyCheck !== false){
-      $(".modal-page1").empty();
-      $(".modal-page2").empty();
-      $(".modal-page1").append("<p>You find a small key.</p>");
+      $(".textBody").empty();
+      $(".textBody").append("<p class='modalText'>You find a <span class='item'>small key</span>.</p>");
+      $('.modalItem').empty();
+      $('.modalItem').append('<img id="key" src="modalimg/key.png" alt="parchment key" />');
       $("#myModal").modal();
     Character.items.push(' Small Key');
   }
@@ -169,6 +180,12 @@ var hallway1 = {
     characterRefresh(Character);
     $('#contextual').hide();
     $('#contextual span.buttontext').empty();
+    $('.textBody').empty();
+    $('.textBody').append('<p class="modalText">' + 'You used the ' + '<span class="item">' + 'gold lighter' + '</p>');
+    $('.modalItem').empty
+    $('.modalItem').append('<img id="lighter" src="modalimg/lighter.png" alt="parchment key" />');
+    $('#myModal').modal();
+
     hallway1.directions.push("up");
     $('#room-display').empty();
     $('#room-display').append(
