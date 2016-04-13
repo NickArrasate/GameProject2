@@ -63,7 +63,7 @@ var Character = new Character(100,10,['Gold Lighter']);
 // Setup the rooms array and starting location and stats========================
 $(document).ready(function(){
   var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catecomb1, catecomb2, catecomb3];// y-axis array================
-  var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum];// x-axis array ===========================
+  var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum, tunnel, cistern];// x-axis array ===========================
   var roomLeft = [null,null,null,null,null,labratory, office];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
   var place = 0;
@@ -106,7 +106,6 @@ $(document).ready(function(){
   });
 
   $("#leftContextual").click(function(){
-    alert('hi');
     $('#contextual').hide();
     roomArray[arrayPlace][place].leftCont(Character);
     directionCheck(roomArray[arrayPlace][place].directions);
@@ -116,7 +115,6 @@ $(document).ready(function(){
 
 
   $("#rightContextual").click(function(){
-    alert('hi');
     $('#contextual').hide();
     roomArray[arrayPlace][place].rightCont(Character);
     directionCheck(roomArray[arrayPlace][place].directions);
@@ -125,7 +123,6 @@ $(document).ready(function(){
   });
 
   $("#middleContextual").click(function(){
-    alert("hi");
     $('#contextual').hide();
     roomArray[arrayPlace][place].middleCont(Character);
     directionCheck(roomArray[arrayPlace][place].directions);
