@@ -222,7 +222,7 @@ p {
 /*ALL MODAL CSS RULES FOR APPENDING*/
 /*UNIVERSAL CSS FOR ALL MODALS*/
 .modal-content {
-  background-image: url("parchment.png");
+  background-image: url("../modalimg/parchment.png");
   background-repeat: no-repeat;
   width:800px;
   height:1150px;
