@@ -62,7 +62,7 @@ var Character = new Character(100,10,['Gold Lighter']);
 $(document).ready(function(){
 
   var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2];// y-axis array================
-  var roomRight = [null,null, terrace];// x-axis array ===========================
+  var roomRight = [null,null, terrace, null, null, libraryDoor];// x-axis array ===========================
   var roomLeft = [null,null,null,null,null,labratory, office];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
   var place = 0;
@@ -185,7 +185,49 @@ function displayCoords(x,y,title){
 
 // Room objects to append into display ======================================
 // Rooms should contain a 'description' to be appended into html, an 'action' function to happen when char moves into room (can be null), an 'after' function to run after the 'contextual' button has been pressed and the available 'directions' from the room.=============================================
+var libraryDoor = {
+  title: 'Mysterious Door',
+  keywords: [],
+  description: '<div class="room" id="libraryDoor">' +
+  '<p>' + 'You encounter an old door, barely illuminated by a lit torch.' + '</p>' +
+  '</div>',
+  action: function() {
 
+    var keyCheck = Character.checkInventory(" Small Key");
+    if (keyCheck == false) {
+      $('#contextual').show();
+      $('#contextual span.buttontext').append('Unlock the door with the <span class ="item">small key</span>.');
+    } else{
+      $('#contextual').show();
+      $('#contextual span.buttontext').append('Try to open the door');
+    };
+  },
+  after: function() {
+    var keyCheck = Character.checkInventory(" Small Key")
+    if (keyCheck == false) {
+      Character.addSanity(1);
+      characterRefresh(Character);
+      $('#contextual').hide();
+      $('#contextual span.buttontext').empty();
+      libraryDoor.directions.push("up");
+      $('#room-display').empty();
+      $('#room-display').append(
+        '<div class="room" id="libraryDoor">' +
+        '<p>' + 'You take the <span class ="item">small key </span>from your pocket and try to fit it into the lock. With some effort you hear a click and the door unlocks.' + '</p>' +
+        '</div>');
+    } else {
+      characterRefresh(Character);
+      $('#contextual').hide();
+      $('#contextual span.buttontext').empty();
+      $('#room-display').empty();
+      $('#room-display').append(
+        '<div class="room" id="libraryDoor">' +
+        '<p>' + 'You turn the knob, but the door is locked.' + '</p>' +
+        '</div>');
+    }
+  },
+  directions: ['left'],
+}
 
 var office = {
   title: 'Office',
@@ -208,12 +250,6 @@ var office = {
   image: '<img src="img/study.jpg" class="img-styles">',
 
 }
-var library = {
-   title: 'Library',
-   description: '<div class="room" id="library">' +
-   '<p>' + ''
-}
-
 var labratory = {
   title: 'Labratory',
   description: '<div class="room" id="labratory">' +
@@ -266,7 +302,7 @@ var hallway1 = {
   '<p>' + 'You take the antique <span class ="item">gold lighter </span>from your pocket and ignite it, shedding a warm glow onto the damp walls of the stairway. You are still unable to see the bottom...' + '</p>' +
   '</div>');
 },
-   directions: [],
+   directions: ["down"],
 }
 
 var foyer = {
