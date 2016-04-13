@@ -1,15 +1,144 @@
-var Library = {
-  title: 'Library',
-  keywords: ['candle','candles','sconce','torch'],
-  description: '<div class="room" id="office">' +
-  '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
-  '<div>',
+
+var catecomb3 = {
+  title: 'Catecomb 3',
+  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  description: '<div class="room" id="catecomb3">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in yet another catecomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
+  '</div>',
   action: function(){},
   results: function(){
+    if(enteredText === 'left' || enteredText ==='left lever'){
+      catecomb1.directions.push("forward");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to your right has appeared.</p></div>");
+    } else if(enteredText === 'center' || enteredText === 'center lever' || enteredText === 'middle' || enteredText === 'middle lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    } else if (enteredText === 'right' || enteredText === 'right lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    }
+  },
+  directions: [],
+  image: null,
+}
+
+var catecomb2 = {
+  title: 'Catecomb 2',
+  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  description: '<div class="room" id="catecomb2">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in another catecomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
+  '</div>',
+  action: function(){},
+  results: function(){
+    if(enteredText === 'left' || enteredText ==='left lever'){
+      catecomb1.directions.push("forward");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    } else if(enteredText === 'center' || enteredText === 'center lever' || enteredText === 'middle' || enteredText === 'middle lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    } else if (enteredText === 'right' || enteredText === 'right lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    }
+  },
+  directions: [],
+  image: null,
+}
+
+var catecomb1 = {
+  title: 'Catecomb 1',
+  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  description: '<div class="room" id="catecomb1">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in a decrepit catecomb.  Skulls and bones line the walls. A stone column stands in the middle, with three levers facing you.' + '</p>' +
+  '</div>',
+  action: function(){},
+  results: function(){
+    if(enteredText === 'left' || enteredText ==='left lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you came through has reappeared.</p></div>");
+    } else if(enteredText === 'center' || enteredText === 'center lever' || enteredText === 'middle' || enteredText === 'middle lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you came through has reappeared.</p></div>");
+    } else if (enteredText === 'right' || enteredText === 'right lever'){
+      catecomb1.directions.push("forward");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    }
+  },
+  directions: [],
+  image: null,
+}
+var mausoleum = {
+  title: 'Mausoleum',
+  keywords: [],
+  description: '<div class="room" id="mausoleum">' +
+  '<p>' + 'As you continue walking, the stench of death grows. You can barely make out still shapes around you, bodies eternally resting. You arrive in a large open space, dimly lit by torches. There seem to be multiple diverging passages branching out from the larger room' + '<p/>' +
+  '<div>',
+  action: function(){
+    $('#contextual').show();
+    $('#contextual span.buttontext').append('listen');
+  },
+  after: function() {
+    $('#room-display').empty();
+    $('#room-display').append(
+      '<div class="room">' +
+      '<p>' + 'You hear a faint chanting down the passage to your left.' + '</p>' +
+      '</div>');
+  },
+  directions: ["down", "left"],
+}
+
+
+
+var cryptEntrance = {
+  title: 'Crypt Entrance',
+  keywords: [],
+  description: '<div class="room" id="cryptEntrance">' +
+  '<p>' + 'You step tenatively through the hidden door into a dark musty cold room. The floors are stone and the smell of death greets you... You raise your lighter in an attempt to see better but the darkness seems to continue on for quite some distance. ' + '<p/>' +
+  '<div>',
+  action: function(){
+    Character.loseSanity(1);
+    characterRefresh(character);
+  },
+  directions: ["down", "up"],
+
+}
+
+var library = {
+  title: 'Library',
+  keywords: ['candle','candles','sconce','torch'],
+  description: '<div class="room" id="library">' +
+  '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
+  '</div>',
+  action: function(){},
+  results: function(){
+<<<<<<< HEAD
   },
 
+=======
+    library.directions.push('up');
+    $('#room-display').empty();
+    $('#room-display').append(
+      '<div class="room">' +
+      '<p>' + 'You reach up to the the candlestick on the wall and give it a firm pull. The bookcase groans and swings out slowly. Beyond, there is a stairway leading down into the darkness...' + '</p>' +
+      '</div>');
+      $(".textBody").empty();
+      $(".textBody").append("<p class='modalText'>You found a lever disguised as a candle.</p>");
+      $('.modalItem').empty();
+      $('.modalItem').append('<img id="candle" src="modalimg/candle.png" alt="parchment key" />');
+      $("#myModal").modal();
+  },
+>>>>>>> 49822a35acc88135a99818c7c67698dbe650a603
   directions: ['down'],
-  image: '<img src="img/door.jpg" class="img-styles">',
+  image: '<img src="img/library.jpg" class="img-styles">',
 
 }
 var libraryDoor = {
@@ -19,7 +148,7 @@ var libraryDoor = {
   '<p>' + 'You encounter an old door, barely illuminated by a lit torch.' + '</p>' +
   '</div>',
   action: function() {
-
+    // $('#contextual').empty();
     var keyCheck = Character.checkInventory(" Small Key");
     if (keyCheck == false) {
       $('#contextual').show();
@@ -42,6 +171,11 @@ var libraryDoor = {
         '<div class="room" id="libraryDoor">' +
         '<p>' + 'You take the <span class ="item">small key </span>from your pocket and try to fit it into the lock. With some effort you hear a click and the door unlocks.' + '</p>' +
         '</div>');
+        $(".textBody").empty();
+        $(".textBody").append("<p class='modalText'>You used the <span class='item'>small key</span>.</p>");
+        $('.modalItem').empty();
+        $('.modalItem').append('<img id="key" src="modalimg/key.png" alt="parchment key" />');
+        $("#myModal").modal();
     } else {
       characterRefresh(Character);
       $('#contextual').hide();
@@ -55,6 +189,7 @@ var libraryDoor = {
   },
   directions: ['left'],
   image: '<img src="img/door.jpg" class="img-styles">',
+  image2: '<img src="img/door.jpg" class="img-styles">',
 }
 
 var office = {
@@ -67,16 +202,16 @@ var office = {
   results: function(){
     var firstKeyCheck = Character.checkInventory(" Small Key");
     if (firstKeyCheck !== false){
-      $(".modal-page1").empty();
-      $(".modal-page2").empty();
-      $(".modal-page1").append("<p>You find a small key.</p>");
+      $(".textBody").empty();
+      $(".textBody").append("<p class='modalText'>You find a <span class='item'>small key</span>.</p>");
+      $('.modalItem').empty();
+      $('.modalItem').append('<img id="key" src="modalimg/key.png" alt="parchment key" />');
       $("#myModal").modal();
     Character.items.push(' Small Key');
   }
 },
   directions: ['down'],
   image: '<img src="img/study.jpg" class="img-styles">',
-
 }
 var labratory = {
   title: 'Labratory',
@@ -128,6 +263,12 @@ var hallway1 = {
     characterRefresh(Character);
     $('#contextual').hide();
     $('#contextual span.buttontext').empty();
+    $('.textBody').empty();
+    $('.textBody').append('<p class="modalText">' + 'You used the ' + '<span class="item">' + 'gold lighter' + '</p>');
+    $('.modalItem').empty
+    $('.modalItem').append('<img id="lighter" src="modalimg/lighter.png" alt="parchment key" />');
+    $('#myModal').modal();
+
     hallway1.directions.push("up");
     $('#room-display').empty();
     $('#room-display').append(
@@ -200,7 +341,8 @@ var path = {
       $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
       $("#myModal").modal();
       Character.items.push("cigarettes");
-      $("#itemdisplay").append("<h6><button id='smokeACig'>Smoke</button></h6>");
+      $("#smokeACig").show();
+      characterRefresh();
     }
   },
   directions: ['up'],
