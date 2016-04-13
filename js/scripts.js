@@ -10,9 +10,8 @@ var roomLeft = [];
 var roomArray = [];
 // var Character = null;
 var directions = null;
-function Character(health, strength, sanity, items){
+function Character(health, sanity, items){
  this.health= health;
- this.strength = strength;
  this.sanity = sanity;
  this.items= items;
 };
@@ -35,7 +34,7 @@ Character.prototype.checkInventory = function(passItem){
     }
   }
 }
-var Character = new Character(100,10,10,['Gold Lighter']);
+var Character = new Character(100,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
 $(document).ready(function(){
@@ -79,6 +78,8 @@ $(document).ready(function(){
     $('#contextual').hide();
     roomArray[arrayPlace][place].after(Character);
     directionCheck(roomArray[arrayPlace][place].directions);
+    $('#room-picture').empty();
+    $('#room-picture').append(roomArray[arrayPlace][place].image2);
   });
 
     $("button#textSubmit").click(function(event){
@@ -122,7 +123,6 @@ function compareText(passedKeyArray, passedEnteredText){
 //updates character sheet info====================================
 function characterRefresh(Character){
   $('#healthdisplay').text(Character.health);
-  $('#strengthdisplay').text(Character.strength);
   $('#sanitydisplay').text(Character.sanity);
   $('#itemdisplay').text(Character.items);
 }
@@ -184,7 +184,7 @@ var library = {
 var labratory = {
   title: 'Labratory',
   description: '<div class="room" id="labratory">' +
-  '<p>' + 'You make your way down the passage to the left. After walking for a bit, you come across two doors opposite each other. The door on the left is locked tight. However, the door on the right is slightly ajar. Will you investigate?' + '</p>' +
+  '<p>' + 'You make your way down the passage to the left. After walking for a bit, you come across a wood door set in the wall. There is an old sconce on the wal nearby. You light the sconce to shed more light on your surroundings. The door is slightly ajar. Will you investigate?' + '</p>' +
   '</div>',
   action: function(){
   $('#contextual').show();
@@ -201,7 +201,9 @@ var labratory = {
   '<p>' + 'The room is small and contains several tables densely cluttered with glass vials and scientific equipment. Dust covers every surface. You approach a large glass container. When you hold your light up to it, the shape of a large, curled tentacle emerges through the cloudy liquid that suspends it. You recoil in disgust at the sight and knock a vial off the table behind you sending it to the ground. The sound of it shattering in the silence is enough to send your heart racing. You exit the labratory in a hurry, eager to put some distance between you and the odd tentacle in the jar...' + '</p>' +
   '</div>');
 },
-directions: ['up','right']
+directions: ['up','right'],
+image: '<img src="img/labdoor.jpg" class="img-styles">',
+image2: '<img src="img/lab.jpg" class="img-styles">',
 }
 var hallway2 = {
   title: 'Hallway',
@@ -211,7 +213,9 @@ var hallway2 = {
   action: function(){},
   after: null,
   directions: ['left','right'],
+  image: '<img src="img/wall.jpg" class="img-styles">',
 }
+
 var hallway1 = {
   title: 'Staircase',
   description: '<div class="room" id="hallway1">' +
@@ -222,6 +226,7 @@ var hallway1 = {
     $('#contextual span.buttontext').append('Light the <span class ="item">gold lighter</span>.');
   },
   after: function(Character){
+
     Character.addSanity(1);
     characterRefresh(Character);
     $('#contextual').hide();
@@ -234,6 +239,8 @@ var hallway1 = {
   '</div>');
 },
    directions: [],
+   image: '<img src="img/stairstop.jpg" class="img-styles">',
+   image2: '<img src="img/stairs.jpg" class="img-styles">'
 }
 
 var foyer = {
@@ -259,6 +266,8 @@ var terrace = {
   },
   after: null,
   directions: ['left'],
+  image: '<img src="img/terrace.jpeg" class="img-styles">',
+
 }
 
 var entrance = {

@@ -65,7 +65,7 @@ p {
   border-style: dashed;
   background-repeat: no-repeat;
   min-width: 133px;
-  
+
 }
 #character-info h4 {
   text-align: left;
@@ -102,6 +102,9 @@ p {
   font-weight: bolder;
   border-color: #252525;
 
+}
+.sanity, #sanity{
+  color: #0F6679;
 }
 .health, #health {
   color: crimson;
