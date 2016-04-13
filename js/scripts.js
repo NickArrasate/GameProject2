@@ -20,7 +20,12 @@ Character.prototype.addSanity = function(amount){
   return this.sanity += amount;
 };
 Character.prototype.loseSanity = function(amount){
-  return this.sanity -= amount;
+  if (this.sanity > 0){
+    return this.sanity -= amount;
+  }else if(this.sanity <= 0){
+    //Modal to display Game over
+    location.reload();  
+  }
 };
 Character.prototype.addHealth = function(amount){
   return this.health += amount;
@@ -28,6 +33,10 @@ Character.prototype.addHealth = function(amount){
 Character.prototype.loseHealth = function(amount){
   return this.health -= amount;
 };
+Character.prototype.smokeCig = function(){
+  this.health -= 5;
+  this.sanity += 1;
+}
 Character.prototype.checkInventory = function(passItem){
   for(i = 0; i < this.items.length; i += 1){
     if(this.items[i] === passItem){
@@ -78,17 +87,22 @@ $(document).ready(function(){
     directionCheck(roomArray[arrayPlace][place].directions);
   });
 
-    $("button#textSubmit").click(function(event){
-      event.preventDefault();
-      keyArray = [];
-      var enteredText = $("#textInput").val();
-      $("#textInput").val('');
-      var keyArray = roomArray[arrayPlace][place].keywords;
-      var checkedText = compareText(keyArray, enteredText);
-      if (checkedText === true){
-        roomArray[arrayPlace][place].results(Character);
-      }
-    });
+  $("button#textSubmit").click(function(event){
+    event.preventDefault();
+    keyArray = [];
+    var enteredText = $("#textInput").val();
+    $("#textInput").val('');
+    var keyArray = roomArray[arrayPlace][place].keywords;
+    var checkedText = compareText(keyArray, enteredText);
+    if (checkedText === true){
+      roomArray[arrayPlace][place].results(Character);
+    }
+  });
+
+  $("button#smokeACig").click(function(){
+    alert("hi");
+    Character.smokeCig();
+  });
 });
 // Business logic=======================================
 // protoypes for updating character stats. Call the proto in the room object functions.
@@ -284,6 +298,7 @@ var path = {
       $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
       $("#myModal").modal();
       Character.items.push("cigarettes");
+      $("#item-box-display").append("<h6>Cigarettes - <button id='smokeACig'>Smoke</button></h6>");
     }
   },
   directions: ['up'],
