@@ -58,7 +58,8 @@ p {
   overflow: auto;
 }
 #character-info,
-#item-box {
+#item-box,
+#use-item-box {
   font-weight: bold;
   text-align: left;
   padding: 12px 40px 12px 10px;
@@ -66,10 +67,11 @@ p {
   border-style: dashed;
   background-repeat: no-repeat;
   min-width: 133px;
-
 }
+
 #character-info h4,
-#item-box h4{
+#item-box h4,
+#use-item-box h4{
   text-align: left;
 }
 #button-display {
@@ -223,4 +225,8 @@ p {
   color: rgb(255, 191, 128);
   background-color: rgba(102, 51, 0, .6);
   box-shadow: 5px 5px 5px black;
+}
+
+#smokeACig{
+  display:none;
 }

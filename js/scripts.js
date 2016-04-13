@@ -48,6 +48,7 @@ Character.prototype.loseHealth = function(amount){
 Character.prototype.smokeCig = function(){
   this.health -= 5;
   this.sanity += 1;
+  characterRefresh();
 }
 Character.prototype.checkInventory = function(passItem){
   for(i = 0; i < this.items.length; i += 1){
@@ -118,8 +119,8 @@ $(document).ready(function(){
     characterRefresh();
   });
 
-  $("button#smokeACig").click(function(){
-    alert("hi");
+  $("button#smokeACig").click(function(event){
+    event.preventDefault();
     Character.smokeCig();
   });
 });
@@ -183,6 +184,3 @@ function displayCoords(x,y,title){
   $('#y-coord').text(y);
   $('#roomName').text(title)
 }
-
-// Room objects to append into display ======================================
-// Rooms should contain a 'description' to be appended into html, an 'action' function to happen when char moves into room (can be null), an 'after' function to run after the 'contextual' button has been pressed and the available 'directions' from the room.=============================================
