@@ -1,13 +1,89 @@
+var catecomb3 = {
+  title: 'Catecomb 3',
+  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  description: '<div class="room" id="catecomb3">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in yet another catecomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
+  '</div>',
+  action: function(){},
+  results: function(){
+    if(enteredText === 'left' || enteredText ==='left lever'){
+      catecomb1.directions.push("forward");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to your right has appeared.</p></div>");
+    } else if(enteredText === 'center' || enteredText === 'center lever' || enteredText === 'middle' || enteredText === 'middle lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    } else if (enteredText === 'right' || enteredText === 'right lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    }
+  },
+  directions: [],
+  image: null,
+}
+
+var catecomb2 = {
+  title: 'Catecomb 2',
+  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  description: '<div class="room" id="catecomb2">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in another catecomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
+  '</div>',
+  action: function(){},
+  results: function(){
+    if(enteredText === 'left' || enteredText ==='left lever'){
+      catecomb1.directions.push("forward");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    } else if(enteredText === 'center' || enteredText === 'center lever' || enteredText === 'middle' || enteredText === 'middle lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    } else if (enteredText === 'right' || enteredText === 'right lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    }
+  },
+  directions: [],
+  image: null,
+}
+
+var catecomb1 = {
+  title: 'Catecomb 1',
+  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  description: '<div class="room" id="catecomb1">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in a decrepit catecomb.  Skulls and bones line the walls. A stone column stands in the middle, with three levers facing you.' + '</p>' +
+  '</div>',
+  action: function(){},
+  results: function(){
+    if(enteredText === 'left' || enteredText ==='left lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you came through has reappeared.</p></div>");
+    } else if(enteredText === 'center' || enteredText === 'center lever' || enteredText === 'middle' || enteredText === 'middle lever'){
+      catecomb1.directions.push("right");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you came through has reappeared.</p></div>");
+    } else if (enteredText === 'right' || enteredText === 'right lever'){
+      catecomb1.directions.push("forward");
+      $('#room-display').empty();
+      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    }
+  },
+  directions: [],
+  image: null,
+}
+
 var Library = {
   title: 'Library',
   keywords: ['candle','candles','sconce','torch'],
   description: '<div class="room" id="office">' +
   '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
-  '<div>',
+  '</div>',
   action: function(){},
-  results: function(){
-  }
-},
+  results: function(){},
   directions: ['down'],
   image: '<img src="img/door.jpg" class="img-styles">',
 
@@ -200,7 +276,8 @@ var path = {
       $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
       $("#myModal").modal();
       Character.items.push("cigarettes");
-      $("#itemdisplay").append("<h6><button id='smokeACig'>Smoke</button></h6>");
+      $("#smokeACig").show();
+      characterRefresh();
     }
   },
   directions: ['up'],
