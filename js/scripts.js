@@ -307,7 +307,7 @@ var entrance = {
 
 var path = {
   title: 'Path',
-  keywords: ['pocket'],
+  keywords: ['pocket', 'pockets','check pockets', 'search pockets', 'check pocket', 'search pocket'],
   description: '<div class="room" id="path">' +
   '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You can only go forward.  What is that in your pocket?' + '</p>' +
   '</div>',
@@ -323,7 +323,7 @@ var path = {
       $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
       $("#myModal").modal();
       Character.items.push("cigarettes");
-      $("#itemdisplay").append("<h6><button id='smokeACig'>Smoke</button></h6>");
+      $("#use-item-display").append("<h6><button id='smokeACig'>Smoke</button></h6><br>");
     }
   },
   directions: ['up'],
@@ -348,7 +348,7 @@ var introduction = {
     $('#contextual').hide();
     $('#contextual span.buttontext').empty();
     characterRefresh(Character);
-    this.directions.push('up')
+    this.directions.push('up');
     place = 2;
   },
   directions: [],
