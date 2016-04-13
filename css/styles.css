@@ -223,3 +223,7 @@ p {
   background-color: rgba(102, 51, 0, .6);
   box-shadow: 5px 5px 5px black;
 }
+
+#smokeACig{
+  display:none;
+}

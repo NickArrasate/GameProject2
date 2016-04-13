@@ -48,6 +48,7 @@ Character.prototype.loseHealth = function(amount){
 Character.prototype.smokeCig = function(){
   this.health -= 5;
   this.sanity += 1;
+  characterRefresh();
 }
 Character.prototype.checkInventory = function(passItem){
   for(i = 0; i < this.items.length; i += 1){
@@ -116,8 +117,8 @@ $(document).ready(function(){
     characterRefresh();
   });
 
-  $("button#smokeACig").click(function(){
-    alert("hi");
+  $("button#smokeACig").click(function(event){
+    event.preventDefault();
     Character.smokeCig();
   });
 });
@@ -352,14 +353,14 @@ var path = {
   },
   after: null,
   results: function(){
-    var verifyCigs = Character.checkInventory("cigarettes");
+    var verifyCigs = Character.checkInventory("Cigarettes");
     if(verifyCigs !== false){
       $(".modal-page1").empty();
       $(".modal-page2").empty();
       $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
       $("#myModal").modal();
-      Character.items.push("cigarettes");
-      $("#use-item-display").append("<h6><button id='smokeACig'>Smoke</button></h6><br>");
+      Character.items.push("Cigarettes");
+      $("#smokeACig").show();
     }
   },
   directions: ['up'],
