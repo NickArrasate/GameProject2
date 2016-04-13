@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cigarettes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="modal/styles.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+
+
+  <style>
+  .modal-content {
+    background-image: url("parchment.png");
+    background-repeat: no-repeat;
+    width:800px;
+    height:1150px;
+    background-color: rgba(0,0,0,0);
+    box-shadow: none;
+    border: none;
+  }
+
+.textBody {
+  text-align: center;
+}
+
+  p {
+    font-family: 'tangerine',cursive;
+    padding-top: 200px;
+    position: absolute fixed right;
+    font-size: 30px;
+    color: rgba(102, 51, 0, .6);
+    text-align: center;
+    text-shadow: .5px .25px .25px black;
+  }
+
+  #rolls {
+    padding-top: 200px;
+    padding-left: 85px;
+    margin: auto;
+    width:600px;
+    -webkit-filter: sepia(60%); /* Chrome, Safari, Opera */
+  }
+
+  /*.exit {
+    position: absolute fixed right;
+    margin-left: 250px;
+  }
+  .btn {
+    color: rgb(255, 191, 128);
+    background-color: rgba(102, 51, 0, .6);
+    box-shadow: 5px 5px 5px black;
+  }*/
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="textBody">
+          <p>You have found some cigarettes</p>
+        </div>
+        <div class="item">
+          <img id="rolls" src="rolls.png" alt="parchment key" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
