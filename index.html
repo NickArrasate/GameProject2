@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <script type="text/javascript" src="js/jquery-1.12.2.js"></script>
   <script type="text/javascript" src="js/scripts.js">  </script>
+  <script type="text/javascript" src="js/roomscripts.js">  </script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title" charset="utf-8">
   <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
@@ -13,12 +14,22 @@
 <body>
 
     <div class="row" id="displayRow">
-
       <div class="col-xs-8 col-xs-offset-2">
         <div id="room-picture">
         </div>
       </div>
-
+      <div class="col-xs-2">
+        <div id="item-box">
+          <h4>Items</h4>
+          <span id="itemdisplay"></span>
+        </div>
+        <div id="use-item-box">
+          <h4>Actions</h4>
+          <span id="use-item-display">
+            <button id='smokeACig'>Smoke <br>(+1 Sanity, -10 Health)</button><br>
+          </span>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-xs-1 col-xs-offset-1" id="coordinateDisplay">
@@ -28,23 +39,18 @@
         <div id="room-display"><!--room displays will append here-->
         </div>
       </div>
-      <div id="character-wrapper" class="col-xs-2">
-        <div id="character-info"><!--display character information here-->
+    <div id="character-wrapper" class="col-xs-2">
+      <div id="character-info" class="col-xs-1"><!--display character information here-->
           <h4>Character Sheet</h4>
-          <p id="health">
-            Health: <span id="healthdisplay"></span>
-          </p>
-          <p id="strength">
-            Strength: <span id="strengthdisplay"></span>
-          </p>
-          <p id="sanity">
-            Sanity: <span id="sanitydisplay"></span>
-          </p>
-        </div>
-        <div id="item-box">
-          <h4>Item Stuff</h4>
-          <span id="itemdisplay"></span>
-        </div>
+            <p id="health">
+          Health: <span id="healthdisplay"></span>
+        </p>
+        <p id="sanity">
+          Sanity: <span id="sanitydisplay"></span>
+        </p>
+        <p id="items">
+          Items: <span id="itemdisplay"></span>
+        </p>
       </div>
     </div>
     <div class="row" id="contextrow">

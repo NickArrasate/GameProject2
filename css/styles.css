@@ -58,7 +58,8 @@ p {
   overflow: auto;
 }
 #character-info,
-#item-box {
+#item-box,
+#use-item-box {
   font-weight: bold;
   text-align: left;
   padding: 12px 40px 12px 10px;
@@ -66,10 +67,11 @@ p {
   border-style: dashed;
   background-repeat: no-repeat;
   min-width: 133px;
-
 }
+
 #character-info h4,
-#item-box h4{
+#item-box h4,
+#use-item-box h4{
   text-align: left;
 }
 #button-display {
@@ -104,6 +106,9 @@ p {
   font-weight: bolder;
   border-color: #252525;
 
+}
+.sanity, #sanity{
+  color: #0F6679;
 }
 .health, #health {
   color: crimson;
@@ -360,7 +365,7 @@ text-align: center;
 #key {
   padding-top: 200px;
   padding-left: 85px;
-  /*-webkit-filter: sepia(50%); /* Chrome, Safari, Opera */*/
+  /*-webkit-filter: sepia(50%); /* Chrome, Safari, Opera */
   margin: auto;
   width:600px;
 }
@@ -374,4 +379,8 @@ text-align: center;
   color: rgb(255, 191, 128);
   background-color: rgba(102, 51, 0, .6);
   box-shadow: 5px 5px 5px black;
+}
+
+#smokeACig{
+  display:none;
 }
