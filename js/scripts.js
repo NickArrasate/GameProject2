@@ -63,7 +63,7 @@ var Character = new Character(100,10,['Gold Lighter']);
 $(document).ready(function(){
 
   var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2];// y-axis array================
-  var roomRight = [null,null, terrace, null, null, libraryDoor];// x-axis array ===========================
+  var roomRight = [null,null, terrace, null, null, libraryDoor, library];// x-axis array ===========================
   var roomLeft = [null,null,null,null,null,labratory, office];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
   var place = 0;
@@ -115,8 +115,10 @@ $(document).ready(function(){
     var checkedText = compareText(keyArray, enteredText);
     if (checkedText === true){
       roomArray[arrayPlace][place].results(Character);
+      directionCheck(roomArray[arrayPlace][place].directions);
     }
     characterRefresh();
+
   });
 
   $("button#smokeACig").click(function(event){
