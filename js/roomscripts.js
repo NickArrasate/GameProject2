@@ -1,15 +1,20 @@
-var Library = {
+var library = {
   title: 'Library',
   keywords: ['candle','candles','sconce','torch'],
-  description: '<div class="room" id="office">' +
+  description: '<div class="room" id="library">' +
   '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
   '<div>',
   action: function(){},
   results: function(){
-  }
-},
+    library.directions.push('up');
+    $('#room-display').empty();
+    $('#room-display').append(
+      '<div class="room">' +
+      '<p>' + 'You reach up to the the candlestick on the wall and give it a firm pull. The bookcase groans and swings out slowly. Beyond, there is a stairway leading down into the darkness...' + '</p>' +
+      '</div>');
+  },
   directions: ['down'],
-  image: '<img src="img/door.jpg" class="img-styles">',
+  image: '<img src="img/library.jpg" class="img-styles">',
 
 }
 var libraryDoor = {
@@ -19,7 +24,7 @@ var libraryDoor = {
   '<p>' + 'You encounter an old door, barely illuminated by a lit torch.' + '</p>' +
   '</div>',
   action: function() {
-
+    // $('#contextual').empty();
     var keyCheck = Character.checkInventory(" Small Key");
     if (keyCheck == false) {
       $('#contextual').show();
@@ -55,6 +60,7 @@ var libraryDoor = {
   },
   directions: ['left'],
   image: '<img src="img/door.jpg" class="img-styles">',
+  image2: '<img src="img/door.jpg" class="img-styles">',
 }
 
 var office = {
@@ -76,7 +82,6 @@ var office = {
 },
   directions: ['down'],
   image: '<img src="img/study.jpg" class="img-styles">',
-
 }
 var labratory = {
   title: 'Labratory',
