@@ -6,8 +6,8 @@ var Library = {
   '<div>',
   action: function(){},
   results: function(){
-  }
-},
+  },
+
   directions: ['down'],
   image: '<img src="img/door.jpg" class="img-styles">',
 
@@ -229,4 +229,5 @@ var introduction = {
     place = 2;
   },
   directions: [],
+  image: '<img src="img/startScreen.gif" class="img-styles">',
 }

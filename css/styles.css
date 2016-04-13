@@ -20,6 +20,7 @@ p {
   padding-bottom: 0;
   border-radius: 5px;
 }
+
 .room-frame {
   background-image: url(../img/frame.png);
   z-index: 2;
