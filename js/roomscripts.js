@@ -1,3 +1,18 @@
+
+var cryptEntrance = {
+  title: 'Crypt Entrance',
+  keywords: [],
+  description: '<div class="room" id="office">' +
+  '<p>' + 'You step tenatively through the hidden door into a dark musty cold room. The floors are stone and the smell of death greets you... You raise your lighter in an attempt to see better but the darkness seems to continue on for quite some distance. ' + '<p/>' +
+  '<div>',
+  action: function(){
+    Character.loseSanity(1);
+    characterRefresh(character);
+  },
+  directions = ["down", "up"],
+
+}
+
 var library = {
   title: 'Library',
   keywords: ['candle','candles','sconce','torch'],
