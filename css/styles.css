@@ -57,7 +57,8 @@ p {
   max-height: 175px;
   overflow: auto;
 }
-#character-info {
+#character-info,
+#item-box {
   font-weight: bold;
   text-align: left;
   padding: 12px 40px 12px 10px;
@@ -67,7 +68,8 @@ p {
   min-width: 133px;
 
 }
-#character-info h4 {
+#character-info h4,
+#item-box h4{
   text-align: left;
 }
 #button-display {
