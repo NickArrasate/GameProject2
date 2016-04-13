@@ -1,15 +1,36 @@
+var mausoleum = {
+  title: 'Mausoleum',
+  keywords: [],
+  description: '<div class="room" id="mausoleum">' +
+  '<p>' + 'As you continue walking, the stench of death grows. You can barely make out still shapes around you, bodies eternally resting. You arrive in a large open space, dimly lit by torches. There seem to be multiple diverging passages branching out from the larger room' + '<p/>' +
+  '<div>',
+  action: function(){
+    $('#contextual').show();
+    $('#contextual span.buttontext').append('listen');
+  },
+  after: function() {
+    $('#room-display').empty();
+    $('#room-display').append(
+      '<div class="room">' +
+      '<p>' + 'You hear a faint chanting down the passage to your left.' + '</p>' +
+      '</div>');
+  },
+  directions: ["down", "left"],
+}
+
+
 
 var cryptEntrance = {
   title: 'Crypt Entrance',
   keywords: [],
-  description: '<div class="room" id="office">' +
+  description: '<div class="room" id="cryptEntrance">' +
   '<p>' + 'You step tenatively through the hidden door into a dark musty cold room. The floors are stone and the smell of death greets you... You raise your lighter in an attempt to see better but the darkness seems to continue on for quite some distance. ' + '<p/>' +
   '<div>',
   action: function(){
     Character.loseSanity(1);
     characterRefresh(character);
   },
-  directions = ["down", "up"],
+  directions: ["down", "up"],
 
 }
 
