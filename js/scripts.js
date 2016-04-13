@@ -8,6 +8,7 @@ var roomCenter = [];
 var roomRight = [];
 var roomLeft = [];
 var roomArray = [];
+var enteredText = "";
 // var Character = null;
 var directions = null;
 function Character(health, sanity, items){
@@ -61,9 +62,8 @@ var Character = new Character(100,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
 $(document).ready(function(){
-
-  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2];// y-axis array================
-  var roomRight = [null,null, terrace, null, null, libraryDoor, library];// x-axis array ===========================
+  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, catecomb1, catecomb2, catecomb3];// y-axis array================
+  var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum];// x-axis array ===========================
   var roomLeft = [null,null,null,null,null,labratory, office];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
   var place = 0;
