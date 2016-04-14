@@ -1,6 +1,3 @@
-// business logic =================================
-
-
 // Global Variables ==========================================
 var place = null; //used to index through room arrays. (roomCenter,roomRight)
 var arrayPlace = null; //used to index through array of rooms. (roomArray)
@@ -43,10 +40,10 @@ Character.prototype.loseHealth = function(amount){
     location.reload();
   } else if (this.health > 0){
       return this.health;
-      characterRefresh();
+      characterRefresh(Character);
   }
 };
-Character.prototype.smokeCig = function(Character){
+Character.prototype.smokeCig = function(){
   this.health -= 5;
   this.sanity += 1;
   characterRefresh(Character);
@@ -167,7 +164,6 @@ function directionCheck(directions){
     $('#right').show();
   }
 }
-
 }
 function compareText(passedKeyArray, passedEnteredText){
   for(i = 0; i < passedKeyArray.length; i += 1){
