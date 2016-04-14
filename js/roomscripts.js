@@ -366,21 +366,22 @@ var foyer = {
 }
 var terrace = {
   title: 'Terrace',
-  keywords: ['investigate'],
+  keywords: ['investigate','look','explore'],
   description: '<div class="room" id="entrance">' +
   '<p>' + 'You find yourself on a small overgrown terrace, the wind moans through the trees. The shadows beneath the limbs deepen and you feel something watching you. Your skin crawls and you wonder if you might just be imagining things. You are torn between investigating or retreating back to the beaten path.'  + '</p>' +
   '</div>',
   action: function(Character){
     $("#tripleContextual").hide();
-    Character.loseSanity(2);
     },
   after: null,
   results: function() {
     $(".textBody").empty();
-    $(".textBody").append("<p>Only a second after investigating you discover your suspicions were correct. You see glowing eyes gleaming back at you. Your heart skips and your stomach drops into what seems like an endless void and you break out into a cold sweat.</p>");
+    $(".textBody").append("<p class='modalText'>Only a second after investigating you discover your suspicions were correct.<br /> You see glowing eyes gleaming back at you.<br /> Your heart skips,your stomach drops into what seems like an endless void<br /> and you break out into a cold sweat.</p>");
     $('.modalItem').empty();
     $('.modalItem').append('<img id="eyes" src="img/eyes.jpg" alt="scary eyes" />');
     $('#myModal').modal();
+    Character.loseSanity(2);
+    characterRefresh(Character);
   },
   directions: ['left'],
   image: '<img src="img/terrace.jpeg" class="img-styles">',
