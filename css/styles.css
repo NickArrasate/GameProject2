@@ -116,7 +116,9 @@ p {
   width: 30%;
   font-weight: bolder;
   border-color: #252525;
-
+}
+#button-display{
+  margin-top: 10px;
 }
 .sanity, #sanity{
   color: #0F6679;
@@ -134,10 +136,9 @@ p {
 #contextual {
   z-index: 3;
   padding: 0;
+  margin-top: 5px;
   align-items: center;
   text-align: center;
-
-
 }
 .context{
   font-size: 20pt;
@@ -218,6 +219,22 @@ p {
   box-shadow: none;
   border: none;
 }
+#smokeACig {
+    font-size: 20pt;
+    font-family: 'Tangerine', cursive;
+    background-image: url(../img/frame.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    margin-left:auto;
+    margin-right: auto;
+}
+#smokeACig:hover {
+  cursor: pointer;
+}
 
 /*MODALS*/
 
@@ -255,11 +272,12 @@ p {
 .modal-content {
   background-image: url("../modalimg/parchment.png");
   background-repeat: no-repeat;
-  width:800px;
+  width:760px;
   height:1150px;
   background-color: rgba(0,0,0,0);
   box-shadow: none;
   border: none;
+  text-align: center;
 }
 .journal-content {
   background-image: url("../modalimg/journal.png");
@@ -285,10 +303,18 @@ text-align: center;
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
+.modalText1 {
+  font-family: 'tangerine',cursive;
+  position: absolute fixed right;
+  font-size: 30px;
+  color: rgba(102, 51, 0, .6);
+  text-align: center;
+  text-shadow: .5px .25px .25px black;
+}
 
 #lighter {
   padding-top: 200px;
-  padding-left: 200px;
+
   width:500px;
   -webkit-filter: sepia(70%); /* Chrome, Safari, Opera */
 }
@@ -306,7 +332,6 @@ text-align: center;
 
 #candle {
   padding-top: 130px;
-  padding-left: 200px;
   margin: auto;
   width:550px;
   filter:opacity(800%);
@@ -327,9 +352,8 @@ text-align: center;
 
 #rolls {
   padding-top: 200px;
-  padding-left: 85px;
   margin: auto;
-  width:600px;
+  width:300px;
   -webkit-filter: sepia(60%); /* Chrome, Safari, Opera */
 }
 
@@ -346,7 +370,6 @@ text-align: center;
 }
 
 #death {
-  padding-left: 250px;
   margin: auto;
   width:525px;
   -webkit-filter: sepia(90%); /* Chrome, Safari, Opera */
@@ -365,10 +388,22 @@ text-align: center;
 
 #insane {
   padding-top: 100px;
-  padding-left: 150px;
   margin: auto;
   width:650px;
   -webkit-filter: sepia(20%); /* Chrome, Safari, Opera */
+}
+#almostcrazy {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  width:350px;
+  -webkit-filter: sepia(50%); /* Chrome, Safari, Opera */
+}
+.modalitem {
+  padding-left: auto;
+  padding-right: auto;
+
 }
 
 /*DOOR KEY*/
@@ -393,10 +428,15 @@ text-align: center;
 
 #key {
   padding-top: 200px;
-  padding-left: 85px;
   /*-webkit-filter: sepia(50%); /* Chrome, Safari, Opera */
   margin: auto;
   width:600px;
+}
+#wood {
+  padding-top: 100px;
+  margin: auto;
+  width:650px;
+  -webkit-filter: sepia(20%); /* Chrome, Safari, Opera */
 }
 
 /*CLOSE MODAL BUTTON ---- NOT IN USE*/
