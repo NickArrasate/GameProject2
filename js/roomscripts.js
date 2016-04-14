@@ -1,5 +1,19 @@
 
-var water3 = {}
+var water3 = {
+  title: "Water 2",
+  keywords: ['pawn', 'pawns'],
+  description: "<div class='room' id='water2'><p>You continue rowing into the blackness, and the figure poses his next riddle: 'The eight of us go forth not back to protect our king from a foes attack. What are we? '</p></div>",
+  action: function(){},
+  results: function(){
+    $("#room-display").empty();
+    $("#room-display").append("<div class='room' id='water3'><p>'How clever...' he cackles.</p></div>");
+    water2.directions.push("up");
+    Character.addSanity(1);
+  },
+  directions: ['left'],
+  image: '<img src="img/water3.png" class="img-styles">',
+}
+
 var exit = {
   description: '<div class="room" id="exit">' +
   '<p>' + 'The riddleman drops you at the opposite shore. You see a dim light in the distance.' + '</p>' +
@@ -17,8 +31,8 @@ var water2 = {
     water2.directions.push("up");
     Character.addSanity(1);
   },
-  directions: [],
-  image: null,
+  directions: ['left'],
+  image: '<img src="img/water2.jpg" class="img-styles">',
 }
 
 var water1 = {
@@ -87,6 +101,7 @@ var shore2 = {
     $("#myJournal").modal();
     },
   directions: ['up','down'],
+  image: '<img src="img/shore2.jpg" class="img-styles">',
 }
 var shore1 ={
   title: 'Shore',
@@ -273,6 +288,7 @@ var mausoleum = {
   '<div>',
   action: function(){
     $("#tripleContextual").hide();
+    Character.loseSanity(1);
     $(".buttontext").empty();
     $('#contextual').show();
     $('#contextual span.buttontext').append('Listen');
@@ -306,7 +322,7 @@ var library = {
   title: 'Library',
   keywords: ['candle','candles','sconce','torch','candlestick'],
   description: '<div class="room" id="library">' +
-  '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
+  '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases.' + '<p/>' +
   '</div>',
   action: function(){
   },
@@ -381,7 +397,7 @@ var office = {
   title: 'Office',
   keywords: ['drawer','desk','drawers','furniture'],
   description: '<div class="room" id="office">' +
-  '<p>' + 'At the end of the hall you enter a small office. tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers.' + '<p/>' +
+  '<p>' + 'At the end of the hall you enter a small office. Tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers.' + '<p/>' +
   '<div>',
   action: function(){
   },

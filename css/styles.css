@@ -50,6 +50,7 @@ p {
   min-width: 470px;
   min-height:350px;
 }
+
 .room {
   align-items: center;
   text-align: center;
@@ -78,6 +79,10 @@ p {
 #item-box h4,
 #use-item-box h4{
   text-align: left;
+}
+
+#character-info{
+  border-top: none;
 }
 #item-box {
   border-bottom: none;
@@ -209,6 +214,15 @@ p {
   font-size: 30pt;
   font-weight: bold;
   font-family: 'Tangerine', cursive;
+}
+
+.headerFont{
+  font-family: 'Tangerine', cursive;
+  font-weight: bold;
+}
+
+#stat-wrapper{
+  margin-top: 120px;
 }
 
 .journal-content {
