@@ -26,7 +26,7 @@ var shore4 = {
   },
   directions: ["up"],
   image: '<img src="img/shore4.jpg" class="img-styles">',
-
+}
 var shore2 ={
   title: 'Shore',
   keywords: ["journal", "book", "rock"],
@@ -389,7 +389,7 @@ var hallway2 = {
   after: null,
   results: function(){
     $(".modal-page1").empty();
-    $(".modal-page1").append("<p>Journal 3, 5, 1260<br>We have finally made contact with our Lord! Augustus went into the crypts to perform the ritual. He never returned. Peter went down to check on him and reported that he found nothing anywhere in the catacombs. We know our Lord took him into his embrace. We will all be with Him soon.</p>");
+    $(".modal-page1").append("<p>Journal 3, 5, 1260<br>We have finally made contact with our Lord! Augustus went into the crypts to perform the ritual. He never returned. Xavier went down to check on him and reported that he found nothing anywhere in the catacombs. We know our Lord took him into his embrace. We will all be with Him soon.</p>");
     $("#myJournal").modal();
     },
   directions: ['left','right'],
