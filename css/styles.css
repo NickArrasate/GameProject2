@@ -22,6 +22,7 @@ p {
   border: 5px solid white;
 }
 
+
 .room-frame {
   background-image: url(../img/frame.png);
   z-index: 2;
