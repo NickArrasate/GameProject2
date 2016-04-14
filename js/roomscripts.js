@@ -46,21 +46,21 @@ var catacomb3 = {
   results: function(){},
   leftCont: function(){
     $("#tripleContextual").hide();
-    catecomb3.directions.push("up");
+    catacomb3.directions.push("up");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
   },
   middleCont: function(){
     $("#tripleContextual").hide();
-    catecomb3.directions.push("right");
+    catacomb3.directions.push("right");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door to the right has appeared.</p></div>");
   },
   rightCont: function(){
     $("#tripleContextual").hide();
-    catecomb3.directions.push("right");
+    catacomb3.directions.push("right");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door to the right has appeared.</p></div>");
   },
   directions: [],
   image: '<img src="img/catacomb2.jpg" class="img-styles">',
@@ -81,21 +81,21 @@ var catacomb2 = {
   results: function(){},
   leftCont: function(){
     $("#tripleContextual").hide();
-    catecomb2.directions.push("right");
+    catacomb2.directions.push("right");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door to the right has appeared.</p></div>");
   },
   middleCont: function(){
-    $("tripleContextual").hide();
-    catecomb2.directions.push("right");
+    $("#tripleContextual").hide();
+    catacomb2.directions.push("right");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door to the right has appeared.</p></div>");
   },
   rightCont: function(){
     $("#tripleContextual").hide();
-    catecomb2.directions.push("up");
+    catacomb2.directions.push("up");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
   },
   directions: [],
   image: '<img src="img/cryptEntrance.jpg" class="img-styles">',
@@ -116,21 +116,21 @@ var catacomb1 = {
   results: function(){},
   leftCont: function(){
     $("#tripleContextual").hide();
-    catecomb1.directions.push("up");
+    catacomb1.directions.push("up");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
   },
   middleCont: function(){
     $("#tripleContextual").hide();
-    catecomb1.directions.push("right");
+    catacomb1.directions.push("right");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
   },
   rightCont: function(){
     $("#tripleContextual").hide();
-    catecomb1.directions.push("right");
+    catacomb1.directions.push("right");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
   },
   directions: [],
   image: '<img src="img/catacomb1.jpg" class="img-styles">',
@@ -142,18 +142,10 @@ var mausoleum = {
   '<p>' + 'As you continue walking, the stench of death grows. You can barely make out still shapes around you, bodies eternally resting. You arrive in a large open space, dimly lit by torches. There seem to be multiple diverging passages branching out from the larger room' + '<p/>' +
   '<div>',
   action: function(){
-<<<<<<< HEAD
+    $("#tripleContextual").hide();
     $(".buttontext").empty();
     $('#contextual').show();
-    $('#contextual span.buttontext').append('Listen');
-=======
-
-    $("#tripleContextual").hide();
-    $("#contextual").empty();
-    $('#contextual').show();
     $('#contextual span.buttontext').append('listen');
-
->>>>>>> 8c4b8cf2130ba223a8e939ad45ee2f4e0cb289c5
   },
   after: function() {
     $('#room-display').empty();
@@ -164,6 +156,7 @@ var mausoleum = {
     },
     directions: ["down", "left"],
     image: '<img src="img/mausoleum.jpg" class="img-styles">',
+    image2: '<img src="img/mausoleum.jpg" class="img-styles">',
   }
 var cryptEntrance = {
   title: 'Crypt Entrance',
