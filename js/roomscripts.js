@@ -1,3 +1,18 @@
+var water1 = {
+  title: 'Water1',
+  keywords: [],
+  description: '<div class="room" id="waterBoat1">' +
+  '<p>' + 'As the skiff departs from the shore, you notice the shrouded figure accompanying you begins to display a strange attitude. Almost as if he had this entire encounter planned all along.' + '</p>' +
+  '</div>',
+  action: function(){
+    Character.loseSanity(1);
+    $(".tripleContextual").hide();
+  },
+  results: function(){},
+  directions: ['right'],
+  image: '<img src="img/tunnel.jpg" class="img-styles">',
+}
+
 var shore4 = {
   title: "Shore",
   keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut"],
