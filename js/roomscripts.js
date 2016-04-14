@@ -1,12 +1,12 @@
 var shore4 = {
-  title: "shoreline"
-  keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut"]
+  title: "Shore",
+  keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut"],
   description: '<div class="room" id="shoreline4">' +
   '<p>' + 'As you walk along the shoreline you see a small beam of light. It seems to be coming from a small opening in the cave ceiling far above. The beam of light shines on a large desolate tree covered in abnormal and unmentionable scrawlings... the work of a madman. There are deep cuts in the tree as if something hacked at it. The occult symbols glow before your eyes and the darkness seems ever more consuming. A cliffside blocks you from continuing on in this direction...' + '</p>' +
   '</div>',
   action: function(){
     Character.loseSanity(2);
-  }
+  },
   results: function(){
     var strangeChipsCheck = Character.checkInventory(" Strange Wood Chips");
     if (strangeChipsCheck !== false){
@@ -16,30 +16,29 @@ var shore4 = {
         '<p>' + 'As you investigate the tree further you notice disturbed earth covered in glowings woodchips. Whoever or whatever... made these markings was chopping was gathering woodchips from the tree. You pick up some a handful of woodchips and put them in your pocket.' + '</p>' +
         '</div>');
       Character.items.push(' Strange Wood Chips');
+      characterRefresh(Character);
     }
   },
   directions: ["up"],
-  image: '<img src="img/shore4.jpg" class="image-styles">',
-
+  image: '<img src="img/shore4.jpg" class="img-styles">',
+}
 var shore2 ={
-  title: 'Shore 2',
+  title: 'Shore',
   keywords: [],
   description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness... </p><div>',
   action:function(){},
   directions: ['up','down'],
 }
-
 var shore1 ={
-  title: 'Shore 1',
+  title: 'Shore',
   keywords: [],
   description: '<div class="room" id="shore1"><p>The floor opens up beneath you and you fall into the blackness.  Your fall is stopped when you land on the sandy shore of a vast underground lake.  You cannot see the other side.</p><div>',
   action:function(){},
   directions: ['up','down'],
   image: '<img src="img/shore1.png" class="img-styles">',
 }
-
 var shore3 = {
-  title: 'Shore 3',
+  title: 'Shore',
   keywords: ['boat', 'hull', 'the boat'],
   description: '<div class="room" id="shore">' +
   '<p>' + 'As you walk up the shoreline, the inky water continues to lap gently onto the sand. There is a small row boat in the sand.' + '</p>' +
@@ -70,9 +69,8 @@ var shore3 = {
   image: '<img src="img/boat.jpg" class="img-styles">',
   image2: '<img src="img/boat.jpg" class="img-styles">',
 }
-
 var tunnel2 = {
-  title: 'Tunnel 2',
+  title: 'Tunnel',
   keywords: [],
   description: '<div class="room" id="tunnel2">' +
   '<p>' + 'The door slams shut behind you and will not open. The air is noticably stale here. Your only option is to proceed through the cavernous halls.' + '</p>' +
@@ -86,7 +84,6 @@ var tunnel2 = {
   directions: ['down'],
   image: '<img src="img/tunnel2.jpg" class="img-styles">',
 }
-
 var tunnel = {
   title: 'Tunnel',
   keywords: [],
@@ -102,9 +99,8 @@ var tunnel = {
   directions: ['down'],
   image: '<img src="img/tunnel.jpg" class="img-styles">',
 }
-
 var catacomb3 = {
-  title: 'Catacomb 3',
+  title: 'Catacomb',
   keywords: [],
   description: '<div class="room" id="catacomb3">' +
   '<p>' + 'The door slams shut behind you and will not open.  You find yourself in yet another catacomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
@@ -140,7 +136,7 @@ var catacomb3 = {
 }
 
 var catacomb2 = {
-  title: 'Catacomb 2',
+  title: 'Catacomb',
   keywords: [],
   description: '<div class="room" id="catacomb2">' +
   '<p>' + 'The door slams shut behind you and will not open.  You find yourself in another catacomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
@@ -176,7 +172,7 @@ var catacomb2 = {
 }
 
 var catacomb1 = {
-  title: 'Catacomb 1',
+  title: 'Catacomb',
   keywords: [],
   description: '<div class="room" id="catacomb1">' +
   '<p>' + 'The door slams shut behind you and will not open.  You find yourself in a decrepit catacomb.  Skulls and bones line the walls. A stone column stands in the middle, with three levers facing you.' + '</p>' +
@@ -349,7 +345,7 @@ var office = {
 var labratory = {
   title: 'Labratory',
   description: '<div class="room" id="labratory">' +
-  '<p>' + 'You make your way down the passage to the left. After walking for a bit, you come across a wood door set in the wall. There is an old sconce on the wal nearby. You light the sconce to shed more light on your surroundings. The door is slightly ajar. Will you investigate?' + '</p>' +
+  '<p>' + 'You make your way down the passage to the left. After walking for a bit, you come across a wood door set in the wall. There is an old sconce on the wall nearby. You light the sconce to shed more light on your surroundings. The door is slightly ajar. Will you investigate?' + '</p>' +
   '</div>',
   action: function(){
   $('#contextual').show();
@@ -434,7 +430,7 @@ var foyer = {
 }
 var terrace = {
   title: 'Terrace',
-  keywords: ['investigate','look','explore'],
+  keywords: ['investigate','look','explore','bushes','search'],
   description: '<div class="room" id="entrance">' +
   '<p>' + 'You find yourself on a small overgrown terrace, the wind moans through the trees. The shadows beneath the limbs deepen and you feel something watching you. Your skin crawls and you wonder if you might just be imagining things. You are torn between investigating or retreating back to the beaten path.'  + '</p>' +
   '</div>',
@@ -473,7 +469,7 @@ var path = {
   title: 'Path',
   keywords: ['pocket','coat','jacket','pockets',],
   description: '<div class="room" id="path">' +
-  '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You can only go forward.  You remember you have something of importance in your coat pocket...' + '</p>' +
+  '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You need to calm your nerves before you go forward.  You remember you have something of importance in your coat pocket...' + '</p>' +
   '</div>',
   action: function(){
     $('#down').hide();
@@ -488,11 +484,12 @@ var path = {
       $('.modalItem').append('<img id="key" src="modalimg/rolls.png" alt="parchment key" />');
       $("#myModal").modal();
       Character.items.push(' Cigarettes');
+      path.directions.push('up')
       $('#smokeACig').show();
       characterRefresh(Character);
     }
     },
-  directions: ['up'],
+  directions: [],
   image: '<img src="img/path.jpg" class="img-styles">',
 }
 var turnback = {
