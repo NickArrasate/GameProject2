@@ -278,9 +278,8 @@ var mausoleum = {
   '<p>' + 'As you continue walking, the stench of death grows. You can barely make out still shapes around you, bodies eternally resting. You arrive in a large open space, dimly lit by torches. There seem to be multiple diverging passages branching out from the larger room' + '<p/>' +
   '<div>',
   action: function(){
-
     $("#tripleContextual").hide();
-
+    Character.loseSanity(1);
     $(".buttontext").empty();
     $('#contextual').show();
     $('#contextual span.buttontext').append('listen');
@@ -314,7 +313,7 @@ var library = {
   title: 'Library',
   keywords: ['candle','candles','sconce','torch','candlestick'],
   description: '<div class="room" id="library">' +
-  '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
+  '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases.' + '<p/>' +
   '</div>',
   action: function(){
   },
@@ -389,7 +388,7 @@ var office = {
   title: 'Office',
   keywords: ['drawer','desk','drawers','furniture'],
   description: '<div class="room" id="office">' +
-  '<p>' + 'At the end of the hall you enter a small office. tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers.' + '<p/>' +
+  '<p>' + 'At the end of the hall you enter a small office. Tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers.' + '<p/>' +
   '<div>',
   action: function(){
   },
