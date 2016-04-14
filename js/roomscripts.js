@@ -21,7 +21,7 @@ var shore4 = {
   },
   directions: ["up"],
   image: '<img src="img/shore4.jpg" class="img-styles">',
-}
+
 var shore2 ={
   title: 'Shore',
   keywords: [],
@@ -41,7 +41,7 @@ var shore3 = {
   title: 'Shore',
   keywords: ['boat', 'hull', 'the boat'],
   description: '<div class="room" id="shore">' +
-  '<p>' + 'As you walk up the shoreline, the inky water continues to lap gently onto the sand. There is a small row boat in the sand.' + '</p>' +
+  '<p>' + 'As you walk up the shoreline, the inky water continues to lap gently onto the sand. There is a small row boat in the sand. ' + '</p>' +
   '</div>',
   action: function(){
     var keyCheck = Character.checkInventory(" Strange Wood Chips");
@@ -55,7 +55,7 @@ var shore3 = {
   },
   after: function(){
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='shore3'>" + "<p>You begin work on the boat. After some time you are able to patch the hole with the" + '<span class ="item">' + ' Strang Wood Chips' + '</span>. They seem to attach themselves to eachother and the wood of the boat.' + '</p></div>');
+    $('#room-display').append("<div class='room' id='shore3'>" + "<p>You begin work on the boat. After some time you are able to patch the hole with the" + '<span class ="item">' + ' Strange Wood Chips' + '</span>. Suddenly a shrouded figure approaches you from behind.  He thanks you for fixing the boat and offers to transport you... if you can answer 3 riddles.  Seeing no other choice, you accept and depart.' + '</p></div>');
     shore3.directions.push('right');
   },
   results: function(){
@@ -67,7 +67,7 @@ var shore3 = {
   },
   directions: ['down'],
   image: '<img src="img/boat.jpg" class="img-styles">',
-  image2: '<img src="img/boat.jpg" class="img-styles">',
+  image2: '<img src="img/cloak.jpeg" class="img-styles">',
 }
 var tunnel2 = {
   title: 'Tunnel',
@@ -469,7 +469,7 @@ var path = {
   title: 'Path',
   keywords: ['pocket','coat','jacket','pockets',],
   description: '<div class="room" id="path">' +
-  '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You need to calm your nerves before you go forward.  You remember you have something of importance in your coat pocket...' + '</p>' +
+  '<p>' + 'You stand alone on a narrow path hemmed in by towering trees.  You don\'t know how you got here but you feel compelled to continue. A blocky shadow looms ahead. You can only go forward.  You remember you have something of importance in your coat pocket...' + '</p>' +
   '</div>',
   action: function(){
     $('#down').hide();
@@ -504,7 +504,7 @@ var turnback = {
 var introduction = {
   title: 'Introduction',
   description: '<div class="room" id="introduction">' +
-  '<p>' + 'Welcome to our game. You have been sent by a wealthy, anonymous sponsor to explore a long forgotten cathedral. St. Lovecraft\'s Cathedral was lost in a great flood many years ago and only recently, due to the considerable efforts of your sponsor, became accessible. You have been asked to return anything you may find inside. There are many rooms and places to explore and you have been provided with a set of coordinates to track your progress. Remember to \'Search\' your surroundings. Please note that your statistics and a list of your held items may be found on the right side of your screen. Enjoy.' + '</p>' +
+  '<p>' + 'Welcome to our game. There are many rooms and places to explore and you have been provided with a set of coordinates to track your progress. Remember to \'Search\' your surroundings. Please note that your statistics and a list of your held items may be found on the right side of your screen. Enjoy.' + '</p>' +
   '</div>',
   action: function(){},
   after: function(){

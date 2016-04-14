@@ -4,6 +4,7 @@ body {
   background-position: center;
   align-items: center;
   padding-top: 25px;
+  font-weight: bold;
 }
 p {
   max-height: 235px;
