@@ -1,34 +1,46 @@
 // CISTERN NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
-var cistern = {
-  title: 'Cistern',
+var tunnel2 = {
+  title: 'Tunnel 2',
   keywords: [],
-  description: '<div class="room" id="cistern">' +
-  '<p>' + 'You find yourself in a hollowed cistern. The air is noticably stale as it loomes over the stale crimsoned rust colored ankle deep water. Your only option is to proceed tredge through the cavernous halls.' + '</p>' +
-  '</div>',
-  action: function(){},
-  results: function(){},
-  directions: [],
-  image: '<img src="img/cistern.jpg" class="img-styles">',
-}
-// TUNNEL NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
-var tunnel = {
-  title: 'Tunnel Ground Hole',
-  keywords: [],
-  discription: '<div class="room" id="cistern">' +
-  '<p>' + 'You find yourself in a hollowed cistern. The air is noticably stale as it loomes over the stale crimsoned rust colored ankle deep water. Your only option is to proceed tredge through the cavernous halls.' + '</p>' +
-  '</div>',
-  action: function(){},
-  results: function(){},
-  directions: [],
-  image: '<img src="img/tunnel.jpg" class="img-styles">'
-}
-var catecomb3 = {
-  title: 'Catecomb 3',
-  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
-  description: '<div class="room" id="catecomb3">' +
-  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in yet another catecomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
+  description: '<div class="room" id="tunnel2">' +
+  '<p>' + 'The door slams shut behind you and will not open. The air is noticably stale here. Your only option is to proceed through the cavernous halls.' + '</p>' +
   '</div>',
   action: function(){
+    Character.loseSanity(1);
+    characterRefresh(Character);
+    $(".tripleContextual").hide();
+  },
+  results: function(){},
+  directions: ['down'],
+  image: '<img src="img/tunnel2.jpg" class="img-styles">',
+}
+
+var tunnel = {
+  title: 'Tunnel',
+  keywords: [],
+  description: '<div class="room" id="cistern">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in a cavernous tunnel. You can only follow the tunnel and see where it leads.' + '</p>' +
+  '</div>',
+  action: function(){
+    Character.loseSanity(1);
+    characterRefresh(Character);
+    $(".tripleContextual").hide();
+  },
+  results: function(){},
+  directions: ['down'],
+  image: '<img src="img/tunnel.jpg" class="img-styles">'
+}
+
+var catacomb3 = {
+  title: 'Catacomb 3',
+  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  description: '<div class="room" id="catacomb3">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in yet another catacomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
+  '</div>',
+  action: function(){
+    catacomb3.directions = [];
+    Character.loseSanity(1);
+    characterRefresh(Character);
     $("#tripleContextual").show();
   },
   results: function(){},
@@ -51,16 +63,19 @@ var catecomb3 = {
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
   },
   directions: [],
-  image: '<img src="img/cistern.jpg" class="img-styles">',
+  image: '<img src="img/catacomb2.jpg" class="img-styles">',
 }
 
-var catecomb2 = {
-  title: 'Catecomb 2',
+var catacomb2 = {
+  title: 'Catacomb 2',
   keywords: [],
-  description: '<div class="room" id="catecomb2">' +
-  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in another catecomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
+  description: '<div class="room" id="catacomb2">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in another catacomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
   '</div>',
   action: function(){
+    catacomb2.directions = [];
+    Character.loseSanity(1);
+    characterRefresh(Character);
     $("#tripleContextual").show();
   },
   results: function(){},
@@ -83,16 +98,19 @@ var catecomb2 = {
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
   },
   directions: [],
-  image: null,
+  image: '<img src="img/cryptEntrance.jpg" class="img-styles">',
 }
 
-var catecomb1 = {
-  title: 'Catecomb 1',
+var catacomb1 = {
+  title: 'Catacomb 1',
   keywords: [],
-  description: '<div class="room" id="catecomb1">' +
-  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in a decrepit catecomb.  Skulls and bones line the walls. A stone column stands in the middle, with three levers facing you.' + '</p>' +
+  description: '<div class="room" id="catacomb1">' +
+  '<p>' + 'The door slams shut behind you and will not open.  You find yourself in a decrepit catacomb.  Skulls and bones line the walls. A stone column stands in the middle, with three levers facing you.' + '</p>' +
   '</div>',
   action: function(){
+    catacomb1.directions = [];
+    Character.loseSanity(1);
+    characterRefresh(Character);
     $("#tripleContextual").show();
   },
   results: function(){},
@@ -115,7 +133,7 @@ var catecomb1 = {
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
   },
   directions: [],
-  image: null,
+  image: '<img src="img/catacomb1.jpg" class="img-styles">',
 }
 var mausoleum = {
   title: 'Mausoleum',
@@ -124,9 +142,18 @@ var mausoleum = {
   '<p>' + 'As you continue walking, the stench of death grows. You can barely make out still shapes around you, bodies eternally resting. You arrive in a large open space, dimly lit by torches. There seem to be multiple diverging passages branching out from the larger room' + '<p/>' +
   '<div>',
   action: function(){
+<<<<<<< HEAD
     $(".buttontext").empty();
     $('#contextual').show();
     $('#contextual span.buttontext').append('Listen');
+=======
+
+    $("#tripleContextual").hide();
+    $("#contextual").empty();
+    $('#contextual').show();
+    $('#contextual span.buttontext').append('listen');
+
+>>>>>>> 8c4b8cf2130ba223a8e939ad45ee2f4e0cb289c5
   },
   after: function() {
     $('#room-display').empty();
@@ -145,11 +172,12 @@ var cryptEntrance = {
   '<p>' + 'You step tenatively through the hidden door into a dark musty cold room. The floors are stone and the smell of death greets you... You raise your lighter in an attempt to see better but the darkness seems to continue on for quite some distance. ' + '<p/>' +
   '<div>',
   action: function(){
+    $("#tripleContextual").hide();
     Character.loseSanity(1);
     characterRefresh(character);
     },
   directions: ["down", "up"],
-  image: '<img src="img/cryptEntrance.jpg" class="img-styles">',
+  image: '<img src="img/crypt2.jpg" class="img-styles">',
 }
 
 var library = {
@@ -158,7 +186,9 @@ var library = {
   description: '<div class="room" id="library">' +
   '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
   '</div>',
-  action: function(){},
+  action: function(){
+    $("#tripleContextual").hide();
+  },
   results: function(){
     library.directions.push('up');
     $('#room-display').empty();
@@ -183,6 +213,7 @@ var libraryDoor = {
   '<p>' + 'You encounter an old door, barely illuminated by a lit torch.' + '</p>' +
   '</div>',
   action: function() {
+    $("#tripleContextual").hide();
     var keyCheck = Character.checkInventory(" Small Key");
     $('.buttontext').empty();
     if (keyCheck == false) {
@@ -232,7 +263,9 @@ var office = {
   description: '<div class="room" id="office">' +
   '<p>' + 'At the end of the hall you enter a small office. tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers.' + '<p/>' +
   '<div>',
-  action: function(){},
+  action: function(){
+    $("#tripleContextual").hide();
+  },
   results: function(){
     var firstKeyCheck = Character.checkInventory(" Small Key");
     if (firstKeyCheck !== false){
@@ -253,9 +286,10 @@ var labratory = {
   '<p>' + 'You make your way down the passage to the left. After walking for a bit, you come across a wood door set in the wall. There is an old sconce on the wal nearby. You light the sconce to shed more light on your surroundings. The door is slightly ajar. Will you investigate?' + '</p>' +
   '</div>',
   action: function(){
-    $('#contextual').show();
-    $('#contextual span.buttontext').text('Push the door open.');
-    },
+  $("#tripleContextual").hide();
+  $('#contextual').show();
+  $('#contextual span.buttontext').text('Push the door open.');
+},
   after: function(Character){
     Character.loseSanity(3);
     characterRefresh(Character);
@@ -277,7 +311,9 @@ var hallway2 = {
   description: '<div class="room" id="hallway2">' +
   '<p>' + 'As you reach the bottom of the stairs, the air smells more and more fetid. The weak flame in your hand is the only light. There is a path to your left and one to your right, each indiscernible from the other in the darkness...' + '</p>' +
   '</div>',
-  action: function(){},
+  action: function(){
+    $("#tripleContextual").hide();
+  },
   after: null,
   results: function(){
     $(".modal-page1").empty();
@@ -294,6 +330,7 @@ var hallway1 = {
   '<p>' + 'As you enter the stairway, you feel a chill wind rise to greet you. The air has an old smell about it as if it has been laying still for eons. The stairs before you plunge into darkness. If only there was an item to light help the way...' + '</p>' +
   '</div>',
   action: function(){
+    $("#tripleContextual").hide();
     $('#contextual').show();
     $('#contextual span.buttontext').append('Light the <span class ="item">gold lighter</span>.');
     },
@@ -325,6 +362,7 @@ var foyer = {
   '<p>' + 'You scraped your back on the rusty gate as you passed beneath (-1 <span class = "health">health</span>). You find yourself in a small, dim vestibule. The once, grand meeting place of the cathedral is badly damaged and the pews are a jumbled mess. The aisles are a mess of dusty detritus. You see a narrow staircase leading down... ' + '</p>' +
   '</div>',
   action: function(Character){
+    $("#tripleContextual").hide();
     Character.loseHealth(1);
     characterRefresh(Character);
     },
@@ -334,13 +372,22 @@ var foyer = {
 }
 var terrace = {
   title: 'Terrace',
+  keywords: ['investigate'],
   description: '<div class="room" id="entrance">' +
-  '<p>' + 'You find yourself on a small terrace, the wind moans through the trees. The shadows beneath the limbs deepen and you feel something watching you. Your skin crawls and you wonder if you might just be imagining things...'  + '</p>' +
+  '<p>' + 'You find yourself on a small overgrown terrace, the wind moans through the trees. The shadows beneath the limbs deepen and you feel something watching you. Your skin crawls and you wonder if you might just be imagining things. You are torn between investigating or retreating back to the beaten path.'  + '</p>' +
   '</div>',
   action: function(Character){
+    $("#tripleContextual").hide();
     Character.loseSanity(2);
     },
   after: null,
+  results: function() {
+    $(".textBody").empty();
+    $(".textBody").append("<p>Only a second after investigating you discover your suspicions were correct. You see glowing eyes gleaming back at you. Your heart skips and your stomach drops into what seems like an endless void and you break out into a cold sweat.</p>");
+    $('.modalItem').empty();
+    $('.modalItem').append('<img id="eyes" src="img/eyes.jpg" alt="scary eyes" />');
+    $('#myModal').modal();
+  },
   directions: ['left'],
   image: '<img src="img/terrace.jpeg" class="img-styles">',
 
@@ -351,7 +398,9 @@ var entrance = {
   description: '<div class="room" id="entrance">' +
   '<p>' + 'After seeing the front door of the large building is blocked by debris you move around to the side to seek entrance. You are facing a moss-laden archway on the broad side of the building. There is a rusted, dilapidated gate hanging from it\'s hinges. There may be just enough space to squeeze between the doors. To your right there is an overgrown path.' + '</p>' +
   '</div>',
-  action: function(){},
+  action: function(){
+    $("#tripleContextual").hide();
+  },
   after: null,
   directions: ['up','down','right'],
   image: '<img src="img/gate.jpg" class="img-styles">'
@@ -364,6 +413,7 @@ var path = {
   '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You can only go forward.  You remember you have something of importance in your coat pocket...' + '</p>' +
   '</div>',
   action: function(){
+    $("#tripleContextual").hide();
     $('#down').hide();
     },
   after: null,
