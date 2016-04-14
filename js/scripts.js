@@ -67,11 +67,11 @@ $(document).ready(function(){
   var arrayPlace = 1;
   $('#room-display').append(roomArray[arrayPlace][place].description);
   $('#room-display').hide();
-  $('#room-display').fadeIn(2000);
+  $('#room-display').fadeIn(750);
 
   $('#room-picture').append(roomArray[arrayPlace][place].image);
   $('#room-picture').hide();
-  $('#room-picture').fadeIn(2000);
+  $('#room-picture').fadeIn(750);
   displayCoords(arrayPlace, place);
 
   // movement and setting=====================================================
@@ -86,11 +86,11 @@ $(document).ready(function(){
     $('#room-display').empty();
     $('#room-display').append(roomArray[arrayPlace][place].description);
     $('#room-display').hide();
-    $('#room-display').fadeIn(2000);
+    $('#room-display').fadeIn(750);
     $('#room-picture').empty();
     $('#room-picture').append(roomArray[arrayPlace][place].image);
     $('#room-picture').hide();
-    $('#room-picture').fadeIn(2000);
+    $('#room-picture').fadeIn(750);
     console.log(place, arrayPlace);// logs current coords==========================
     displayCoords(arrayPlace, place, roomArray[arrayPlace][place].title);
 //calls the room action function and refreshes stats=================================

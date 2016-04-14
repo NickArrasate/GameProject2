@@ -41,24 +41,24 @@ var catacomb3 = {
     catacomb3.directions = [];
     Character.loseSanity(1);
     characterRefresh(Character);
-    $("#tripleContextual").show();
+    $("#tripleContextual").fadeIn();
   },
   results: function(){},
   leftCont: function(){
     $("#tripleContextual").hide();
-    catecomb3.directions.push("up");
+    catacomb3.directions.push("up");
     $('#room-display').empty();
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
   },
   middleCont: function(){
     $("#tripleContextual").hide();
-    catecomb3.directions.push("right");
+    catacomb3.directions.push("right");
     $('#room-display').empty();
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
   },
   rightCont: function(){
     $("#tripleContextual").hide();
-    catecomb3.directions.push("right");
+    catacomb3.directions.push("right");
     $('#room-display').empty();
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
   },
@@ -76,24 +76,24 @@ var catacomb2 = {
     catacomb2.directions = [];
     Character.loseSanity(1);
     characterRefresh(Character);
-    $("#tripleContextual").show();
+    $("#tripleContextual").fadeIn();
   },
   results: function(){},
   leftCont: function(){
     $("#tripleContextual").hide();
-    catecomb2.directions.push("right");
+    catacomb2.directions.push("right");
     $('#room-display').empty();
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
   },
   middleCont: function(){
     $("tripleContextual").hide();
-    catecomb2.directions.push("right");
+    catacomb2.directions.push("right");
     $('#room-display').empty();
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
   },
   rightCont: function(){
     $("#tripleContextual").hide();
-    catecomb2.directions.push("up");
+    catacomb2.directions.push("up");
     $('#room-display').empty();
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
   },
@@ -111,12 +111,12 @@ var catacomb1 = {
     catacomb1.directions = [];
     Character.loseSanity(1);
     characterRefresh(Character);
-    $("#tripleContextual").show();
+    $("#tripleContextual").fadeIn();
   },
   results: function(){},
   leftCont: function(){
     $("#tripleContextual").hide();
-    catecomb1.directions.push("up");
+    catacomb1.directions.push("up");
     $('#room-display').empty();
     $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
   },
@@ -143,8 +143,7 @@ var mausoleum = {
   '<div>',
   action: function(){
 
-    $("#tripleContextual").hide();
-    $("#contextual").empty();
+    $(".buttontext").empty();
     $('#contextual').show();
     $('#contextual span.buttontext').append('listen');
 
@@ -166,7 +165,6 @@ var cryptEntrance = {
   '<p>' + 'You step tenatively through the hidden door into a dark musty cold room. The floors are stone and the smell of death greets you... You raise your lighter in an attempt to see better but the darkness seems to continue on for quite some distance. ' + '<p/>' +
   '<div>',
   action: function(){
-    $("#tripleContextual").hide();
     Character.loseSanity(1);
     characterRefresh(character);
     },
@@ -181,7 +179,6 @@ var library = {
   '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
   },
   results: function(){
     library.directions.push('up');
@@ -207,7 +204,6 @@ var libraryDoor = {
   '<p>' + 'You encounter an old door, barely illuminated by a lit torch.' + '</p>' +
   '</div>',
   action: function() {
-    $("#tripleContextual").hide();
     var keyCheck = Character.checkInventory(" Small Key");
     $('.buttontext').empty();
     if (keyCheck == false) {
@@ -258,7 +254,6 @@ var office = {
   '<p>' + 'At the end of the hall you enter a small office. tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers.' + '<p/>' +
   '<div>',
   action: function(){
-    $("#tripleContextual").hide();
   },
   results: function(){
     var firstKeyCheck = Character.checkInventory(" Small Key");
@@ -280,7 +275,6 @@ var labratory = {
   '<p>' + 'You make your way down the passage to the left. After walking for a bit, you come across a wood door set in the wall. There is an old sconce on the wal nearby. You light the sconce to shed more light on your surroundings. The door is slightly ajar. Will you investigate?' + '</p>' +
   '</div>',
   action: function(){
-  $("#tripleContextual").hide();
   $('#contextual').show();
   $('#contextual span.buttontext').text('Push the door open.');
 },
@@ -306,7 +300,6 @@ var hallway2 = {
   '<p>' + 'As you reach the bottom of the stairs, the air smells more and more fetid. The weak flame in your hand is the only light. There is a path to your left and one to your right, each indiscernible from the other in the darkness...' + '</p>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
   },
   after: null,
   results: function(){
@@ -324,7 +317,6 @@ var hallway1 = {
   '<p>' + 'As you enter the stairway, you feel a chill wind rise to greet you. The air has an old smell about it as if it has been laying still for eons. The stairs before you plunge into darkness. If only there was an item to light help the way...' + '</p>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
     $('#contextual').show();
     $('#contextual span.buttontext').append('Light the <span class ="item">gold lighter</span>.');
     },
@@ -356,7 +348,6 @@ var foyer = {
   '<p>' + 'You scraped your back on the rusty gate as you passed beneath (-1 <span class = "health">health</span>). You find yourself in a small, dim vestibule. The once, grand meeting place of the cathedral is badly damaged and the pews are a jumbled mess. The aisles are a mess of dusty detritus. You see a narrow staircase leading down... ' + '</p>' +
   '</div>',
   action: function(Character){
-    $("#tripleContextual").hide();
     Character.loseHealth(1);
     characterRefresh(Character);
     },
@@ -371,7 +362,6 @@ var terrace = {
   '<p>' + 'You find yourself on a small overgrown terrace, the wind moans through the trees. The shadows beneath the limbs deepen and you feel something watching you. Your skin crawls and you wonder if you might just be imagining things. You are torn between investigating or retreating back to the beaten path.'  + '</p>' +
   '</div>',
   action: function(Character){
-    $("#tripleContextual").hide();
     Character.loseSanity(2);
     },
   after: null,
@@ -393,7 +383,6 @@ var entrance = {
   '<p>' + 'After seeing the front door of the large building is blocked by debris you move around to the side to seek entrance. You are facing a moss-laden archway on the broad side of the building. There is a rusted, dilapidated gate hanging from it\'s hinges. There may be just enough space to squeeze between the doors. To your right there is an overgrown path.' + '</p>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
   },
   after: null,
   directions: ['up','down','right'],
@@ -407,7 +396,6 @@ var path = {
   '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You can only go forward.  You remember you have something of importance in your coat pocket...' + '</p>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
     $('#down').hide();
     },
   after: null,
