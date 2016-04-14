@@ -211,7 +211,7 @@ p {
   font-family: 'Tangerine', cursive;
 }
 
-.modal-content {
+.journal-content {
   background-image: url("../img/journal.png");
   width:800px;
   height:500px;
@@ -224,9 +224,9 @@ p {
 
 .modal-page1 {
   float:left;
-  width: 390px;
+  width: 290px;
   margin-top: 30px;
-  margin-left: 25px;
+  margin-left: 60px;
 }
 .modal-page2 {
   float:right;
@@ -370,26 +370,6 @@ text-align: center;
   margin: auto;
   width:650px;
   -webkit-filter: sepia(20%); /* Chrome, Safari, Opera */
-}
-
-/*LOSER*/
-.modalText {
- font-family: 'tangerine',cursive;
- padding-top: 30px;
- position: absolute fixed right;
- font-size: 30px;
- color: rgba(102, 51, 0, .6);
- text-align: center;
- text-shadow: .5px .25px .25px black;
-}
-
-#crow {
- padding-top: 30px;
- padding-left: 150px;
- margin: auto;
- width:600px;
- filter: opacity(60%);
- -webkit-filter: sepia(100%); /* Chrome, Safari, Opera */
 }
 
 /*DOOR KEY*/

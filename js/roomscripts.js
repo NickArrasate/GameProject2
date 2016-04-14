@@ -478,10 +478,10 @@ var path = {
   results: function(){
     var verifyCigs = Character.checkInventory("cigarettes");
     if(verifyCigs !== false){
-      $(".textBody").empty();
-      $(".textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.<br>Be careful though!  Each time You smoke you will lose <span class='health'>health</span>.</p>");
-      $('.modalItem').empty();
-      $('.modalItem').append('<img id="key" src="modalimg/rolls.png" alt="parchment key" />');
+      $("#myModal .textBody").empty();
+      $("#myModal .textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.<br>Be careful though!  Each time You smoke you will lose <span class='health'>health</span>.</p>");
+      $('#myModal .modalItem').empty();
+      $('#myModal .modalItem').append('<img id="key" src="modalimg/rolls.png" alt="parchment key" />');
       $("#myModal").modal();
       Character.items.push(' Cigarettes');
       path.directions.push('up')
