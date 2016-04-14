@@ -1,3 +1,4 @@
+
 var water2 = {
   title: "Water 2",
   keywords: ['breath', 'his breath'],
@@ -8,6 +9,20 @@ var water2 = {
     $("#room-display").append("<div class='room' id='water2'><p>'Very wise...' he cackles, and continues rowing.</p></div>");
     Character.addSanity(1);
   },
+
+var water1 = {
+  title: 'Water1',
+  keywords: [],
+  description: '<div class="room" id="waterBoat1">' +
+  '<p>' + 'As the skiff departs from the shore, you notice the shrouded figure accompanying you begins to display a strange attitude. Almost as if he had this entire encounter planned all along.' + '</p>' +
+  '</div>',
+  action: function(){
+    Character.loseSanity(1);
+    $(".tripleContextual").hide();
+  },
+  results: function(){},
+  directions: ['right', 'left'],
+  image: '<img src="img/water1.jpg" class="img-styles">',
 }
 
 var shore4 = {
@@ -33,8 +48,8 @@ var shore4 = {
   },
   directions: ["up"],
   image: '<img src="img/shore4.jpg" class="img-styles">',
-
-var shore2 ={
+}
+var shore2 = {
   title: 'Shore',
   keywords: [],
   description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness... </p><div>',
