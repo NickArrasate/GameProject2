@@ -1,4 +1,29 @@
 // CISTERN NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
+var shore4 = {
+  title: "shoreline"
+  keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut"]
+  description: '<div class="room" id="shoreline4">' +
+  '<p>' + 'As you walk along the shoreline you see a small beam of light. It seems to be coming from a small opening in the cave ceiling far above. The beam of light shines on a large desolate tree covered in abnormal and unmentionable scrawlings... the work of a madman. There are deep cuts in the tree as if something hacked at it. The occult symbols glow before your eyes and the darkness seems ever more consuming. A cliffside blocks you from continuing on in this direction...' + '</p>' +
+  '</div>',
+  action: function(){
+    Character.loseSanity(2);
+  }
+  results: function(){
+    var strangeChipsCheck = Character.checkInventory(" Strange Wood Chips");
+    if (strangeChipsCheck !== false){
+      $('#room-display').empty();
+      $('#room-display').append(
+        '<div class="room">' +
+        '<p>' + 'As you investigate the tree further you notice disturbed earth covered in glowings woodchips. Whoever or whatever... made these markings was chopping was gathering woodchips from the tree. You pick up some a handful of woodchips and put them in your pocket.' + '</p>' +
+        '</div>');
+      Character.items.push(' Strange Wood Chips');
+    }
+  },
+  directions: ["up"],
+  image: '<img src="img/shore4.jpg" class="image-styles">',
+
+}
+
 var tunnel2 = {
   title: 'Tunnel 2',
   keywords: [],
