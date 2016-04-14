@@ -218,6 +218,7 @@ p {
 .headerFont{
   font-family: 'Tangerine', cursive;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 #stat-wrapper{
