@@ -21,8 +21,8 @@ Character.prototype.loseSanity = function(amount){
   this.sanity -= amount;
   if(this.sanity <= 0){
     //Modal to display Game over
-    alert("You have gone insane.  Game Over.");
-    location.reload();
+    $('#insaneModal').modal();
+    // location.reload();
   } else if (this.sanity > 0){
       return this.sanity;
       characterRefresh(Character);
@@ -36,8 +36,8 @@ Character.prototype.loseHealth = function(amount){
   this.health -= amount;
   if(this.health <= 0){
     //Modal to display Game over
-    alert("You have Died.  Game Over.");
-    location.reload();
+    $('#loseModal').modal();
+    // location.reload();
   } else if (this.health > 0){
       return this.health;
       characterRefresh(Character);
@@ -49,8 +49,8 @@ Character.prototype.smokeCig = function(){
   characterRefresh(Character);
   if(this.health <= 0){
     //Modal to display Game over
-    alert("You have Died.  Game Over.");
-    location.reload();
+    $('#loseModal').modal();
+    // location.reload();
   } else if (this.health > 0){
       return this.health;
       characterRefresh(Character);
