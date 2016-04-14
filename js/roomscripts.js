@@ -1,3 +1,4 @@
+var water3 = {}
 
 var water2 = {
   title: "Water 2",
@@ -7,21 +8,30 @@ var water2 = {
   results: function(){
     $("#room-display").empty();
     $("#room-display").append("<div class='room' id='water2'><p>'Very wise...' he cackles, and continues rowing.</p></div>");
+    water2.directions.push("up");
     Character.addSanity(1);
   },
+  directions: ['left'],
+  image: null,
+}
 
 var water1 = {
   title: 'Water1',
-  keywords: [],
+  keywords: ["nothing"],
   description: '<div class="room" id="waterBoat1">' +
-  '<p>' + 'As the skiff departs from the shore, you notice the shrouded figure accompanying you begins to display a strange attitude. Almost as if he had this entire encounter planned all along.' + '</p>' +
+  '<p>' + 'As the skiff departs from the shore, you notice the shrouded figure accompanying you begins to display a strange attitude. Almost as if he had this entire encounter planned all along. He poses his first riddle: "What do the poor possess, the rich lack, and if eaten will kill you?"' + '</p>' +
   '</div>',
   action: function(){
     Character.loseSanity(1);
     $(".tripleContextual").hide();
   },
-  results: function(){},
-  directions: ['right', 'left'],
+  results: function(){
+    $("#room-display").empty();
+    $("#room-display").append("<div class='room' id='water2'><p>'Ah, surprisngly smart'... he continues rowing.</p></div>");
+    water1.directions.push("right");
+    Character.addSanity(1);
+  },
+  directions: ['left'],
   image: '<img src="img/water1.jpg" class="img-styles">',
 }
 
