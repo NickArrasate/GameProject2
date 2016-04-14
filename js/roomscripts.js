@@ -7,11 +7,9 @@ var cistern = {
   '</div>',
   action: function(){},
   results: function(){},
-
   directions: [],
   image: '<img src="img/cistern.jpg" class="img-styles">',
 }
-
 // TUNNEL NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
 var tunnel = {
   title: 'Tunnel Ground Hole',
@@ -21,11 +19,9 @@ var tunnel = {
   '</div>',
   action: function(){},
   results: function(){},
-
   directions: [],
   image: '<img src="img/tunnel.jpg" class="img-styles">'
 }
-
 var catecomb3 = {
   title: 'Catecomb 3',
   keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
@@ -37,23 +33,23 @@ var catecomb3 = {
   },
   results: function(){},
   leftCont: function(){
-      $("#tripleContextual").hide();
-      catecomb3.directions.push("up");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
-    },
+    $("#tripleContextual").hide();
+    catecomb3.directions.push("up");
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+  },
   middleCont: function(){
-      $("#tripleContextual").hide();
-      catecomb3.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
-    },
+    $("#tripleContextual").hide();
+    catecomb3.directions.push("right");
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+  },
   rightCont: function(){
-      $("#tripleContextual").hide();
-      catecomb3.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
-    },
+    $("#tripleContextual").hide();
+    catecomb3.directions.push("right");
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+  },
   directions: [],
   image: '<img src="img/cistern.jpg" class="img-styles">',
 }
@@ -69,23 +65,23 @@ var catecomb2 = {
   },
   results: function(){},
   leftCont: function(){
-      $("#tripleContextual").hide();
-      catecomb2.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
-    },
+    $("#tripleContextual").hide();
+    catecomb2.directions.push("right");
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+  },
   middleCont: function(){
-      $("tripleContextual").hide();
-      catecomb2.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
-    },
+    $("tripleContextual").hide();
+    catecomb2.directions.push("right");
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door to the right has appeared.</p></div>");
+  },
   rightCont: function(){
-      $("#tripleContextual").hide();
-      catecomb2.directions.push("up");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
-    },
+    $("#tripleContextual").hide();
+    catecomb2.directions.push("up");
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+  },
   directions: [],
   image: null,
 }
@@ -101,23 +97,23 @@ var catecomb1 = {
   },
   results: function(){},
   leftCont: function(){
-      $("#tripleContextual").hide();
-      catecomb1.directions.push("up");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
-    },
+    $("#tripleContextual").hide();
+    catecomb1.directions.push("up");
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+  },
   middleCont: function(){
-      $("#tripleContextual").hide();
-      catecomb1.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
-    },
+    $("#tripleContextual").hide();
+    catecomb1.directions.push("right");
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
+  },
   rightCont: function(){
-      $("#tripleContextual").hide();
-      catecomb1.directions.push("right");
-      $('#room-display').empty();
-      $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
-    },
+    $("#tripleContextual").hide();
+    catecomb1.directions.push("right");
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='catecomb1'>" + "<p>The door you entered through has reappeared.</p></div>");
+  },
   directions: [],
   image: null,
 }
@@ -138,13 +134,10 @@ var mausoleum = {
       '<div class="room">' +
       '<p>' + 'You hear a faint chanting down the passage to your left.' + '</p>' +
       '</div>');
-  },
-  directions: ["down", "left"],
-  image: '<img src="img/mausoleum.jpg" class="img-styles">',
-}
-
-
-
+    },
+    directions: ["down", "left"],
+    image: '<img src="img/mausoleum.jpg" class="img-styles">',
+  }
 var cryptEntrance = {
   title: 'Crypt Entrance',
   keywords: [],
@@ -154,20 +147,19 @@ var cryptEntrance = {
   action: function(){
     Character.loseSanity(1);
     characterRefresh(character);
-  },
+    },
   directions: ["down", "up"],
   image: '<img src="img/cryptEntrance.jpg" class="img-styles">',
 }
 
 var library = {
   title: 'Library',
-  keywords: ['candle','candles','sconce','torch'],
+  keywords: ['candle','candles','sconce','torch','candlestick'],
   description: '<div class="room" id="library">' +
   '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
   '</div>',
   action: function(){},
   results: function(){
-
     library.directions.push('up');
     $('#room-display').empty();
     $('#room-display').append(
@@ -179,10 +171,10 @@ var library = {
       $('.modalItem').empty();
       $('.modalItem').append('<img id="candle" src="modalimg/candle.png" alt="parchment key" />');
       $("#myModal").modal();
-  },
-  directions: ['down'],
-  image: '<img src="img/library.jpg" class="img-styles">',
-}
+    },
+    directions: ['down'],
+    image: '<img src="img/library.jpg" class="img-styles">',
+  }
 
 var libraryDoor = {
   title: 'Mysterious Door',
@@ -192,53 +184,53 @@ var libraryDoor = {
   '</div>',
   action: function() {
     var keyCheck = Character.checkInventory(" Small Key");
+    $('.buttontext').empty();
     if (keyCheck == false) {
       $('#contextual').show();
-      $('#contextual span.buttontext').append('Unlock the door with the <span class ="item">small key</span>.');
+      $('#contextual span.buttontext').append('Unlock the door with the' + '<span class ="item">' + 'small key' + '</span>.');
     } else {
       $('#contextual').show();
-      $('#contextual span.buttontext').append('Try the door.');
+      $('#contextual span.buttontext').text('Try the door.');
     };
-  },
-  after: function() {
-    var keyCheck = Character.checkInventory(" Small Key")
-    if (keyCheck == false) {
-      Character.addSanity(1);
-      characterRefresh(Character);
-      $('#contextual').hide();
-      $('#contextual span.buttontext').empty();
-      libraryDoor.directions.push("up");
-      $('#room-display').empty();
-      $('#room-display').append(
-        '<div class="room" id="libraryDoor">' +
-        '<p>' + 'You take the <span class ="item">small key </span>from your pocket and try to fit it into the lock. With some effort you hear a click and the door unlocks.' + '</p>' +
-        '</div>');
-        $(".textBody").empty();
-        $(".textBody").append("<p class='modalText'>You used the <span class='item'>small key</span>.</p>");
-        $('.modalItem').empty();
-        $('.modalItem').append('<img id="key" src="modalimg/key.png" alt="parchment key" />');
-        $("#myModal").modal();
-    } else {
-      characterRefresh(Character);
-      $('#contextual').hide();
-      $('#contextual span.buttontext').empty();
-      $('#room-display').empty();
-      $('#room-display').append(
-        '<div class="room" id="libraryDoor">' +
-        '<p>' + 'You turn the knob, but the door is locked.' + '</p>' +
-        '</div>');
+},
+after: function() {
+  var keyCheck = Character.checkInventory(" Small Key")
+  if (keyCheck == false) {
+    Character.addSanity(1);
+    characterRefresh(Character);
+    $('#contextual').hide();
+    $('#contextual span.buttontext').empty();
+    libraryDoor.directions.push("up");
+    $('#room-display').empty();
+    $('#room-display').append(
+    '<div class="room" id="libraryDoor">' +
+    '<p>' + 'You take the <span class ="item">small key </span>from your pocket and try to fit it into the lock. With some effort you hear a click and the door unlocks.' + '</p>' +
+    '</div>');
+    $(".textBody").empty();
+    $(".textBody").append("<p class='modalText'>You used the <span class='item'>small key</span>.</p>");
+    $('.modalItem').empty();
+    $('.modalItem').append('<img id="key" src="modalimg/key.png" alt="parchment key" />');
+    $("#myModal").modal();
+  } else {
+    characterRefresh(Character);
+    $('#contextual').hide();
+    $('#contextual span.buttontext').empty();
+    $('#room-display').empty();
+    $('#room-display').append(
+      '<div class="room" id="libraryDoor">' +
+      '<p>' + 'You turn the knob, but the door is locked.' + '</p>' +
+      '</div>');
     }
   },
   directions: ['left'],
   image: '<img src="img/door.jpg" class="img-styles">',
   image2: '<img src="img/door.jpg" class="img-styles">',
 }
-
 var office = {
   title: 'Office',
   keywords: ['drawer','desk','drawers','furniture'],
   description: '<div class="room" id="office">' +
-  '<p>' + 'At the end of the hall you enter a small office. tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers. Against the far wall, a chest of drawers sits in the gloom.' + '<p/>' +
+  '<p>' + 'At the end of the hall you enter a small office. tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers.' + '<p/>' +
   '<div>',
   action: function(){},
   results: function(){
@@ -249,9 +241,9 @@ var office = {
       $('.modalItem').empty();
       $('.modalItem').append('<img id="key" src="modalimg/key.png" alt="parchment key" />');
       $("#myModal").modal();
-    Character.items.push(' Small Key');
-  }
-},
+      Character.items.push(' Small Key');
+    }
+    },
   directions: ['down'],
   image: '<img src="img/study.jpg" class="img-styles">',
 }
@@ -261,9 +253,9 @@ var labratory = {
   '<p>' + 'You make your way down the passage to the left. After walking for a bit, you come across a wood door set in the wall. There is an old sconce on the wal nearby. You light the sconce to shed more light on your surroundings. The door is slightly ajar. Will you investigate?' + '</p>' +
   '</div>',
   action: function(){
-  $('#contextual').show();
-  $('#contextual span.buttontext').text('Push the door open.');
-},
+    $('#contextual').show();
+    $('#contextual span.buttontext').text('Push the door open.');
+    },
   after: function(Character){
     Character.loseSanity(3);
     characterRefresh(Character);
@@ -271,13 +263,13 @@ var labratory = {
     $('#contextual span.buttontext').empty();
     $('#room-display').empty();
     $('#room-display').append(
-    '<div class="room" id="labratory">' +
-  '<p>' + 'The room is small and contains several tables densely cluttered with glass vials and scientific equipment. Dust covers every surface. You approach a large glass container. When you hold your light up to it, the shape of a large, curled tentacle emerges through the cloudy liquid that suspends it. You recoil in disgust at the sight and knock a vial off the table behind you sending it to the ground. The sound of it shattering in the silence is enough to send your heart racing. You exit the labratory in a hurry, eager to put some distance between you and the odd tentacle in the jar...' + '</p>' +
-  '</div>');
-},
-directions: ['up','right'],
-image: '<img src="img/labdoor.jpg" class="img-styles">',
-image2: '<img src="img/lab.jpg" class="img-styles">',
+      '<div class="room" id="labratory">' +
+      '<p>' + 'The room is small and contains several tables densely cluttered with glass vials and scientific equipment. Dust covers every surface. You approach a large glass container. When you hold your light up to it, the shape of a large, curled tentacle emerges through the cloudy liquid that suspends it. You recoil in disgust at the sight and knock a vial off the table behind you sending it to the ground. The sound of it shattering in the silence is enough to send your heart racing. You exit the labratory in a hurry, eager to put some distance between you and the odd tentacle in the jar...' + '</p>' +
+      '</div>');
+    },
+  directions: ['up','right'],
+  image: '<img src="img/labdoor.jpg" class="img-styles">',
+  image2: '<img src="img/lab.jpg" class="img-styles">',
 }
 var hallway2 = {
   title: 'Hallway',
@@ -288,10 +280,10 @@ var hallway2 = {
   action: function(){},
   after: null,
   results: function(){
-      $(".modal-page1").empty();
-      $(".modal-page1").append("<p>Journal 3, 5, 1260<br>We have finally made contact with our Lord! Augustus went into the crypts to perform the ritual. He never returned. Peter went down to check on him and reported that he found nothing anywhere in the catacombs. We know our Lord took him into his embrace. We will all be with Him soon.</p>");
-      $("#myJournal").modal();
-  },
+    $(".modal-page1").empty();
+    $(".modal-page1").append("<p>Journal 3, 5, 1260<br>We have finally made contact with our Lord! Augustus went into the crypts to perform the ritual. He never returned. Peter went down to check on him and reported that he found nothing anywhere in the catacombs. We know our Lord took him into his embrace. We will all be with Him soon.</p>");
+    $("#myJournal").modal();
+    },
   directions: ['left','right'],
   image: '<img src="img/wall.jpg" class="img-styles">',
 }
@@ -304,9 +296,8 @@ var hallway1 = {
   action: function(){
     $('#contextual').show();
     $('#contextual span.buttontext').append('Light the <span class ="item">gold lighter</span>.');
-  },
+    },
   after: function(Character){
-
     Character.addSanity(1);
     characterRefresh(Character);
     $('#contextual').hide();
@@ -316,22 +307,17 @@ var hallway1 = {
     $('.modalItem').empty
     $('.modalItem').append('<img id="lighter" src="modalimg/lighter.png" alt="parchment key" />');
     $('#myModal').modal();
-
     hallway1.directions.push("up");
     $('#room-display').empty();
     $('#room-display').append(
-    '<div class="room" id="hallway1">' +
-  '<p>' + 'You take the antique <span class ="item">gold lighter </span>from your pocket and ignite it, shedding a warm glow onto the damp walls of the stairway. You are still unable to see the bottom...' + '</p>' +
-  '</div>');
-},
-
-
-   image: '<img src="img/stairstop.jpg" class="img-styles">',
-   image2: '<img src="img/stairs.jpg" class="img-styles">',
-
-   directions: ["down"],
-
-}
+      '<div class="room" id="hallway1">' +
+      '<p>' + 'You take the antique <span class ="item">gold lighter </span>from your pocket and ignite it, shedding a warm glow onto the damp walls of the stairway. You are still unable to see the bottom...' + '</p>' +
+      '</div>');
+    },
+    image: '<img src="img/stairstop.jpg" class="img-styles">',
+    image2: '<img src="img/stairs.jpg" class="img-styles">',
+    directions: ["down"],
+  }
 
 var foyer = {
   title: 'Vestibule',
@@ -341,7 +327,7 @@ var foyer = {
   action: function(Character){
     Character.loseHealth(1);
     characterRefresh(Character);
-  },
+    },
   after: null,
   directions: ['up'],
   image: '<img src="img/vestibule.jpg" class="img-styles">',
@@ -353,7 +339,7 @@ var terrace = {
   '</div>',
   action: function(Character){
     Character.loseSanity(2);
-  },
+    },
   after: null,
   directions: ['left'],
   image: '<img src="img/terrace.jpeg" class="img-styles">',
@@ -373,26 +359,27 @@ var entrance = {
 
 var path = {
   title: 'Path',
-  keywords: ['pocket'],
+  keywords: ['pocket','coat','jacket','pockets',],
   description: '<div class="room" id="path">' +
-  '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You can only go forward.  What is that in your pocket?' + '</p>' +
+  '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You can only go forward.  You remember you have something of importance in your coat pocket...' + '</p>' +
   '</div>',
   action: function(){
     $('#down').hide();
-  },
+    },
   after: null,
   results: function(){
     var verifyCigs = Character.checkInventory("cigarettes");
     if(verifyCigs !== false){
-      $(".modal-page1").empty();
-      $(".modal-page2").empty();
-      $(".modal-page1").append("<p>You find a pack of cigarettes in your pocket.</p>");
+      $(".textBody").empty();
+      $(".textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.</p>");
+      $('.modalItem').empty();
+      $('.modalItem').append('<img id="key" src="modalimg/rolls.png" alt="parchment key" />');
       $("#myModal").modal();
-      Character.items.push("cigarettes");
-      $("#smokeACig").show();
-      characterRefresh();
+      Character.items.push(' Cigarettes');
+      $('#smokeACig').show();
+      characterRefresh(Character);
     }
-  },
+    },
   directions: ['up'],
   image: '<img src="img/path.jpg" class="img-styles">',
 }
@@ -408,7 +395,7 @@ var turnback = {
 var introduction = {
   title: 'Introduction',
   description: '<div class="room" id="introduction">' +
-  '<p>' + 'Welcome to our game. You have been sent by a wealthy, anonymous sponsor to explore a long forgotten cathedral. St. Lovecraft\'s Cathedral was lost in a great flood many years ago and only recently, due to the considerable efforts of your sponsor, became accessible. You have been asked to return anything you may find inside. There are many rooms and places to explore and you have been provided with a set of coordinates to track your progress. Please note that your statistics and a list of your held items may be found on the lower right of your screen. Enjoy.' + '</p>' +
+  '<p>' + 'Welcome to our game. You have been sent by a wealthy, anonymous sponsor to explore a long forgotten cathedral. St. Lovecraft\'s Cathedral was lost in a great flood many years ago and only recently, due to the considerable efforts of your sponsor, became accessible. You have been asked to return anything you may find inside. There are many rooms and places to explore and you have been provided with a set of coordinates to track your progress. Remember to \'Search\' your surroundings. Please note that your statistics and a list of your held items may be found on the right side of your screen. Enjoy.' + '</p>' +
   '</div>',
   action: function(){},
   after: function(){
@@ -417,7 +404,7 @@ var introduction = {
     characterRefresh(Character);
     this.directions.push('up')
     place = 2;
-  },
+    },
   directions: [],
   image: '<img src="img/startScreen.gif" class="img-styles">',
   image2: '<img src="img/startScreen.gif" class="img-styles">',

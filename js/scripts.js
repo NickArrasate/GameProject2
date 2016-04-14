@@ -1,6 +1,3 @@
-// business logic =================================
-
-
 // Global Variables ==========================================
 var place = null; //used to index through room arrays. (roomCenter,roomRight)
 var arrayPlace = null; //used to index through array of rooms. (roomArray)
@@ -46,10 +43,16 @@ Character.prototype.loseHealth = function(amount){
       characterRefresh();
   }
 };
-Character.prototype.smokeCig = function(Character){
+Character.prototype.smokeCig = function(){
   this.health -= 5;
   this.sanity += 1;
-  characterRefresh();
+  if(this.health <= 0){
+    //Modal to display Game over
+    alert("You have Died.  Game Over.");
+    location.reload();
+  } else if (this.health > 0){
+      return this.health;
+  }
 }
 Character.prototype.checkInventory = function(passItem){
   for(i = 0; i < this.items.length; i += 1){
@@ -148,6 +151,7 @@ $(document).ready(function(){
   $("button#smokeACig").click(function(event){
     event.preventDefault();
     Character.smokeCig();
+    characterRefresh(Character);
   });
 });
 // Business logic=======================================
@@ -166,7 +170,6 @@ function directionCheck(directions){
     $('#right').show();
   }
 }
-
 }
 function compareText(passedKeyArray, passedEnteredText){
   for(i = 0; i < passedKeyArray.length; i += 1){
