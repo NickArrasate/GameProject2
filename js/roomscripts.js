@@ -1,4 +1,36 @@
 // CISTERN NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
+var Shore3 = {
+  title: 'Shore 3',
+  keywords: ['boat', 'hull', 'the boat'],
+  description: '<div class="room" id="shore">' +
+  '<p>' + 'As you walk up the shoreline, the inky water continues to lap gently onto the sand. There is a small row boat in the sand.' + '</p>' +
+  '</div>',
+  action: function(){
+    var keyCheck = Character.checkInventory(" Strange Wood Chips");
+    $('.buttontext').empty();
+    if (keyCheck == false) {
+      $('#contextual').show();
+      $('#contextual span.buttontext').append('Use the' + '<span class ="item">' + ' Strange Wood Chips' + '</span>.');
+    } else {
+      $('#contextual').hide();
+    };
+  },
+  after: function(){
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='shore3'>" + "<p>You begin work on the boat. After some time you are able to patch the hole with the" + '<span class ="item">' + ' Strang Wood Chips' + '</span>. They seem to attach themselves to eachother and the wood of the boat.' + '</p></div>');
+    shore3.directions.push('right');
+  }
+  results: function(){
+    $('#room-display').empty();
+    $('#room-display').append(
+      '<div class="room">' +
+      '<p>' + 'The boards at the bottom of the boat are broken out in some places. You doubt it would float in this condition.' + '</p>' +
+      '</div>');
+  },
+  directions: ['down'],
+  image: '<img src="img/boat.jpg" class="img-styles">',
+  image2: '<img src="img/boat.jpg" class="img-styles">',
+}
 var tunnel2 = {
   title: 'Tunnel 2',
   keywords: [],
@@ -48,7 +80,7 @@ var catacomb3 = {
     $("#tripleContextual").hide();
     catacomb3.directions.push("up");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A trap door apperas in the floor.</p></div>");
   },
   middleCont: function(){
     $("#tripleContextual").hide();
