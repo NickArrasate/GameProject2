@@ -1,3 +1,8 @@
+var exit = {
+  description: '<div class="room" id="exit">' +
+  '<p>' + 'The riddleman drops you at the opposite shore. You see a dim light in the distance.' + '</p>' +
+  '</div>',
+}
 var shore4 = {
   title: "Shore",
   keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut"],
@@ -24,9 +29,16 @@ var shore4 = {
 }
 var shore2 ={
   title: 'Shore',
-  keywords: [],
-  description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness... </p><div>',
-  action:function(){},
+  keywords: ["journal", "book", "rock"],
+  description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness...You notice a small black journal resting on a rock nearby."" </p><div>',
+  action: function(){
+  },
+  after: null,
+  results: function(){
+    $(".modal-page1").empty();
+    $(".modal-page1").append("<p>Journal 3, 7, 1260<br>I am not my pants! I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants! -- Augustus.</p>");
+    $("#myJournal").modal();
+    },
   directions: ['up','down'],
 }
 var shore1 ={
@@ -368,9 +380,9 @@ var labratory = {
 }
 var hallway2 = {
   title: 'Hallway',
-  keywords: ['scrap','paper','note','floor'],
+  keywords: ['scrap','paper','note','floor','book'],
   description: '<div class="room" id="hallway2">' +
-  '<p>' + 'As you reach the bottom of the stairs, the air smells more and more fetid. The weak flame in your hand is the only light. There is a path to your left and one to your right, each indiscernible from the other in the darkness...' + '</p>' +
+  '<p>' + 'As you reach the bottom of the stairs, the air smells more and more fetid. you notice a small book on the floor The weak flame in your hand is the only light. There is a path to your left and one to your right, each indiscernible from the other in the darkness...' + '</p>' +
   '</div>',
   action: function(){
   },
