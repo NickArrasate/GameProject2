@@ -1,4 +1,24 @@
-// CISTERN NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
+var shore4 = {}
+
+var shore3 = {}
+
+var shore2 ={
+  title: 'Shore 2',
+  keywords: [],
+  description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness... </p><div>',
+  action:function(){},
+  directions: ['up','down'],
+}
+
+var shore1 ={
+  title: 'Shore 1',
+  keywords: [],
+  description: '<div class="room" id="shore1"><p>The floor opens up beneath you and you fall into the blackness.  Your fall is stopped when you land on the sandy shore of a vast underground lake.  You cannot see the other side.</p><div>',
+  action:function(){},
+  directions: ['up','down'],
+  image: '<img src="img/shore1.png" class="img-styles">',
+}
+
 var tunnel2 = {
   title: 'Tunnel 2',
   keywords: [],
@@ -46,9 +66,9 @@ var catacomb3 = {
   results: function(){},
   leftCont: function(){
     $("#tripleContextual").hide();
-    catacomb3.directions.push("up");
+    catacomb3.directions.push("left");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door opens to your left...</p></div>");
   },
   middleCont: function(){
     $("#tripleContextual").hide();
@@ -329,7 +349,7 @@ var hallway1 = {
     $('#contextual span.buttontext').empty();
     $('.textBody').empty();
     $('.textBody').append('<p class="modalText">' + 'You used the ' + '<span class="item">' + 'gold lighter' + '</p>');
-    $('.modalItem').empty
+    $('.modalItem').empty();
     $('.modalItem').append('<img id="lighter" src="modalimg/lighter.png" alt="parchment key" />');
     $('#myModal').modal();
     hallway1.directions.push("up");
@@ -405,7 +425,7 @@ var path = {
     var verifyCigs = Character.checkInventory("cigarettes");
     if(verifyCigs !== false){
       $(".textBody").empty();
-      $(".textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.</p>");
+      $(".textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.<br>Be careful though!  Each time You smoke you will lose <span class='health'>health</span>.</p>");
       $('.modalItem').empty();
       $('.modalItem').append('<img id="key" src="modalimg/rolls.png" alt="parchment key" />');
       $("#myModal").modal();
