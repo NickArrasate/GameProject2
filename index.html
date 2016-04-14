@@ -18,16 +18,25 @@
         <div id="room-picture">
         </div>
       </div>
-      <div class="col-xs-2">
+      <div class="col-xs-2" id='stat-wrapper'>
         <div id="item-box">
-          <h4>Items</h4>
+          <h2 class='headerFont'>Items</h2>
           <span id="itemdisplay"></span>
         </div>
         <div id="use-item-box">
-          <h4>Actions</h4>
+          <h2 class='headerFont'>Actions</h2>
           <span id="use-item-display">
             <button id='smokeACig'>Smoke <br>(+1 Sanity, -10 Health)</button><br>
           </span>
+        </div>
+        <div id="character-info"><!--display character information here-->
+            <h2 class='headerFont'>Character Stats</h2>
+              <p id="health">
+            Health: <span id="healthdisplay"></span>
+          </p>
+          <p id="sanity">
+            Sanity: <span id="sanitydisplay"></span>
+          </p>
         </div>
       </div>
     </div>
@@ -40,19 +49,10 @@
           Restart?
         </div>
         <div id="room-display"><!--room displays will append here-->
-
         </div>
       </div>
     <div id="character-wrapper" class="col-xs-2">
-      <div id="character-info" class="col-xs-1"><!--display character information here-->
-          <h4>Character Sheet</h4>
-            <p id="health">
-          Health: <span id="healthdisplay"></span>
-        </p>
-        <p id="sanity">
-          Sanity: <span id="sanitydisplay"></span>
-        </p>
-      </div>
+
     </div>
     <div class="row" id="contextrow">
       <div id="contextual" class="col-xs-12">
