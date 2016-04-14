@@ -1,6 +1,5 @@
-var shore4 = {}
 
-var shore3 = {}
+var shore4 = {}
 
 var shore2 ={
   title: 'Shore 2',
@@ -17,6 +16,39 @@ var shore1 ={
   action:function(){},
   directions: ['up','down'],
   image: '<img src="img/shore1.png" class="img-styles">',
+}
+
+var shore3 = {
+  title: 'Shore 3',
+  keywords: ['boat', 'hull', 'the boat'],
+  description: '<div class="room" id="shore">' +
+  '<p>' + 'As you walk up the shoreline, the inky water continues to lap gently onto the sand. There is a small row boat in the sand.' + '</p>' +
+  '</div>',
+  action: function(){
+    var keyCheck = Character.checkInventory(" Strange Wood Chips");
+    $('.buttontext').empty();
+    if (keyCheck == false) {
+      $('#contextual').show();
+      $('#contextual span.buttontext').append('Use the' + '<span class ="item">' + ' Strange Wood Chips' + '</span>.');
+    } else {
+      $('#contextual').hide();
+    };
+  },
+  after: function(){
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='shore3'>" + "<p>You begin work on the boat. After some time you are able to patch the hole with the" + '<span class ="item">' + ' Strang Wood Chips' + '</span>. They seem to attach themselves to eachother and the wood of the boat.' + '</p></div>');
+    shore3.directions.push('right');
+  },
+  results: function(){
+    $('#room-display').empty();
+    $('#room-display').append(
+      '<div class="room">' +
+      '<p>' + 'The boards at the bottom of the boat are broken out in some places. You doubt it would float in this condition.' + '</p>' +
+      '</div>');
+  },
+  directions: ['down'],
+  image: '<img src="img/boat.jpg" class="img-styles">',
+  image2: '<img src="img/boat.jpg" class="img-styles">',
 }
 
 var tunnel2 = {
@@ -48,7 +80,7 @@ var tunnel = {
   },
   results: function(){},
   directions: ['down'],
-  image: '<img src="img/tunnel.jpg" class="img-styles">'
+  image: '<img src="img/tunnel.jpg" class="img-styles">',
 }
 
 var catacomb3 = {
@@ -379,20 +411,23 @@ var foyer = {
 }
 var terrace = {
   title: 'Terrace',
-  keywords: ['investigate'],
+  keywords: ['investigate','look','explore'],
   description: '<div class="room" id="entrance">' +
   '<p>' + 'You find yourself on a small overgrown terrace, the wind moans through the trees. The shadows beneath the limbs deepen and you feel something watching you. Your skin crawls and you wonder if you might just be imagining things. You are torn between investigating or retreating back to the beaten path.'  + '</p>' +
   '</div>',
   action: function(Character){
     Character.loseSanity(2);
+    $("#tripleContextual").hide();
     },
   after: null,
   results: function() {
     $(".textBody").empty();
-    $(".textBody").append("<p>Only a second after investigating you discover your suspicions were correct. You see glowing eyes gleaming back at you. Your heart skips and your stomach drops into what seems like an endless void and you break out into a cold sweat.</p>");
+    $(".textBody").append("<p class='modalText'>Only a second after investigating you discover your suspicions were correct.<br /> You see glowing eyes gleaming back at you.<br /> Your heart skips,your stomach drops into what seems like an endless void<br /> and you break out into a cold sweat.</p>");
     $('.modalItem').empty();
     $('.modalItem').append('<img id="eyes" src="img/eyes.jpg" alt="scary eyes" />');
     $('#myModal').modal();
+    Character.loseSanity(2);
+    characterRefresh(Character);
   },
   directions: ['left'],
   image: '<img src="img/terrace.jpeg" class="img-styles">',
