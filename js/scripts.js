@@ -44,7 +44,7 @@ Character.prototype.loseHealth = function(amount){
   }
 };
 Character.prototype.smokeCig = function(){
-  this.health -= 5;
+  this.health -= 10;
   this.sanity += 1;
   characterRefresh(Character);
 }
@@ -61,17 +61,17 @@ var Character = new Character(100,10,['Gold Lighter']);
 $(document).ready(function(){
   var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catacomb1, catacomb2, catacomb3];// y-axis array================
   var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum, tunnel, tunnel2];// x-axis array ===========================
-  var roomLeft = [null,null,null,null,null,labratory, office];
+  var roomLeft = [null,null,null,null,null,labratory, office, null, null, shore4, shore1, shore2, shore3];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
   var place = 0;
   var arrayPlace = 1;
   $('#room-display').append(roomArray[arrayPlace][place].description);
   $('#room-display').hide();
-  $('#room-display').fadeIn(2000);
+  $('#room-display').fadeIn(500);
 
   $('#room-picture').append(roomArray[arrayPlace][place].image);
   $('#room-picture').hide();
-  $('#room-picture').fadeIn(2000);
+  $('#room-picture').fadeIn(500);
   displayCoords(arrayPlace, place);
 
   // movement and setting=====================================================
@@ -86,11 +86,12 @@ $(document).ready(function(){
     $('#room-display').empty();
     $('#room-display').append(roomArray[arrayPlace][place].description);
     $('#room-display').hide();
-    $('#room-display').fadeIn(2000);
+
+    $('#room-display').fadeIn(500);
     $('#room-picture').empty();
     $('#room-picture').append(roomArray[arrayPlace][place].image);
     $('#room-picture').hide();
-    $('#room-picture').fadeIn(2000);
+    $('#room-picture').fadeIn(500);
     console.log(place, arrayPlace);// logs current coords==========================
     displayCoords(arrayPlace, place, roomArray[arrayPlace][place].title);
 //calls the room action function and refreshes stats=================================

@@ -22,6 +22,7 @@ p {
   border: 5px solid white;
 }
 
+
 .room-frame {
   background-image: url(../img/frame.png);
   z-index: 2;
@@ -399,6 +400,15 @@ text-align: center;
   color: rgba(102, 51, 0, .6);
   text-align: center;
   text-shadow: .5px .25px .25px black;
+}
+
+/*SCARY EYES*/
+#eyes {
+  width:570px;
+  margin-top: 250px;
+  margin-left: 80px;
+  border-radius: 50px;
+  box-shadow: 60px;
 }
 
 #key {
