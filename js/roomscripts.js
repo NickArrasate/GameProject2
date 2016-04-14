@@ -33,7 +33,7 @@ var tunnel = {
 
 var catacomb3 = {
   title: 'Catacomb 3',
-  keywords: ['left','left lever','right','right lever','center', 'center lever', 'middle', 'middle lever'],
+  keywords: [],
   description: '<div class="room" id="catacomb3">' +
   '<p>' + 'The door slams shut behind you and will not open.  You find yourself in yet another catacomb.  Another stone column stands in the middle, with three more levers facing you.' + '</p>' +
   '</div>',
@@ -64,6 +64,7 @@ var catacomb3 = {
   },
   directions: [],
   image: '<img src="img/catacomb2.jpg" class="img-styles">',
+  image2: '<img src="img/catacomb2.jpg" class="img-styles">',
 }
 
 var catacomb2 = {
@@ -99,6 +100,7 @@ var catacomb2 = {
   },
   directions: [],
   image: '<img src="img/cryptEntrance.jpg" class="img-styles">',
+  image2: '<img src="img/cryptEntrance.jpg" class="img-styles">',
 }
 
 var catacomb1 = {
@@ -134,6 +136,7 @@ var catacomb1 = {
   },
   directions: [],
   image: '<img src="img/catacomb1.jpg" class="img-styles">',
+  image2: '<img src="img/catacomb1.jpg" class="img-styles">',
 }
 var mausoleum = {
   title: 'Mausoleum',
