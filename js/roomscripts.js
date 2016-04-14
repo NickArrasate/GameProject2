@@ -1,3 +1,15 @@
+var water2 = {
+  title: "Water 2",
+  keywords: ['breath', 'his breath'],
+  description: "<div class='room' id='water2'><p>You continue rowing into the blackness, and the figure poses his next riddle: 'What is light as a feather, but even the world's strongest man could not hold it for more than one minute?'</p></div>",
+  action: function(){},
+  results: function(){
+    $("#room-display").empty();
+    $("#room-display").append("<div class='room' id='water2'><p>'Very wise...' he cackles, and continues rowing.</p></div>");
+    Character.addSanity(1);
+  },
+}
+
 var shore4 = {
   title: "Shore",
   keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut"],
