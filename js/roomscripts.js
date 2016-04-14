@@ -88,7 +88,7 @@ var shore2 = {
   after: null,
   results: function(){
     $(".modal-page1").empty();
-    $(".modal-page1").append("<p>Journal 3, 7, 1260<br>I am not my pants! I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants!I am not my pants! -- Augustus.</p>");
+    $(".modal-page1").append("<p>Journal 3, 8, 1260<br>The ritual was successful. Our lord has arisen! He has asked that I bring the others to complete our transformation, though they might resist his embrace at first they will come to love him as I do. We are all saved! WE ARE ALL SAVED! -- Augustus.</p>");
     $("#myJournal").modal();
     },
   directions: ['up','down'],
@@ -135,16 +135,20 @@ var shore3 = {
 }
 var tunnel2 = {
   title: 'Tunnel',
-  keywords: [],
+  keywords: ["note", "journal"],
   description: '<div class="room" id="tunnel2">' +
-  '<p>' + 'The door slams shut behind you and will not open. The air is noticably stale here. Your only option is to proceed through the cavernous halls.' + '</p>' +
+  '<p>' + 'The door slams shut behind you and will not open. The air is noticably stale here. you notice a small note lying on the ground... Your only option is to proceed through the cavernous halls.' + '</p>' +
   '</div>',
   action: function(){
     Character.loseSanity(1);
     characterRefresh(Character);
     $(".tripleContextual").hide();
   },
-  results: function(){},
+  results: function(){
+    $(".modal-page1").empty();
+    $(".modal-page1").append("<p>Journal 3, 6, 1260<br>I am eager to meet our lord, but this set of crypts presents itself as quite a maze. different levers seem to open different doors. I am lost in here, but I know my lord will guide the way.   -- Augustus.</p>");
+    $("#myJournal").modal();
+  },
   directions: ['down'],
   image: '<img src="img/tunnel2.jpg" class="img-styles">',
 }
