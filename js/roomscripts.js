@@ -1,4 +1,56 @@
-// CISTERN NEEDS PROGRAMMING FOR FUNCTIONS & ARRAYS
+
+var shore4 = {}
+
+var shore2 ={
+  title: 'Shore 2',
+  keywords: [],
+  description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness... </p><div>',
+  action:function(){},
+  directions: ['up','down'],
+}
+
+var shore1 ={
+  title: 'Shore 1',
+  keywords: [],
+  description: '<div class="room" id="shore1"><p>The floor opens up beneath you and you fall into the blackness.  Your fall is stopped when you land on the sandy shore of a vast underground lake.  You cannot see the other side.</p><div>',
+  action:function(){},
+  directions: ['up','down'],
+  image: '<img src="img/shore1.png" class="img-styles">',
+}
+
+var shore3 = {
+  title: 'Shore 3',
+  keywords: ['boat', 'hull', 'the boat'],
+  description: '<div class="room" id="shore">' +
+  '<p>' + 'As you walk up the shoreline, the inky water continues to lap gently onto the sand. There is a small row boat in the sand.' + '</p>' +
+  '</div>',
+  action: function(){
+    var keyCheck = Character.checkInventory(" Strange Wood Chips");
+    $('.buttontext').empty();
+    if (keyCheck == false) {
+      $('#contextual').show();
+      $('#contextual span.buttontext').append('Use the' + '<span class ="item">' + ' Strange Wood Chips' + '</span>.');
+    } else {
+      $('#contextual').hide();
+    };
+  },
+  after: function(){
+    $('#room-display').empty();
+    $('#room-display').append("<div class='room' id='shore3'>" + "<p>You begin work on the boat. After some time you are able to patch the hole with the" + '<span class ="item">' + ' Strang Wood Chips' + '</span>. They seem to attach themselves to eachother and the wood of the boat.' + '</p></div>');
+    shore3.directions.push('right');
+  },
+  results: function(){
+    $('#room-display').empty();
+    $('#room-display').append(
+      '<div class="room">' +
+      '<p>' + 'The boards at the bottom of the boat are broken out in some places. You doubt it would float in this condition.' + '</p>' +
+      '</div>');
+  },
+  directions: ['down'],
+  image: '<img src="img/boat.jpg" class="img-styles">',
+  image2: '<img src="img/boat.jpg" class="img-styles">',
+}
+
 var tunnel2 = {
   title: 'Tunnel 2',
   keywords: [],
@@ -28,7 +80,7 @@ var tunnel = {
   },
   results: function(){},
   directions: ['down'],
-  image: '<img src="img/tunnel.jpg" class="img-styles">'
+  image: '<img src="img/tunnel.jpg" class="img-styles">',
 }
 
 var catacomb3 = {
@@ -41,14 +93,14 @@ var catacomb3 = {
     catacomb3.directions = [];
     Character.loseSanity(1);
     characterRefresh(Character);
-    $("#tripleContextual").show();
+    $("#tripleContextual").fadeIn();
   },
   results: function(){},
   leftCont: function(){
     $("#tripleContextual").hide();
-    catacomb3.directions.push("up");
+    catacomb3.directions.push("left");
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door on the far wall has appeared.</p></div>");
+    $('#room-display').append("<div class='room' id='catacomb1'>" + "<p>A door opens to your left...</p></div>");
   },
   middleCont: function(){
     $("#tripleContextual").hide();
@@ -77,7 +129,7 @@ var catacomb2 = {
     catacomb2.directions = [];
     Character.loseSanity(1);
     characterRefresh(Character);
-    $("#tripleContextual").show();
+    $("#tripleContextual").fadeIn();
   },
   results: function(){},
   leftCont: function(){
@@ -113,7 +165,7 @@ var catacomb1 = {
     catacomb1.directions = [];
     Character.loseSanity(1);
     characterRefresh(Character);
-    $("#tripleContextual").show();
+    $("#tripleContextual").fadeIn();
   },
   results: function(){},
   leftCont: function(){
@@ -145,7 +197,9 @@ var mausoleum = {
   '<p>' + 'As you continue walking, the stench of death grows. You can barely make out still shapes around you, bodies eternally resting. You arrive in a large open space, dimly lit by torches. There seem to be multiple diverging passages branching out from the larger room' + '<p/>' +
   '<div>',
   action: function(){
+
     $("#tripleContextual").hide();
+
     $(".buttontext").empty();
     $('#contextual').show();
     $('#contextual span.buttontext').append('listen');
@@ -168,7 +222,6 @@ var cryptEntrance = {
   '<p>' + 'You step tenatively through the hidden door into a dark musty cold room. The floors are stone and the smell of death greets you... You raise your lighter in an attempt to see better but the darkness seems to continue on for quite some distance. ' + '<p/>' +
   '<div>',
   action: function(){
-    $("#tripleContextual").hide();
     Character.loseSanity(1);
     characterRefresh(character);
     },
@@ -183,7 +236,6 @@ var library = {
   '<p>' + 'The door lead to a mouldy library. There are tall bookcases and nooks for study. The books are badly damaged by age and have no discernible titles. There is a brass candlestick holder attached to a wall near a bookcase. You don\'t immmediately see any exits or entrances but you notice odd markings at the foot of one of the tall bookcases. It appears the bookcase can swing outward...' + '<p/>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
   },
   results: function(){
     library.directions.push('up');
@@ -209,7 +261,6 @@ var libraryDoor = {
   '<p>' + 'You encounter an old door, barely illuminated by a lit torch.' + '</p>' +
   '</div>',
   action: function() {
-    $("#tripleContextual").hide();
     var keyCheck = Character.checkInventory(" Small Key");
     $('.buttontext').empty();
     if (keyCheck == false) {
@@ -260,7 +311,6 @@ var office = {
   '<p>' + 'At the end of the hall you enter a small office. tipped and molding furniture lay on the ground among various scattered documents. There is a desk in the middle of the room strewn with papers.' + '<p/>' +
   '<div>',
   action: function(){
-    $("#tripleContextual").hide();
   },
   results: function(){
     var firstKeyCheck = Character.checkInventory(" Small Key");
@@ -282,7 +332,6 @@ var labratory = {
   '<p>' + 'You make your way down the passage to the left. After walking for a bit, you come across a wood door set in the wall. There is an old sconce on the wal nearby. You light the sconce to shed more light on your surroundings. The door is slightly ajar. Will you investigate?' + '</p>' +
   '</div>',
   action: function(){
-  $("#tripleContextual").hide();
   $('#contextual').show();
   $('#contextual span.buttontext').text('Push the door open.');
 },
@@ -308,7 +357,6 @@ var hallway2 = {
   '<p>' + 'As you reach the bottom of the stairs, the air smells more and more fetid. The weak flame in your hand is the only light. There is a path to your left and one to your right, each indiscernible from the other in the darkness...' + '</p>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
   },
   after: null,
   results: function(){
@@ -326,7 +374,6 @@ var hallway1 = {
   '<p>' + 'As you enter the stairway, you feel a chill wind rise to greet you. The air has an old smell about it as if it has been laying still for eons. The stairs before you plunge into darkness. If only there was an item to light help the way...' + '</p>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
     $('#contextual').show();
     $('#contextual span.buttontext').append('Light the <span class ="item">gold lighter</span>.');
     },
@@ -337,7 +384,7 @@ var hallway1 = {
     $('#contextual span.buttontext').empty();
     $('.textBody').empty();
     $('.textBody').append('<p class="modalText">' + 'You used the ' + '<span class="item">' + 'gold lighter' + '</p>');
-    $('.modalItem').empty
+    $('.modalItem').empty();
     $('.modalItem').append('<img id="lighter" src="modalimg/lighter.png" alt="parchment key" />');
     $('#myModal').modal();
     hallway1.directions.push("up");
@@ -358,7 +405,6 @@ var foyer = {
   '<p>' + 'You scraped your back on the rusty gate as you passed beneath (-1 <span class = "health">health</span>). You find yourself in a small, dim vestibule. The once, grand meeting place of the cathedral is badly damaged and the pews are a jumbled mess. The aisles are a mess of dusty detritus. You see a narrow staircase leading down... ' + '</p>' +
   '</div>',
   action: function(Character){
-    $("#tripleContextual").hide();
     Character.loseHealth(1);
     characterRefresh(Character);
     },
@@ -373,6 +419,7 @@ var terrace = {
   '<p>' + 'You find yourself on a small overgrown terrace, the wind moans through the trees. The shadows beneath the limbs deepen and you feel something watching you. Your skin crawls and you wonder if you might just be imagining things. You are torn between investigating or retreating back to the beaten path.'  + '</p>' +
   '</div>',
   action: function(Character){
+    Character.loseSanity(2);
     $("#tripleContextual").hide();
     },
   after: null,
@@ -396,7 +443,6 @@ var entrance = {
   '<p>' + 'After seeing the front door of the large building is blocked by debris you move around to the side to seek entrance. You are facing a moss-laden archway on the broad side of the building. There is a rusted, dilapidated gate hanging from it\'s hinges. There may be just enough space to squeeze between the doors. To your right there is an overgrown path.' + '</p>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
   },
   after: null,
   directions: ['up','down','right'],
@@ -410,7 +456,6 @@ var path = {
   '<p>' + 'You stand alone on a narrow path hemmed in by towering trees. A blocky shadow looms ahead. You can only go forward.  You remember you have something of importance in your coat pocket...' + '</p>' +
   '</div>',
   action: function(){
-    $("#tripleContextual").hide();
     $('#down').hide();
     },
   after: null,
@@ -418,7 +463,7 @@ var path = {
     var verifyCigs = Character.checkInventory("cigarettes");
     if(verifyCigs !== false){
       $(".textBody").empty();
-      $(".textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.</p>");
+      $(".textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.<br>Be careful though!  Each time You smoke you will lose <span class='health'>health</span>.</p>");
       $('.modalItem').empty();
       $('.modalItem').append('<img id="key" src="modalimg/rolls.png" alt="parchment key" />');
       $("#myModal").modal();
