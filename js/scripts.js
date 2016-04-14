@@ -69,7 +69,12 @@ $(document).ready(function(){
   var place = 0;
   var arrayPlace = 1;
   $('#room-display').append(roomArray[arrayPlace][place].description);
+  $('#room-display').hide();
+  $('#room-display').fadeIn(2000);
+
   $('#room-picture').append(roomArray[arrayPlace][place].image);
+  $('#room-picture').hide();
+  $('#room-picture').fadeIn(2000);
   displayCoords(arrayPlace, place);
 
   // movement and setting=====================================================
@@ -83,8 +88,12 @@ $(document).ready(function(){
   };
     $('#room-display').empty();
     $('#room-display').append(roomArray[arrayPlace][place].description);
+    $('#room-display').hide();
+    $('#room-display').fadeIn(2000);
     $('#room-picture').empty();
     $('#room-picture').append(roomArray[arrayPlace][place].image);
+    $('#room-picture').hide();
+    $('#room-picture').fadeIn(2000);
     console.log(place, arrayPlace);// logs current coords==========================
     displayCoords(arrayPlace, place, roomArray[arrayPlace][place].title);
 //calls the room action function and refreshes stats=================================

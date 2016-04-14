@@ -128,9 +128,9 @@ var mausoleum = {
   '<p>' + 'As you continue walking, the stench of death grows. You can barely make out still shapes around you, bodies eternally resting. You arrive in a large open space, dimly lit by torches. There seem to be multiple diverging passages branching out from the larger room' + '<p/>' +
   '<div>',
   action: function(){
-    $("#contextual").empty();
-    $('#contextual').show();
-    $('#contextual span.buttontext').append('listen');
+    $("contextual").empty();
+    $("#contextual").show();
+    $("contextual span.buttontext").append("listen");
   },
   after: function() {
     $('#room-display').empty();
