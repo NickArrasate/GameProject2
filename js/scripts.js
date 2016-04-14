@@ -21,8 +21,7 @@ Character.prototype.loseSanity = function(amount){
   this.sanity -= amount;
   if(this.sanity <= 0){
     //Modal to display Game over
-    $('#insaneModal').modal();
-    // location.reload();
+    youCrazy();
   } else if (this.sanity > 0){
       return this.sanity;
       characterRefresh(Character);
@@ -36,8 +35,7 @@ Character.prototype.loseHealth = function(amount){
   this.health -= amount;
   if(this.health <= 0){
     //Modal to display Game over
-    $('#loseModal').modal();
-    // location.reload();
+    youDied();
   } else if (this.health > 0){
       return this.health;
       characterRefresh(Character);
@@ -49,8 +47,7 @@ Character.prototype.smokeCig = function(){
   characterRefresh(Character);
   if(this.health <= 0){
     //Modal to display Game over
-    $('#loseModal').modal();
-    // location.reload();
+      youDied();
   } else if (this.health > 0){
       return this.health;
       characterRefresh(Character);
@@ -166,11 +163,28 @@ $(document).ready(function(){
     Character.smokeCig();
     characterRefresh(Character);
   });
+  $('#continue').click(function(event){
+    location.reload();
+  });
 });
 // Business logic=======================================
 // protoypes for updating character stats. Call the proto in the room object functions.
 
 // checks object.directions for available directions and displays related buttons======================
+function youDied(){
+  $('#loseModal').modal();
+  $('.arrow').empty();
+  $("#smokeACig").hide();
+  $('#room-display').empty();
+  $('#continue').show();
+}
+function youCrazy(){
+  $('#insaneModal').modal();
+  $('.arrow').empty();
+  $("#smokeACig").hide();
+  $('#room-display').empty();
+  $('#continue').show();
+}
 function directionCheck(directions){
   for (i = 0; i < directions.length; i++){
   if (directions[i] == 'up'){

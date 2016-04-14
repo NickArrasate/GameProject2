@@ -21,8 +21,8 @@ var shore4 = {
   },
   directions: ["up"],
   image: '<img src="img/shore4.jpg" class="img-styles">',
-
-var shore2 ={
+}
+var shore2 = {
   title: 'Shore',
   keywords: [],
   description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness... </p><div>',
@@ -511,7 +511,7 @@ var introduction = {
     $('#contextual').hide();
     $('#contextual span.buttontext').empty();
     characterRefresh(Character);
-    this.directions.push('up')
+    this.directions.push('up');
     place = 2;
     },
   directions: [],

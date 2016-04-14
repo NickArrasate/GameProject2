@@ -28,8 +28,6 @@ p {
 .room-frame {
   background-image: url(../img/frame.png);
   z-index: 2;
-  /*margin: auto;*/
-  /*margin-top: 100px;*/
   max-width: 100%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -417,5 +415,8 @@ text-align: center;
 }
 
 #tripleContextual{
+  display: none;
+}
+#continue {
   display: none;
 }
