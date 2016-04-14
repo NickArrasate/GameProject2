@@ -49,7 +49,7 @@ Character.prototype.loseHealth = function(amount){
 Character.prototype.smokeCig = function(Character){
   this.health -= 5;
   this.sanity += 1;
-  characterRefresh();
+  characterRefresh(Character);
 }
 Character.prototype.checkInventory = function(passItem){
   for(i = 0; i < this.items.length; i += 1){
@@ -62,8 +62,8 @@ var Character = new Character(100,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
 $(document).ready(function(){
-  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catecomb1, catecomb2, catecomb3];// y-axis array================
-  var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum, tunnel, cistern];// x-axis array ===========================
+  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catacomb1, catacomb2, catacomb3];// y-axis array================
+  var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum, tunnel, tunnel2];// x-axis array ===========================
   var roomLeft = [null,null,null,null,null,labratory, office];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
   var place = 0;
@@ -148,6 +148,7 @@ $(document).ready(function(){
   $("button#smokeACig").click(function(event){
     event.preventDefault();
     Character.smokeCig();
+    characterRefresh(Character);
   });
 });
 // Business logic=======================================
