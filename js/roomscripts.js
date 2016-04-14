@@ -1,5 +1,19 @@
 
-var water3 = {}
+var water3 = {
+  title: "Water 2",
+  keywords: ['pawn', 'pawns'],
+  description: "<div class='room' id='water2'><p>You continue rowing into the blackness, and the figure poses his next riddle: 'The eight of us go forth not back to protect our king from a foes attack. What are we? '</p></div>",
+  action: function(){},
+  results: function(){
+    $("#room-display").empty();
+    $("#room-display").append("<div class='room' id='water3'><p>'How clever...' he cackles.</p></div>");
+    water2.directions.push("up");
+    Character.addSanity(1);
+  },
+  directions: ['left'],
+  image: null,
+}
+
 var exit = {
   description: '<div class="room" id="exit">' +
   '<p>' + 'The riddleman drops you at the opposite shore. You see a dim light in the distance.' + '</p>' +
