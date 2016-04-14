@@ -9,8 +9,8 @@ var water1 = {
     $(".tripleContextual").hide();
   },
   results: function(){},
-  directions: ['right'],
-  image: '<img src="img/tunnel.jpg" class="img-styles">',
+  directions: ['right', 'left'],
+  image: '<img src="img/water1.jpg" class="img-styles">',
 }
 
 var shore4 = {
@@ -36,8 +36,8 @@ var shore4 = {
   },
   directions: ["up"],
   image: '<img src="img/shore4.jpg" class="img-styles">',
-
-var shore2 ={
+}
+var shore2 = {
   title: 'Shore',
   keywords: [],
   description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness... </p><div>',
