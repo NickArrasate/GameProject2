@@ -45,12 +45,10 @@ p {
   padding-bottom: 0;
   overflow: auto;
 }
-
 #room-picture{
   min-width: 470px;
   min-height:350px;
 }
-
 .room {
   align-items: center;
   text-align: center;
@@ -75,14 +73,15 @@ p {
   background-repeat: no-repeat;
   min-width: 133px;
 }
-
 #character-info h4,
 #item-box h4,
 #use-item-box h4{
   text-align: left;
 }
+#item-box {
+  border-bottom: none;
+}
 #button-display {
-
   background-image: url(../img/frame.png);
   background-size: 100% 100%;
   height: 68px;
@@ -96,6 +95,10 @@ p {
 }
 .directions:hover {
   cursor: pointer;
+}
+#textEnterDiv {
+  margin-right: 0;
+  padding-left: 10px;
 }
 #textInput {
   font-size: 20pt;
