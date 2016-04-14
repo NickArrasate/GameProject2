@@ -11,7 +11,7 @@ var water3 = {
     Character.addSanity(1);
   },
   directions: ['left'],
-  image: null,
+  image: '<img src="img/water3.png" class="img-styles">',
 }
 
 var exit = {
@@ -32,7 +32,7 @@ var water2 = {
     Character.addSanity(1);
   },
   directions: ['left'],
-  image: null,
+  image: '<img src="img/water2.jpg" class="img-styles">',
 }
 
 var water1 = {
@@ -92,6 +92,7 @@ var shore2 = {
     $("#myJournal").modal();
     },
   directions: ['up','down'],
+  image: '<img src="img/shore2.jpg" class="img-styles">',
 }
 var shore1 ={
   title: 'Shore',
