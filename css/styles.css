@@ -402,6 +402,15 @@ text-align: center;
   text-shadow: .5px .25px .25px black;
 }
 
+/*SCARY EYES*/
+#eyes {
+  width:570px;
+  margin-top: 250px;
+  margin-left: 80px;
+  border-radius: 50px;
+  box-shadow: 60px;
+}
+
 #key {
   padding-top: 200px;
   padding-left: 85px;
