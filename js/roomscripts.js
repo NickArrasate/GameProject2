@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var exit = {
   description: '<div class="room" id="exit">' +
   '<p>' + 'The riddleman drops you at the opposite shore. You see a dim light in the distance.' + '</p>' +
