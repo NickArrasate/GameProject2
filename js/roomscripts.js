@@ -1,8 +1,36 @@
+<<<<<<< HEAD
 var exit = {
   description: '<div class="room" id="exit">' +
   '<p>' + 'The riddleman drops you at the opposite shore. You see a dim light in the distance.' + '</p>' +
   '</div>',
 }
+
+var water2 = {
+  title: "Water 2",
+  keywords: ['breath', 'his breath'],
+  description: "<div class='room' id='water2'><p>You continue rowing into the blackness, and the figure poses his next riddle: 'What is light as a feather, but even the world's strongest man could not hold it for more than one minute?'</p></div>",
+  action: function(){},
+  results: function(){
+    $("#room-display").empty();
+    $("#room-display").append("<div class='room' id='water2'><p>'Very wise...' he cackles, and continues rowing.</p></div>");
+    Character.addSanity(1);
+  },
+
+var water1 = {
+  title: 'Water1',
+  keywords: [],
+  description: '<div class="room" id="waterBoat1">' +
+  '<p>' + 'As the skiff departs from the shore, you notice the shrouded figure accompanying you begins to display a strange attitude. Almost as if he had this entire encounter planned all along.' + '</p>' +
+  '</div>',
+  action: function(){
+    Character.loseSanity(1);
+    $(".tripleContextual").hide();
+  },
+  results: function(){},
+  directions: ['right', 'left'],
+  image: '<img src="img/water1.jpg" class="img-styles">',
+}
+
 var shore4 = {
   title: "Shore",
   keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut"],
@@ -27,7 +55,11 @@ var shore4 = {
   directions: ["up"],
   image: '<img src="img/shore4.jpg" class="img-styles">',
 }
+<<<<<<< HEAD
 var shore2 ={
+=======
+var shore2 = {
+>>>>>>> e170ee6bfc9ff70fd974719260d9b85628e8574d
   title: 'Shore',
   keywords: ["journal", "book", "rock"],
   description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness...You notice a small black journal resting on a rock nearby."" </p><div>',
