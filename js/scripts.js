@@ -22,6 +22,8 @@ Character.prototype.loseSanity = function(amount){
   if(this.sanity <= 0){
     //Modal to display Game over
     youCrazy();
+  } else if (this.sanity <= 3){
+    almost();
   } else if (this.sanity > 0){
       return this.sanity;
       characterRefresh(Character);
@@ -158,7 +160,7 @@ $(document).ready(function(){
     characterRefresh();
   });
 
-  $("button#smokeACig").click(function(event){
+  $("#smokeACig").click(function(event){
     event.preventDefault();
     Character.smokeCig();
     characterRefresh(Character);
@@ -177,6 +179,9 @@ function youDied(){
   $("#smokeACig").hide();
   $('#room-display').empty();
   $('#continue').show();
+}
+function almost(){
+  $('#almostModal').modal();
 }
 function youCrazy(){
   $('#insaneModal').modal();

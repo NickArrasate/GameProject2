@@ -11,7 +11,7 @@ var water3 = {
     Character.addSanity(1);
   },
   directions: ['left'],
-  image: null,
+  image: '<img src="img/water3.png" class="img-styles">',
 }
 
 var exit = {
@@ -32,7 +32,7 @@ var water2 = {
     Character.addSanity(1);
   },
   directions: ['left'],
-  image: null,
+  image: '<img src="img/water2.jpg" class="img-styles">',
 }
 
 var water1 = {
@@ -51,7 +51,7 @@ var water1 = {
     water1.directions.push("right");
     Character.addSanity(1);
   },
-  directions: ['left'],
+  directions: [],
   image: '<img src="img/water1.jpg" class="img-styles">',
 }
 
@@ -67,15 +67,24 @@ var shore4 = {
   results: function(){
     var strangeChipsCheck = Character.checkInventory(" Strange Wood Chips");
     if (strangeChipsCheck !== false){
-      $('#room-display').empty();
-      $('#room-display').append(
-        '<div class="room">' +
-        '<p>' + 'As you investigate the tree further you notice disturbed earth covered in glowings woodchips. Whoever or whatever... made these markings was chopping was gathering woodchips from the tree. You pick up some a handful of woodchips and put them in your pocket.' + '</p>' +
-        '</div>');
+      var verifyWood = Character.checkInventory(" Strange Wood Chips");
+      if(verifyWood !== false){
+        $("#myModal .textBody").empty();
+        $("#myModal .textBody").append("<p class='modalText'>You tear some bark from the strange tree.</p>");
+        $('#myModal .modalItem').empty();
+        $('#myModal .modalItem').append('<img id="wood" src="modalimg/wood.png" alt="parchment key" />');
+        $("#myModal").modal();
+        Character.items.push(' Strange Wood Chips');
+        $('#room-display').empty();
+        $('#room-display').append(
+          '<div class="room">' +
+          '<p>' + 'As you investigate the tree further you notice disturbed earth covered in glowings woodchips. Whoever or whatever... made these markings was chopping was gathering woodchips from the tree. You pick up some a handful of woodchips and put them in your pocket.' + '</p>' +
+          '</div>');
       Character.items.push(' Strange Wood Chips');
       characterRefresh(Character);
     }
-  },
+  }
+},
   directions: ["up"],
   image: '<img src="img/shore4.jpg" class="img-styles">',
 }
@@ -92,6 +101,7 @@ var shore2 = {
     $("#myJournal").modal();
     },
   directions: ['up','down'],
+  image: '<img src="img/shore2.jpg" class="img-styles">',
 }
 var shore1 ={
   title: 'Shore',
@@ -281,7 +291,7 @@ var mausoleum = {
     Character.loseSanity(1);
     $(".buttontext").empty();
     $('#contextual').show();
-    $('#contextual span.buttontext').append('listen');
+    $('#contextual span.buttontext').append('Listen');
   },
   after: function() {
     $('#room-display').empty();
@@ -298,7 +308,7 @@ var cryptEntrance = {
   title: 'Crypt Entrance',
   keywords: [],
   description: '<div class="room" id="cryptEntrance">' +
-  '<p>' + 'You step tenatively through the hidden door into a dark musty cold room. The floors are stone and the smell of death greets you... You raise your lighter in an attempt to see better but the darkness seems to continue on for quite some distance. ' + '<p/>' +
+  '<p>' + 'You step tentatively through the hidden door into a dark musty cold room. The floors are stone and the smell of death greets you... You raise your lighter in an attempt to see better but the darkness seems to continue on for quite some distance. The oppressive atmosphere begins to wear away at your nerves, How much more of this can your psyche endure?' + '<p/>' +
   '<div>',
   action: function(){
     Character.loseSanity(1);
@@ -481,10 +491,9 @@ var hallway1 = {
 var foyer = {
   title: 'Vestibule',
   description: '<div class="room" id="foyer">' +
-  '<p>' + 'You scraped your back on the rusty gate as you passed beneath (-1 <span class = "health">health</span>). You find yourself in a small, dim vestibule. The once, grand meeting place of the cathedral is badly damaged and the pews are a jumbled mess. The aisles are a mess of dusty detritus. You see a narrow staircase leading down... ' + '</p>' +
+  '<p>' + 'You scraped your back on the rusty gate as you passed beneath. You find yourself in a small, dim vestibule. The once grand meeting place of the cathedral is badly damaged and the pews are a jumbled mess. The aisles are a mess of dusty detritus. You see a narrow staircase leading down and you can not go back... ' + '</p>' +
   '</div>',
   action: function(Character){
-    Character.loseHealth(1);
     characterRefresh(Character);
     },
   after: null,
@@ -539,10 +548,10 @@ var path = {
     },
   after: null,
   results: function(){
-    var verifyCigs = Character.checkInventory("cigarettes");
+    var verifyCigs = Character.checkInventory(" Cigarettes");
     if(verifyCigs !== false){
       $("#myModal .textBody").empty();
-      $("#myModal .textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.<br>Be careful though!  Each time You smoke you will lose <span class='health'>health</span>.</p>");
+      $("#myModal .textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p class='modalText1'>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.<br>Be careful though!  Each time You smoke you will lose <span class='health'>health</span>.</p>");
       $('#myModal .modalItem').empty();
       $('#myModal .modalItem').append('<img id="key" src="modalimg/rolls.png" alt="parchment key" />');
       $("#myModal").modal();
