@@ -25,7 +25,7 @@ Character.prototype.loseSanity = function(amount){
     location.reload();
   } else if (this.sanity > 0){
       return this.sanity;
-      characterRefresh();
+      characterRefresh(Character);
   }
 };
 Character.prototype.addHealth = function(amount){
@@ -47,6 +47,15 @@ Character.prototype.smokeCig = function(){
   this.health -= 10;
   this.sanity += 1;
   characterRefresh(Character);
+  if(this.health <= 0){
+    //Modal to display Game over
+    alert("You have Died.  Game Over.");
+    location.reload();
+  } else if (this.health > 0){
+      return this.health;
+      characterRefresh(Character);
+  }
+
 }
 Character.prototype.checkInventory = function(passItem){
   for(i = 0; i < this.items.length; i += 1){
