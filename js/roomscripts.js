@@ -13,13 +13,11 @@ var water3 = {
   directions: ['left'],
   image: '<img src="img/water3.png" class="img-styles">',
 }
-
 var exit = {
   description: '<div class="room" id="exit">' +
   '<p>' + 'The riddleman drops you at the opposite shore. You see a dim light in the distance.' + '</p>' +
   '</div>',
 }
-
 var water2 = {
   title: "Water 2",
   keywords: ['breath', 'his breath'],
@@ -34,7 +32,6 @@ var water2 = {
   directions: ['left'],
   image: '<img src="img/water2.jpg" class="img-styles">',
 }
-
 var water1 = {
   title: 'Water1',
   keywords: ["nothing"],
@@ -54,7 +51,6 @@ var water1 = {
   directions: [],
   image: '<img src="img/water1.jpg" class="img-styles">',
 }
-
 var shore4 = {
   title: "Shore",
   keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut"],
@@ -91,7 +87,7 @@ var shore4 = {
 var shore2 = {
   title: 'Shore',
   keywords: ["journal", "book", "rock"],
-  description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness...You notice a small black journal resting on a rock nearby."" </p><div>',
+  description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness...You notice a small black journal resting on a rock nearby.</p><div>',
   action: function(){
   },
   after: null,
@@ -212,7 +208,6 @@ var catacomb3 = {
   image: '<img src="img/catacomb2.jpg" class="img-styles">',
   image2: '<img src="img/catacomb2.jpg" class="img-styles">',
 }
-
 var catacomb2 = {
   title: 'Catacomb',
   keywords: [],
@@ -248,7 +243,6 @@ var catacomb2 = {
   image: '<img src="img/cryptEntrance.jpg" class="img-styles">',
   image2: '<img src="img/cryptEntrance.jpg" class="img-styles">',
 }
-
 var catacomb1 = {
   title: 'Catacomb',
   keywords: [],
@@ -307,7 +301,7 @@ var mausoleum = {
     directions: ["down", "left"],
     image: '<img src="img/mausoleum.jpg" class="img-styles">',
     image2: '<img src="img/mausoleum.jpg" class="img-styles">',
-  }
+}
 var cryptEntrance = {
   title: 'Crypt Entrance',
   keywords: [],
@@ -364,7 +358,7 @@ var libraryDoor = {
       $('#contextual span.buttontext').text('Try the door.');
     };
 },
-after: function() {
+  after: function() {
   var keyCheck = Character.checkInventory(" Small Key")
   if (keyCheck == false) {
     Character.addSanity(1);
@@ -460,7 +454,6 @@ var hallway2 = {
   directions: ['left','right'],
   image: '<img src="img/wall.jpg" class="img-styles">',
 }
-
 var hallway1 = {
   title: 'Staircase',
   description: '<div class="room" id="hallway1">' +
@@ -491,7 +484,6 @@ var hallway1 = {
     image2: '<img src="img/stairs.jpg" class="img-styles">',
     directions: ["down"],
   }
-
 var foyer = {
   title: 'Vestibule',
   description: '<div class="room" id="foyer">' +
@@ -526,9 +518,7 @@ var terrace = {
   },
   directions: ['left'],
   image: '<img src="img/terrace.jpeg" class="img-styles">',
-
 }
-
 var entrance = {
   title: 'Entrance',
   description: '<div class="room" id="entrance">' +
@@ -540,7 +530,6 @@ var entrance = {
   directions: ['up','down','right'],
   image: '<img src="img/gate.jpg" class="img-styles">'
 }
-
 var path = {
   title: 'Path',
   keywords: ['pocket','coat','jacket','pockets',],

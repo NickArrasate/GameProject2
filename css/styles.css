@@ -9,11 +9,6 @@ body {
 p {
   max-height: 235px;
 }
-/*.container {
-  max-width: 100%;
-  margin: none;
-  align-items: center;
-}*/
 .img-styles{
   width: 100%;
   max-height: 650px;
@@ -23,8 +18,6 @@ p {
   border-radius: 1px;
   border: 5px solid white;
 }
-
-
 .room-frame {
   background-image: url(../img/frame.png);
   z-index: 2;
@@ -36,7 +29,6 @@ p {
   max-height: 250px;
   min-height: 250px;
   min-width: 60%;
-
 }
 #room-display {
   max-width: 87%;
@@ -50,7 +42,6 @@ p {
   min-width: 470px;
   min-height:350px;
 }
-
 .room {
   align-items: center;
   text-align: center;
@@ -71,21 +62,23 @@ p {
   text-align: left;
   padding: 12px 40px 12px 10px;
   border-radius: 2px;
-  border-style: dashed;
+  border-style: dotted;
   background-repeat: no-repeat;
   min-width: 133px;
+  border-right: none;
 }
 #character-info h4,
 #item-box h4,
 #use-item-box h4{
   text-align: left;
 }
-
 #character-info{
   border-top: none;
+  border-right: none;
 }
 #item-box {
   border-bottom: none;
+  border-right: none;
 }
 #button-display {
   background-image: url(../img/frame.png);
@@ -158,7 +151,6 @@ p {
   margin-left:auto;
   margin-right: auto;
 }
-
 .leftContext,
 .rightContext,
 .middleContext{
@@ -172,7 +164,6 @@ p {
   width: 100%;
   text-align: center;
 }
-
 .leftContext:hover,
 .rightContext:hover,
 .middleContext:hover{
@@ -215,17 +206,14 @@ p {
   font-weight: bold;
   font-family: 'Tangerine', cursive;
 }
-
 .headerFont{
   font-family: 'Tangerine', cursive;
   font-weight: bold;
   text-decoration: underline;
 }
-
 #stat-wrapper{
   margin-top: 120px;
 }
-
 .journal-content {
   background-image: url("../img/journal.png");
   width:800px;
@@ -250,7 +238,6 @@ p {
 #smokeACig:hover {
   cursor: pointer;
 }
-
 /*MODALS*/
 
 .modal-page1 {
@@ -263,7 +250,6 @@ p {
   float:right;
   margin: 15px 60px 0 0;
 }
-
 .modal-page1 p {
   font-family: 'tangerine',cursive;
   position: absolute fixed right;
@@ -272,7 +258,6 @@ p {
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
-
 .modal-page2 p {
   font-family: 'tangerine',cursive;
   position: absolute fixed right;
@@ -281,7 +266,6 @@ p {
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
-
 /*ALL MODAL CSS RULES FOR APPENDING*/
 /*UNIVERSAL CSS FOR ALL MODALS*/
 .modal-content {
@@ -303,11 +287,9 @@ p {
   box-shadow: none;
   border: none;
 }
-
-.textBody {
+.textBody, .textBody {
 text-align: center;
 }
-
 /*GOLD LIGHTER */
 .modalText {
   font-family: 'tangerine',cursive;
@@ -318,22 +300,20 @@ text-align: center;
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
-.modalText1 {
+.modalText2 {
   font-family: 'tangerine',cursive;
   position: absolute fixed right;
+  padding-top: 200px;
   font-size: 30px;
   color: rgba(102, 51, 0, .6);
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
-
 #lighter {
   padding-top: 200px;
-
-  width:500px;
+  width:300px;
   -webkit-filter: sepia(70%); /* Chrome, Safari, Opera */
 }
-
 /*LEVER ON WALL*/
 .modalText {
   font-family: 'tangerine',cursive;
@@ -344,16 +324,14 @@ text-align: center;
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
-
 #candle {
   padding-top: 130px;
   margin: auto;
-  width:550px;
+  width:250px;
   filter:opacity(800%);
   -webkit-filter: sepia(100%); /* Chrome, Safari, Opera */
   filter:blur(900%);
 }
-
 /*CIGARRETTES*/
 .modalText {
   font-family: 'tangerine',cursive;
@@ -364,16 +342,13 @@ text-align: center;
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
-
 #rolls {
   padding-top: 200px;
   margin: auto;
   width:300px;
   -webkit-filter: sepia(60%); /* Chrome, Safari, Opera */
 }
-
 /*DEATH*/
-
 .modalText {
   font-family: 'tangerine',cursive;
   padding-top: 170px;
@@ -383,13 +358,11 @@ text-align: center;
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
-
 #death {
   margin: auto;
   width:525px;
   -webkit-filter: sepia(90%); /* Chrome, Safari, Opera */
 }
-
 /*INSANITY*/
 .modalText {
   font-family: 'tangerine',cursive;
@@ -400,7 +373,6 @@ text-align: center;
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
-
 #insane {
   padding-top: 100px;
   margin: auto;
@@ -418,9 +390,7 @@ text-align: center;
 .modalitem {
   padding-left: auto;
   padding-right: auto;
-
 }
-
 /*DOOR KEY*/
 .modalText {
   font-family: 'tangerine',cursive;
@@ -431,7 +401,6 @@ text-align: center;
   text-align: center;
   text-shadow: .5px .25px .25px black;
 }
-
 /*SCARY EYES*/
 #eyes {
   width:570px;
@@ -440,12 +409,11 @@ text-align: center;
   border-radius: 50px;
   box-shadow: 60px;
 }
-
 #key {
   padding-top: 200px;
   /*-webkit-filter: sepia(50%); /* Chrome, Safari, Opera */
   margin: auto;
-  width:600px;
+  width:350px;
 }
 #wood {
   padding-top: 100px;
@@ -453,7 +421,6 @@ text-align: center;
   width:650px;
   -webkit-filter: sepia(20%); /* Chrome, Safari, Opera */
 }
-
 /*CLOSE MODAL BUTTON ---- NOT IN USE*/
 .exit {
   position: absolute fixed right;
@@ -464,11 +431,9 @@ text-align: center;
   background-color: rgba(102, 51, 0, .6);
   box-shadow: 5px 5px 5px black;
 }
-
 #smokeACig{
   display:none;
 }
-
 #tripleContextual{
   display: none;
 }

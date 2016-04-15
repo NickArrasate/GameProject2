@@ -13,44 +13,44 @@
 </head>
 <body>
 
-    <div class="row" id="displayRow">
-      <div class="col-xs-8 col-xs-offset-2">
-        <div id="room-picture">
-        </div>
-      </div>
-      <div class="col-xs-2" id='stat-wrapper'>
-        <div id="item-box">
-          <h2 class='headerFont'>Items</h2>
-          <span id="itemdisplay"></span>
-        </div>
-        <div id="use-item-box">
-          <h2 class='headerFont'>Actions</h2>
-          <span id="use-item-display">
-            <div id='smokeACig'>Smoke <br>(+1 Sanity, -10 Health)</div><br>
-          </span>
-        </div>
-        <div id="character-info"><!--display character information here-->
-            <h2 class='headerFont'>Character Stats</h2>
-              <p id="health">
-            Health: <span id="healthdisplay"></span>
-          </p>
-          <p id="sanity">
-            Sanity: <span id="sanitydisplay"></span>
-          </p>
-        </div>
+  <div class="row" id="displayRow">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div id="room-picture">
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-1 col-xs-offset-1" id="coordinateDisplay">
-        <span id="x-coord"></span><span>, </span><span id="y-coord"></span><span> - </span><span id="roomName"></span>
+    <div class="col-xs-2" id='stat-wrapper'>
+      <div id="item-box">
+        <h2 class='headerFont'>Items</h2>
+        <span id="itemdisplay"></span>
       </div>
-      <div class="room-frame col-xs-8 ">
-        <div class="room" id="continue">
-          Restart?
-        </div>
-        <div id="room-display"><!--room displays will append here-->
-        </div>
+      <div id="use-item-box">
+        <h2 class='headerFont'>Actions</h2>
+        <span id="use-item-display">
+          <div id='smokeACig'>Smoke <br>(+1 Sanity, -10 Health)</div><br>
+        </span>
       </div>
+      <div id="character-info"><!--display character information here-->
+        <h2 class='headerFont'>Character Stats</h2>
+        <p id="health">
+          Health: <span id="healthdisplay"></span>
+        </p>
+        <p id="sanity">
+          Sanity: <span id="sanitydisplay"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-1 col-xs-offset-1" id="coordinateDisplay">
+      <span id="x-coord"></span><span>, </span><span id="y-coord"></span><span> - </span><span id="roomName"></span>
+    </div>
+    <div class="room-frame col-xs-8 ">
+      <div class="room" id="continue">
+        Restart?
+      </div>
+      <div id="room-display"><!--room displays will append here-->
+      </div>
+    </div>
     <div id="character-wrapper" class="col-xs-2">
 
     </div>
@@ -72,65 +72,65 @@
     </div>
 
     <div class="row">
-    <div class="row">
-      <div class="col-xs-2 col-xs-offset-2" id="textEnterDiv">
-        <form id="textForm">
-          <input type="text" id="textInput">
-          <button type="submit" id="textSubmit">Search</button>
-        </form>
-      </div>
       <div class="row">
-      <div id="button-display" class="col-xs-4"><!---button display here -->
-        <div class="row" id="uprow">
-          <div class="col-xs-2 col-xs-offset-5 arrow">
-            <img id="up" class="directions" src="img/arrow.png" alt="up arrow" value="up"/>
-          </div>
+        <div class="col-xs-2 col-xs-offset-2" id="textEnterDiv">
+          <form id="textForm">
+            <input type="text" id="textInput">
+            <button type="submit" id="textSubmit">Search</button>
+          </form>
         </div>
         <div class="row">
-        <div id="buttonrow" class="row">
-          <div class="col-xs-2 col-xs-offset-3 arrow">
-            <img id="left" class="directions" src="img/arrow.png" alt="up arrow" value="left"/>
+          <div id="button-display" class="col-xs-4"><!---button display here -->
+            <div class="row" id="uprow">
+              <div class="col-xs-2 col-xs-offset-5 arrow">
+                <img id="up" class="directions" src="img/arrow.png" alt="up arrow" value="up"/>
+              </div>
+            </div>
+            <div class="row">
+              <div id="buttonrow" class="row">
+                <div class="col-xs-2 col-xs-offset-3 arrow">
+                  <img id="left" class="directions" src="img/arrow.png" alt="up arrow" value="left"/>
+                </div>
+                <div class="col-xs-2 arrow" id="downcol">
+                  <img id="down" class="directions" src="img/arrow.png" alt="up arrow" value="down"/>
+                </div>
+                <div class="col-xs-2 arrow">
+                  <img id="right" class="directions" src="img/arrow.png" alt="up arrow" value="right"/>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-2 arrow" id="downcol">
-            <img id="down" class="directions" src="img/arrow.png" alt="up arrow" value="down"/>
-          </div>
-          <div class="col-xs-2 arrow">
-            <img id="right" class="directions" src="img/arrow.png" alt="up arrow" value="right"/>
+        </div>
+
+
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="textBody">
+            </div>
+            <div class="modalItem">
+            </div>
           </div>
         </div>
       </div>
-        </div>
-    </div>
+      <div class="modal fade" id="myJournal" role="dialog">
+        <div class="modal-dialog">
 
+          <!-- Modal content-->
+          <div class="journal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-page1">
 
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <div class="textBody">
+            </div>
+            <div class="modal-page2">
+            </div>
           </div>
-          <div class="modalItem">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="myJournal" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="journal-content">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <div class="modal-page1">
-
-          </div>
-          <div class="modal-page2">
-          </div>
-        </div>
-        <!-- <div class="exit">
-        <button type="button" class="btn" data-dismiss="modal">Close</button>
+          <!-- <div class="exit">
+          <button type="button" class="btn" data-dismiss="modal">Close</button>
         </div> -->
       </div>
     </div>
@@ -171,20 +171,20 @@
         <!-- Modal content-->
         <div class="modal-content">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <div class="textBody">
-            <p class="modalText">
+          <div class="textBody2">
+            <p class="modalText2">
               Your sanity is slipping away from you!
             </p>
           </div>
-          <div class="modalItem">
+          <div class="modalItem2">
             <img id="almostcrazy" src="modalimg/brain.png" alt="" />
           </div>
         </div>
       </div>
     </div>
 
-      </div>
-    </div>
+  </div>
+</div>
 
 
 </body>

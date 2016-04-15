@@ -6,12 +6,11 @@ var roomRight = [];
 var roomLeft = [];
 var roomArray = [];
 var enteredText = "";
-// var Character = null;
 var directions = null;
 function Character(health, sanity, items){
- this.health= health;
- this.sanity = sanity;
- this.items= items;
+  this.health= health;
+  this.sanity = sanity;
+  this.items= items;
 };
 Character.prototype.addSanity = function(amount){
   return this.sanity += amount;
@@ -25,8 +24,8 @@ Character.prototype.loseSanity = function(amount){
   } else if (this.sanity <= 3){
     almost();
   } else if (this.sanity > 0){
-      return this.sanity;
-      characterRefresh(Character);
+    return this.sanity;
+    characterRefresh(Character);
   }
 };
 Character.prototype.addHealth = function(amount){
@@ -39,8 +38,8 @@ Character.prototype.loseHealth = function(amount){
     //Modal to display Game over
     youDied();
   } else if (this.health > 0){
-      return this.health;
-      characterRefresh(Character);
+    return this.health;
+    characterRefresh(Character);
   }
 };
 Character.prototype.smokeCig = function(){
@@ -49,17 +48,16 @@ Character.prototype.smokeCig = function(){
   characterRefresh(Character);
   if(this.health <= 0){
     //Modal to display Game over
-      youDied();
+    youDied();
   } else if (this.health > 0){
-      return this.health;
-      characterRefresh(Character);
+    return this.health;
+    characterRefresh(Character);
   }
-
 }
 Character.prototype.checkInventory = function(passItem){
   for(i = 0; i < this.items.length; i += 1){
     if(this.items[i] == passItem){
-    return false;
+      return false;
     }
   }
 }
@@ -67,51 +65,36 @@ var Character = new Character(100,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
 $(document).ready(function(){
-  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catacomb1, catacomb2, catacomb3, null, water1];// y-axis array================
+  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catacomb1, catacomb2, catacomb3, null, water1, exit];// y-axis array================
   var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum, tunnel, tunnel2, null, water2, water3];// x-axis array ===========================
   var roomLeft = [null,null,null,null,null,labratory, office, null, null, shore4, shore1, shore2, shore3];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
   var place = 0;
   var arrayPlace = 1;
-  $('#room-display').append(roomArray[arrayPlace][place].description);
-  $('#room-display').hide();
-  $('#room-display').fadeIn(500);
-
-  $('#room-picture').append(roomArray[arrayPlace][place].image);
-  $('#room-picture').hide();
-  $('#room-picture').fadeIn(500);
+  updatePlace(roomArray[arrayPlace][place].description,roomArray[arrayPlace][place].image);
   displayCoords(arrayPlace, place);
 
   // movement and setting=====================================================
   $('.directions').click(function() {
     var direction = $(this).attr('value');
-    //updates the coords with the appropriate values from roomchange and arraychange functions============
+    //updates the coords with the appropriate values from roomchange and arraychange functions on directional click============
     if (direction == 'up' || direction == 'down'){
-    place += parseInt(roomChanger(direction));
-  } else if (direction == 'right' || direction == 'left') {
-    arrayPlace += parseInt(arrayChanger(direction));
-  };
-    $('#room-display').empty();
-    $('#room-display').append(roomArray[arrayPlace][place].description);
-    $('#room-display').hide();
-
-    $('#room-display').fadeIn(500);
-    $('#room-picture').empty();
-    $('#room-picture').append(roomArray[arrayPlace][place].image);
-    $('#room-picture').hide();
-    $('#room-picture').fadeIn(500);
-    console.log(place, arrayPlace);// logs current coords==========================
-    displayCoords(arrayPlace, place, roomArray[arrayPlace][place].title);
-//calls the room action function and refreshes stats=================================
+      place += parseInt(roomChanger(direction));
+    } else if (direction == 'right' || direction == 'left') {
+      arrayPlace += parseInt(arrayChanger(direction));
+    };
+    updatePlace(roomArray[arrayPlace][place].description,roomArray[arrayPlace][place].image);
     $('#contextual').hide();
+    console.log(place, arrayPlace);// logs current coords and displays them to user==========================
+    //calls the room action function and refreshes stats=================================
     roomArray[arrayPlace][place].action(Character);
     characterRefresh(Character);
     $('.directions').hide();
-    console.log(roomArray[arrayPlace][place].directions);//log to track our coords in console.===================
-    directionCheck(roomArray[arrayPlace][place].directions);
-    displayCoords(arrayPlace, place, roomArray[arrayPlace][place].title);
-});
-//Contextual button function. pressing the contextual button calls the rooms 'after' function======================================================
+    console.log(roomArray[arrayPlace][place].directions);//log to track available directions in console.===================
+    directionCheck(roomArray[arrayPlace][place].directions);//appends available directions to UI
+    displayCoords(arrayPlace, place, roomArray[arrayPlace][place].title);//appends current coords to UI
+  });
+  //Contextual button function. pressing the contextual button calls the rooms 'after' function======================================================
   $('#contextual').click(function(){
     $('#contextual').hide();
     roomArray[arrayPlace][place].after(Character);
@@ -119,33 +102,23 @@ $(document).ready(function(){
     $('#room-picture').empty();
     $('#room-picture').append(roomArray[arrayPlace][place].image2);
   });
-
+  //triple contextual buttons for the catacomb puzzle===========================================
   $("#leftContextual").click(function(){
     $('#contextual').hide();
     roomArray[arrayPlace][place].leftCont(Character);
-    directionCheck(roomArray[arrayPlace][place].directions);
-    $('#room-picture').empty();
-    $('#room-picture').append(roomArray[arrayPlace][place].image2);
+    tripleContextClick(roomArray[arrayPlace][place].directions,roomArray[arrayPlace][place].image2)
   });
-
-
   $("#rightContextual").click(function(){
     $('#contextual').hide();
     roomArray[arrayPlace][place].rightCont(Character);
-    directionCheck(roomArray[arrayPlace][place].directions);
-    $('#room-picture').empty();
-    $('#room-picture').append(roomArray[arrayPlace][place].image2);
+    tripleContextClick(roomArray[arrayPlace][place].directions,roomArray[arrayPlace][place].image2)
   });
-
   $("#middleContextual").click(function(){
     $('#contextual').hide();
     roomArray[arrayPlace][place].middleCont(Character);
-    directionCheck(roomArray[arrayPlace][place].directions);
-    $('#room-picture').empty();
-    $('#room-picture').append(roomArray[arrayPlace][place].image2);
+    tripleContextClick(roomArray[arrayPlace][place].directions,roomArray[arrayPlace][place].image2)
   });
-
-  //Text Enter
+  //Listener for the search bar=================================================
   $("button#textSubmit").click(function(event){
     event.preventDefault();
     keyArray = [];
@@ -170,7 +143,21 @@ $(document).ready(function(){
   });
 });
 // Business logic=======================================
-// protoypes for updating character stats. Call the proto in the room object functions.
+function tripleContextClick (directions, image){
+  directionCheck(directions);
+  $('#room-picture').empty();
+  $('#room-picture').append(image);
+}
+function updatePlace(description, image){
+  $('#room-display').empty();
+  $('#room-display').append(description);
+  $('#room-display').hide();
+  $('#room-display').fadeIn(500);
+  $('#room-picture').empty();
+  $('#room-picture').append(image);
+  $('#room-picture').hide();
+  $('#room-picture').fadeIn(500);
+}
 
 // checks object.directions for available directions and displays related buttons======================
 function youDied(){
@@ -192,16 +179,16 @@ function youCrazy(){
 }
 function directionCheck(directions){
   for (i = 0; i < directions.length; i++){
-  if (directions[i] == 'up'){
-    $('#up').show();
-  }else if (directions[i] == 'down'){
-    $('#down').show();
-  }else if (directions[i] == 'left'){
-    $('#left').show();
-  }else if (directions[i] == 'right'){
-    $('#right').show();
+    if (directions[i] == 'up'){
+      $('#up').show();
+    }else if (directions[i] == 'down'){
+      $('#down').show();
+    }else if (directions[i] == 'left'){
+      $('#left').show();
+    }else if (directions[i] == 'right'){
+      $('#right').show();
+    }
   }
-}
 }
 function compareText(passedKeyArray, passedEnteredText){
   for(i = 0; i < passedKeyArray.length; i += 1){
