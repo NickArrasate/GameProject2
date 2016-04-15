@@ -1,16 +1,16 @@
 
 var water3 = {
-  title: "Water 2",
-  keywords: ['pawn', 'pawns'],
-  description: "<div class='room' id='water2'><p>You continue rowing into the blackness, and the figure poses his next riddle: 'The eight of us go forth not back to protect our king from a foes attack. What are we? '</p></div>",
+  title: "Water",
+  keywords: ['nothing'],
+  description: "<div class='room' id='water2'>" + '<p>' + 'You continue rowing into the blackness, and the figure poses his last riddle: "What do the poor possess, the rich lack, and if eaten will kill you?" ' + '</p></div>',
   action: function(){},
   results: function(){
     $("#room-display").empty();
     $("#room-display").append("<div class='room' id='water3'><p>'How clever...' he cackles.</p></div>");
-    water2.directions.push("up");
+    water3.directions.push("up");
     Character.addSanity(1);
   },
-  directions: ['left'],
+  directions: [],
   image: '<img src="img/water3.png" class="img-styles">',
 }
 var exit = {
@@ -19,7 +19,7 @@ var exit = {
   '</div>',
 }
 var water2 = {
-  title: "Water 2",
+  title: "Water",
   keywords: ['breath', 'his breath'],
   description: "<div class='room' id='water2'><p>You continue rowing into the blackness, and the figure poses his next riddle: 'What is light as a feather, but even the world's strongest man could not hold it for more than one minute?'</p></div>",
   action: function(){},
@@ -33,10 +33,10 @@ var water2 = {
   image: '<img src="img/water2.jpg" class="img-styles">',
 }
 var water1 = {
-  title: 'Water1',
-  keywords: ["nothing"],
+  title: 'Water',
+  keywords: ["pawn", "pawns"],
   description: '<div class="room" id="waterBoat1">' +
-  '<p>' + 'As the skiff departs from the shore, you notice the shrouded figure accompanying you begins to display a strange attitude. Almost as if he had this entire encounter planned all along. He poses his first riddle: "What do the poor possess, the rich lack, and if eaten will kill you?"' + '</p>' +
+  '<p>' + 'As the skiff departs from the shore, you notice the shrouded figure accompanying you begins to display a strange attitude. Almost as if he had this entire encounter planned all along. He poses his first riddle: "The eight of us go forth not back to protect our king from a foes attack. What are we?"' + '</p>' +
   '</div>',
   action: function(){
     Character.loseSanity(1);
@@ -61,22 +61,21 @@ var shore4 = {
     Character.loseSanity(2);
   },
   results: function(){
-    var strangeChipsCheck = Character.checkInventory(" Strange Wood Chips");
+    var strangeChipsCheck = Character.checkInventory(" Strange Bark");
     if (strangeChipsCheck !== false){
-      var verifyWood = Character.checkInventory(" Strange Wood Chips");
+      var verifyWood = Character.checkInventory(" Strange Bark");
       if(verifyWood !== false){
         $("#myModal .textBody").empty();
         $("#myModal .textBody").append("<p class='modalText'>You tear some bark from the strange tree.</p>");
         $('#myModal .modalItem').empty();
         $('#myModal .modalItem').append('<img id="wood" src="modalimg/wood.png" alt="parchment key" />');
         $("#myModal").modal();
-        Character.items.push(' Strange Wood Chips');
+        Character.items.push(' Strange Bark');
         $('#room-display').empty();
         $('#room-display').append(
           '<div class="room">' +
           '<p>' + 'As you investigate the tree further you notice disturbed earth covered in glowings woodchips. Whoever or whatever... made these markings was chopping was gathering woodchips from the tree. You pick up some a handful of woodchips and put them in your pocket.' + '</p>' +
           '</div>');
-      Character.items.push(' Strange Wood Chips');
       characterRefresh(Character);
     }
   }
@@ -114,18 +113,18 @@ var shore3 = {
   '<p>' + 'As you walk up the shoreline, the inky water continues to lap gently onto the sand. There is a small row boat in the sand. ' + '</p>' +
   '</div>',
   action: function(){
-    var keyCheck = Character.checkInventory(" Strange Wood Chips");
+    var keyCheck = Character.checkInventory(" Strange Bark");
     $('.buttontext').empty();
     if (keyCheck == false) {
       $('#contextual').show();
-      $('#contextual span.buttontext').append('Use the' + '<span class ="item">' + ' Strange Wood Chips' + '</span>.');
+      $('#contextual span.buttontext').append('Use the' + '<span class ="item">' + ' Strange Bark' + '</span>.');
     } else {
       $('#contextual').hide();
     };
   },
   after: function(){
     $('#room-display').empty();
-    $('#room-display').append("<div class='room' id='shore3'>" + "<p>You begin work on the boat. After some time you are able to patch the hole with the" + '<span class ="item">' + ' Strange Wood Chips' + '</span>. Suddenly a shrouded figure approaches you from behind.  He thanks you for fixing the boat and offers to transport you... if you can answer 3 riddles.  Seeing no other choice, you accept and depart.' + '</p></div>');
+    $('#room-display').append("<div class='room' id='shore3'>" + "<p>You begin work on the boat. After some time you are able to patch the hole with the" + '<span class ="item">' + ' Strange Bark' + '</span>. Suddenly a shrouded figure approaches you from behind.  He thanks you for fixing the boat and offers to transport you... if you can answer 3 riddles.  Seeing no other choice, you accept and depart.' + '</p></div>');
     shore3.directions.push('right');
   },
   results: function(){
@@ -544,7 +543,7 @@ var path = {
     var verifyCigs = Character.checkInventory(" Cigarettes");
     if(verifyCigs !== false){
       $("#myModal .textBody").empty();
-      $("#myModal .textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p class='modalText1'>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.<br>Be careful though!  Each time You smoke you will lose <span class='health'>health</span>.</p>");
+      $("#myModal .textBody").append("<p class='modalText'>You search your pockets and find pack of <span class='item'>Cigarettes</span>.</p><br><p class='modalText'>You can smoke these to calm your nerves and restore <span class='sanity'>sanity</span>.<br>Be careful though!  Each time You smoke you will lose <span class='health'>health</span>.</p>");
       $('#myModal .modalItem').empty();
       $('#myModal .modalItem').append('<img id="key" src="modalimg/rolls.png" alt="parchment key" />');
       $("#myModal").modal();
@@ -569,7 +568,7 @@ var turnback = {
 var introduction = {
   title: 'Introduction',
   description: '<div class="room" id="introduction">' +
-  '<p>' + 'Welcome to our game. There are many rooms and places to explore and you have been provided with a set of coordinates to track your progress. Remember to \'Search\' your surroundings. Please note that your statistics and a list of your held items may be found on the right side of your screen. Enjoy.' + '</p>' +
+  '<p>' + 'Welcome to Harbinger: Prelude. There are many rooms and places to explore and you have been provided with a set of coordinates to track your progress. Remember to \'Search\' your surroundings. Please note that your statistics and a list of your held items may be found on the right side of your screen. Enjoy.' + '</p>' +
   '</div>',
   action: function(){},
   after: function(){
