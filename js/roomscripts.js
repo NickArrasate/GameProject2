@@ -104,7 +104,6 @@ var shore4 = {
         $('#myModal .modalItem').append('<img id="wood" src="modalimg/wood.png" alt="parchment key" />');
         $("#myModal").modal();
         pocket.play();
-        Character.items.push(' Strange Wood Chips');
         Character.items.push(' Strange Bark');
         $('#room-display').empty();
         $('#room-display').append(
