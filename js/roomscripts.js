@@ -103,6 +103,8 @@ var shore4 = {
         $('#myModal .modalItem').empty();
         $('#myModal .modalItem').append('<img id="wood" src="modalimg/wood.png" alt="parchment key" />');
         $("#myModal").modal();
+        pocket.play();
+        Character.items.push(' Strange Wood Chips');
         Character.items.push(' Strange Bark');
         $('#room-display').empty();
         $('#room-display').append(
@@ -121,12 +123,14 @@ var shore2 = {
   keywords: ["journal", "book", "rock"],
   description: '<div class="room" id="shore2"><p>You continue along the shore.  Walking further into the blackness...You notice a small black journal resting on a rock nearby.</p><div>',
   action: function(){
+    cave.play();
   },
   after: null,
   results: function(){
     $(".modal-page1").empty();
     $(".modal-page1").append("<p>Journal 3, 8, 1260<br>The ritual was successful. Our lord has arisen! He has asked that I bring the others to complete our transformation, though they might resist his embrace at first they will come to love him as I do. We are all saved! WE ARE ALL SAVED! -- Augustus.</p>");
     $("#myJournal").modal();
+    pocket.play();
     },
   directions: ['up','down'],
   image: '<img src="img/shore2.jpg" class="img-styles">',
@@ -156,6 +160,7 @@ var shore3 = {
     };
   },
   after: function(){
+    caveMusic.play();
     $('#room-display').empty();
     $('#room-display').append("<div class='room' id='shore3'>" + "<p>You begin work on the boat. After some time you are able to patch the hole with the" + '<span class ="item">' + ' Strange Bark' + '</span>. Suddenly a shrouded figure approaches you from behind.  He thanks you for fixing the boat and offers to transport you... if you can answer 3 riddles.  Seeing no other choice, you accept and depart.' + '</p></div>');
     shore3.directions.push('right');
@@ -197,6 +202,7 @@ var tunnel = {
   '<p>' + 'The door slams shut behind you and will not open.  You find yourself in a cavernous tunnel. You can only follow the tunnel and see where it leads.' + '</p>' +
   '</div>',
   action: function(){
+    cave.play();
     Character.loseSanity(1);
     characterRefresh(Character);
     $(".tripleContextual").hide();
@@ -368,6 +374,7 @@ var library = {
       $('.modalItem').empty();
       $('.modalItem').append('<img id="candle" src="modalimg/candle.png" alt="parchment key" />');
       $("#myModal").modal();
+      pocket.play();
     },
     directions: ['down'],
     image: '<img src="img/library.jpg" class="img-styles">',
@@ -385,6 +392,7 @@ var libraryDoor = {
     if (keyCheck == false) {
       $('#contextual').show();
       $('#contextual span.buttontext').append('Unlock the door with the' + '<span class ="item">' + 'small key' + '</span>.');
+      largeDoor.play();
     } else {
       $('#contextual').show();
       $('#contextual span.buttontext').text('Try the door.');
@@ -408,6 +416,7 @@ var libraryDoor = {
     $('.modalItem').empty();
     $('.modalItem').append('<img id="key" src="modalimg/key.png" alt="parchment key" />');
     $("#myModal").modal();
+    pocket.play();
   } else {
     characterRefresh(Character);
     $('#contextual').hide();
@@ -439,6 +448,7 @@ var office = {
       $('.modalItem').empty();
       $('.modalItem').append('<img id="key" src="modalimg/key.png" alt="parchment key" />');
       $("#myModal").modal();
+      pocket.play();
       Character.items.push(' Small Key');
     }
     },
@@ -455,6 +465,7 @@ var labratory = {
   $('#contextual span.buttontext').text('Push the door open.');
 },
   after: function(Character){
+    door.play();
     Character.loseSanity(3);
     characterRefresh(Character);
     $('#contextual').hide();
@@ -482,6 +493,7 @@ var hallway2 = {
     $(".modal-page1").empty();
     $(".modal-page1").append("<p>Journal 3, 5, 1260<br>We have finally made contact with our Lord! Augustus went into the crypts to perform the ritual. He never returned. Xavier went down to check on him and reported that he found nothing anywhere in the catacombs. We know our Lord took him into his embrace. We will all be with Him soon.</p>");
     $("#myJournal").modal();
+    pocket.play();
     },
   directions: ['left','right'],
   image: '<img src="img/wall.jpg" class="img-styles">',
@@ -505,6 +517,7 @@ var hallway1 = {
     $('.modalItem').empty();
     $('.modalItem').append('<img id="lighter" src="modalimg/lighter.png" alt="parchment key" />');
     $('#myModal').modal();
+    pocket.play();
     hallway1.directions.push("up");
     $('#room-display').empty();
     $('#room-display').append(
@@ -522,6 +535,7 @@ var foyer = {
   '<p>' + 'You scraped your back on the rusty gate as you passed beneath. You find yourself in a small, dim vestibule. The once grand meeting place of the cathedral is badly damaged and the pews are a jumbled mess. The aisles are a mess of dusty detritus. You see a narrow staircase leading down and you can not go back... ' + '</p>' +
   '</div>',
   action: function(Character){
+    footstep.play();
     characterRefresh(Character);
     },
   after: null,
@@ -545,6 +559,7 @@ var terrace = {
     $('.modalItem').empty();
     $('.modalItem').append('<img id="eyes" src="img/eyes.jpg" alt="scary eyes" />');
     $('#myModal').modal();
+    spook.play();
     Character.loseSanity(2);
     characterRefresh(Character);
   },
@@ -569,6 +584,7 @@ var path = {
   '<p>' + 'You stand alone on a narrow path hemmed in by towering trees.  You don\'t know how you got here but you feel compelled to continue. A blocky shadow looms ahead. You can only go forward.  You remember you have something of importance in your coat pocket...' + '</p>' +
   '</div>',
   action: function(){
+    wolf.play();
     $('#down').hide();
     },
   after: null,
@@ -580,6 +596,7 @@ var path = {
       $('#myModal .modalItem').empty();
       $('#myModal .modalItem').append('<img id="key" src="modalimg/rolls.png" alt="parchment key" />');
       $("#myModal").modal();
+      pocket.play();
       Character.items.push(' Cigarettes');
       path.directions.push('up')
       $('#smokeACig').show();

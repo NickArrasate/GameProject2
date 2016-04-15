@@ -61,6 +61,27 @@ Character.prototype.checkInventory = function(passItem){
     }
   }
 }
+
+// SOUND FILES
+var cave = new Audio('sound/cave.mp3');
+var pocket = new Audio('sound/pocket.mp3');
+var spook = new Audio('sound/spook.mp3');
+spook.volume = 0.2;
+var footstep = new Audio('sound/footstep.mp3');
+footstep.volume = 0.3;
+var caveMusic = new Audio('sound/scarycavemusic.mp3');
+var menu = new Audio('sound/menu.mp3');
+menu.volume = 0.3;
+var woods = new Audio('sound/woods.mp3');
+woods.volume = 0.3;
+var door = new Audio('sound/door.mp3');
+door.volume = 0.3;
+var wolf = new Audio('sound/wolf.mp3');
+wolf.volume = 0.3;
+var largeDoor = new Audio('sound/largeDoor.mp3');
+largeDoor.volume = 0.3;
+
+
 var Character = new Character(100,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
