@@ -86,8 +86,8 @@ var Character = new Character(100,10,['Gold Lighter']);
 // user interface logic ========================================
 // Setup the rooms array and starting location and stats========================
 $(document).ready(function(){
-  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catacomb1, catacomb2, catacomb3, null, water1, exit];// y-axis array================
-  var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum, tunnel, tunnel2, null, water2, water3];// x-axis array ===========================
+  var roomCenter = [introduction, path, entrance, foyer, hallway1, hallway2, null, null, catacomb1, catacomb2, catacomb3, null, water1];// y-axis array================
+  var roomRight = [null,null, terrace, null, null, libraryDoor, library, cryptEntrance, mausoleum, tunnel, tunnel2, null, water2, water3, death, end];// x-axis array ===========================
   var roomLeft = [null,null,null,null,null,labratory, office, null, null, shore4, shore1, shore2, shore3];
   var roomArray = [roomLeft,roomCenter,roomRight];//array for both y- and x-axis==============================
   var place = 0;
@@ -182,6 +182,7 @@ function updatePlace(description, image){
 
 // checks object.directions for available directions and displays related buttons======================
 function youDied(){
+  $('#loseModal').empty();
   $('#loseModal').modal();
   $('.arrow').empty();
   $("#smokeACig").hide();

@@ -1,10 +1,20 @@
 body {
   font-weight: bold;
-  background-image: url(../img/parchment.jpg);
-  background-position: center;
   align-items: center;
   padding-top: 25px;
   font-weight: bold;
+}
+#background {
+  background-image: url(../img/background2.jpg);
+  z-index: -10;
+  background-position: top;
+  background-size: cover;
+  max-width: 90%;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  background-repeat: repeat;
 }
 p {
   max-height: 235px;
@@ -54,6 +64,9 @@ p {
   max-width: 100%;
   max-height: 175px;
   overflow: auto;
+}
+#textForm {
+  padding-left: 18px;
 }
 #character-info,
 #item-box,
