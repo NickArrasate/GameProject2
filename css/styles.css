@@ -78,7 +78,6 @@ p {
   border-style: dotted;
   background-repeat: no-repeat;
   min-width: 133px;
-  border-right: none;
 }
 #character-info h4,
 #item-box h4,
@@ -87,11 +86,9 @@ p {
 }
 #character-info{
   border-top: none;
-  border-right: none;
 }
 #item-box {
   border-bottom: none;
-  border-right: none;
 }
 #button-display {
   background-image: url(../img/frame.png);

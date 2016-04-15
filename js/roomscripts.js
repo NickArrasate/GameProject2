@@ -26,7 +26,7 @@ var death = {
   },
   after:function(){
     $("#room-display").empty();
-    $("#room-display").append("<div class='room' id='death'><p>Suddenly, you feel the gnarled hands of the figure around your throat.  He is impossibly strong.  'You said you would help me', you rasp.  'But I am' he whispers back.  As you feel consciousness slipping away from you, you are pushed from the boat into the black water.  You feel it envelope you as you sink deeper and deeper...</p></div>");
+    $("#room-display").append("<div class='room' id='deathroom'>" + "<p>" + "Suddenly, you feel the gnarled hands of the figure around your throat.  He is impossibly strong.  'You said you would help me', you rasp.  'But I am' he whispers back.  As you feel consciousness slipping away from you, you are pushed from the boat into the black water.  You feel it envelope you as you sink deeper and deeper..." + "</p>" + "</div>");
     death.directions.push('up');
   },
   directions: [''],
@@ -86,7 +86,7 @@ var water1 = {
 }
 var shore4 = {
   title: "Shore",
-  keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut"],
+  keywords: ["tree","light","marking","markings","symbols","symbol","cuts","cut", "wood", "bark"],
   description: '<div class="room" id="shoreline4">' +
   '<p>' + 'As you walk along the shoreline you see a small beam of light. It seems to be coming from a small opening in the cave ceiling far above. The beam of light shines on a large desolate tree covered in abnormal and unmentionable scrawlings... the work of a madman. There are deep cuts in the tree as if something hacked at it. The occult symbols glow before your eyes and the darkness seems ever more consuming. A cliffside blocks you from continuing on in this direction...' + '</p>' +
   '</div>',
