@@ -1,5 +1,42 @@
+var end = {
+  title: "The End",
+  description: '<div class="room" id="exit">' +
+  '<p>' + 'You awake to find yourself tied to a table... cloaked figures surround you.  "Welcome harbinger" one of the them breathes.  "We have been waiting for you."' + '</p>' +
+  '</div>',
+  action:function(){
+    $(".buttontext").empty();
+    $('#contextual').show();
+    $('#contextual span.buttontext').append('To Be Continued');
+  },
+  after:function(){
+    location.reload();
+  },
+  image: '<img src="img/sacrifice.jpg" class="img-styles">',
+}
+
+var death = {
+  title: "-",
+  description: '<div class="room" id="exit">' +
+  '<p>' + 'You are nearing the light... you sense your goal is moments away.' + '</p>' +
+  '</div>',
+  action:function(){
+    $(".buttontext").empty();
+    $('#contextual').show();
+    $('#contextual span.buttontext').append('Continue');
+  },
+  after:function(){
+    $("#room-display").empty();
+    $("#room-display").append("<div class='room' id='death'><p>Suddenly, you feel the gnarled hands of the figure around your throat.  He is impossibly strong.  'You said you would help me', you rasp.  'But I am' he whispers back.  As you feel consciousness slipping away from you, you are pushed from the boat into the black water.  You feel it envelope you as you sink deeper and deeper...</p></div>");
+    death.directions.push('up');
+  },
+  directions: [''],
+  image: '<img src="img/light.jpg" class="img-styles">',
+  image2: '<img src="img/underwater.jpg" class="img-styles">'
+}
+
 
 var water3 = {
+
   title: "Water",
   keywords: ['nothing'],
   description: "<div class='room' id='water2'>" + '<p>' + 'You continue rowing into the blackness, and the figure poses his last riddle: "What do the poor possess, the rich lack, and if eaten will kill you?" ' + '</p></div>',
@@ -13,11 +50,7 @@ var water3 = {
   directions: [],
   image: '<img src="img/water3.png" class="img-styles">',
 }
-var exit = {
-  description: '<div class="room" id="exit">' +
-  '<p>' + 'The riddleman drops you at the opposite shore. You see a dim light in the distance.' + '</p>' +
-  '</div>',
-}
+
 var water2 = {
   title: "Water",
   keywords: ['breath', 'his breath'],
